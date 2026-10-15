@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessment Schedule · Nishkam GCSE Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1B3A6B;--navy-deep:#0f2347;--gold:#C9932F;--gold-warm:#D4A843;--saffron:#E8841A;--saffron-light:#FEF3E2;--gold-light:#F5E6C8;--red:#C0392B;--red-light:#FDEDEC;--green:#1A7A3A;--green-light:#EAFAF1;--teal:#117A65;--teal-light:#E8F8F5;--purple:#6C3483;--purple-light:#F5EEF8;--grey:#5D6D7E;--grey-light:#F2F3F4;--white:#FFF;--ink:#1a1a2e;--paper:#FAFAF7}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.7}a{text-decoration:none}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .main{min-width:0}
+
+  
+  
+  
+  
+  
+  
+
+  .section{padding:48px 80px;border-bottom:1px solid rgba(0,0,0,.06)}
+  .section-header{margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--gold-light)}
+  .section-title h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--navy)}
+  .section-title .spec-ref{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--grey);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+
+  /* YEAR TABS */
+  .year-tabs{display:flex;gap:0;margin-bottom:24px}
+  .year-tab{padding:14px 32px;background:var(--grey-light);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.08em;cursor:pointer;border:1px solid rgba(0,0,0,.08);transition:all .2s}
+  .year-tab:first-child{border-radius:8px 0 0 8px}
+  .year-tab:last-child{border-radius:0 8px 8px 0}
+  .year-tab.active{background:var(--navy);color:white;border-color:var(--navy)}
+
+  /* TERM BLOCKS */
+  .term-block{margin-bottom:32px}
+  .term-header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-radius:10px 10px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.08em;color:white}
+  .term-header .term-dates{font-weight:400;font-size:11px;opacity:.7}
+
+  /* WEEK ROWS */
+  .week-table{width:100%;border-collapse:separate;border-spacing:0}
+  .week-table th{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:10px 12px;background:var(--grey-light);color:var(--grey);text-align:left;border-bottom:1px solid rgba(0,0,0,.08)}
+  .week-table td{padding:12px 14px;font-size:13px;border-bottom:1px solid rgba(0,0,0,.05);vertical-align:top;line-height:1.5}
+  .week-table tr:hover td{background:rgba(201,147,47,.04)}
+  .week-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--navy)}
+  .unit-tag{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;color:white;display:inline-block;margin-bottom:2px}
+  .quiz-code{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--saffron);background:var(--saffron-light);padding:3px 8px;border-radius:4px;display:inline-block}
+  .ppq-ref{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--teal);display:inline-block}
+  .ppq-marks{font-size:10px;color:white;background:var(--saffron);padding:1px 5px;border-radius:3px;margin-left:4px}
+  .cumulative-tag{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--purple);background:var(--purple-light);padding:2px 6px;border-radius:3px;display:inline-block}
+
+  .info-box{background:var(--saffron-light);border-left:4px solid var(--saffron);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:13px;line-height:1.6}
+  .info-box strong{color:var(--saffron)}
+
+  .key-box{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:24px}
+  .key-item{display:flex;align-items:center;gap:8px;font-size:12px;font-family:'JetBrains Mono',monospace}
+  .key-dot{width:14px;height:14px;border-radius:3px;flex-shrink:0}
+
+  .footer{background:var(--navy-deep);color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-family:'JetBrains Mono',monospace;font-size:11px}
+  .footer-motto{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--gold-warm);font-weight:600;display:block;margin-bottom:8px}
+
+  .mobile-nav-btn{display:none;position:fixed;top:16px;left:16px;z-index:200;background:var(--navy);color:white;border:none;border-radius:8px;padding:10px 14px;font-size:18px;cursor:pointer}
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
+  @media(max-width:900px){.sidebar{transform:translateX(-100%);transition:transform .3s}.sidebar.open{transform:translateX(0)}.sidebar-overlay.open{display:block}.mobile-nav-btn{display:block}.main{margin-left:0;width:100%}.hero,.section{padding-left:20px;padding-right:20px}.week-table{font-size:12px}.week-table td,.week-table th{padding:8px 6px}}
+
+/* === NISHKAM SIDEBAR SYSTEM === */
+.layout { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+.sidebar {
+  background: #0E2A47; color: #FAF7F1;
+  padding: 32px 28px;
+  position: sticky; top: 0; height: 100vh;
+  overflow-y: auto; border-right: 1px solid #081A2E;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.sidebar__brand { padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid rgba(176,138,62,0.3); }
+.sidebar__school { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 17px; color: #FAF7F1; letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 6px; }
+.sidebar__motto { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; font-size: 12.5px; color: #D4B570; letter-spacing: 0.01em; }
+.sidebar__eyebrow { margin-top: 16px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D4B570; }
+.sidebar__group { margin-bottom: 24px; }
+.sidebar__group:last-child { margin-bottom: 0; }
+.sidebar__heading { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #B08A3E; margin: 0 0 10px; }
+.sidebar__links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.sidebar__links a {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 7px 10px 7px 12px;
+  font-size: 14px; color: rgba(250,247,241,0.82);
+  border-radius: 4px; transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  border-left: 2px solid transparent; margin-left: -12px; text-decoration: none;
+}
+.sidebar__links a:hover { color: #FAF7F1; background: rgba(176,138,62,0.08); border-left-color: #B08A3E; }
+.sidebar__links a.is-active { color: #D4B570; border-left-color: #B08A3E; font-weight: 500; }
+.sidebar__num { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; color: #B08A3E; font-size: 13px; min-width: 14px; }
+.sidebar__links a svg { width: 11px; height: 11px; opacity: 0.6; margin-left: auto; flex-shrink: 0; }
+.mobile-bar { display: none; position: sticky; top: 0; z-index: 60; background: #0E2A47; color: #FAF7F1; padding: 14px 20px; align-items: center; justify-content: space-between; border-bottom: 1px solid #081A2E; }
+.mobile-bar__brand { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 16px; }
+.mobile-bar__toggle { background: none; border: 1px solid rgba(250,247,241,0.3); color: #FAF7F1; width: 40px; height: 40px; border-radius: 4px; font-size: 18px; cursor: pointer; display: grid; place-items: center; }
+.sidebar-scrim { position: fixed; inset: 0; background: rgba(8,26,46,0.6); z-index: 65; opacity: 0; pointer-events: none; transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1); }
+.sidebar-scrim.is-open { opacity: 1; pointer-events: auto; }
+.main { min-width: 0; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .mobile-bar { display: flex; }
+  .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 300px; max-width: 85vw; transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); z-index: 70; box-shadow: 0 0 40px rgba(0,0,0,0.25); }
+  .sidebar.is-open { transform: translateX(0); }
+}
+/* === END SIDEBAR SYSTEM === */
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="mobile-bar">
+  <div class="mobile-bar__brand">GCSE Business Studies</div>
+  <button class="mobile-bar__toggle" id="sidebarToggle" aria-label="Open navigation">&#9776;</button>
+</div>
+<div class="sidebar-scrim" id="sidebarScrim"></div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar__brand">
+      <div class="sidebar__school">Nishkam School West London</div>
+      <div class="sidebar__motto">Man Neeva, Mat Uchi</div>
+      <div class="sidebar__eyebrow">AQA GCSE Business</div>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Overview</h3>
+      <ul class="sidebar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.nishkamschooltrust.org/nswl/page/?title=Virtue%2Dled+Education&amp;pid=255" target="_blank" rel="noopener">
+          Nishkam Virtues
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a></li>
+        <li><a href="faith.html">Faith &amp; Business</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Revision Units</h3>
+      <ul class="sidebar__links">
+        <li><a href="unit1.html"><span class="sidebar__num">1</span>Business in the Real World</a></li>
+        <li><a href="unit2.html"><span class="sidebar__num">2</span>Influences on Business</a></li>
+        <li><a href="unit3.html"><span class="sidebar__num">3</span>Business Operations</a></li>
+        <li><a href="unit4.html"><span class="sidebar__num">4</span>Human Resources</a></li>
+        <li><a href="unit5.html"><span class="sidebar__num">5</span>Marketing</a></li>
+        <li><a href="unit6.html"><span class="sidebar__num">6</span>Finance</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Resources</h3>
+      <ul class="sidebar__links">
+        <li><a href="resources.html">Download Booklets</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Study Tools</h3>
+      <ul class="sidebar__links">
+        <li><a href="marker.html">Mark My Work</a></li>
+        <li><a href="generator.html">Practice Questions</a></li>
+        <li><a href="mock.html">Mock Paper Generator</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Planning</h3>
+      <ul class="sidebar__links">
+        <li><a href="assessments.html" class="is-active">Assessment Schedule</a></li>
+        <li><a href="revision.html">How to Revise</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Beyond GCSE</h3>
+      <ul class="sidebar__links">
+        <li><a href="alevel.html">A Level Business</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+  <header class="hero" style="padding:88px 0 64px;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>&quot;);pointer-events:none;opacity:0.9;"></div>
+      <div style="max-width:1080px;margin:0 auto;padding:0 48px;position:relative;">
+        <div style="font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#B08A3E;margin-bottom:24px;display:flex;align-items:center;gap:12px;"><span style="width:36px;height:1px;background:#B08A3E;display:inline-block;"></span>Planning &middot; AQA GCSE Business Studies</div>
+        <h1 style="font-family:'DM Serif Display',Georgia,serif;font-weight:500;font-size:clamp(40px,6vw,76px);line-height:0.98;letter-spacing:-0.025em;color:#0E2A47;margin:0 0 24px;max-width:14ch;">Assessment<br><em style="font-style:italic;font-weight:400;color:#B08A3E;">schedule.</em></h1>
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:19px;line-height:1.5;color:#444;max-width:620px;margin:0;">The complete two-year programme mapped week by week. Every week has a quiz code and a past paper question &mdash; from Year 10 Day 1 to the final exam.</p>
+      </div>
+    </header>
+
+  <div class="section" style="background:white">
+    <div class="info-box">
+      <strong>How this works:</strong> Each week you will complete two tasks. (1) A <strong>knowledge quiz</strong> on the topic being taught that week — enter the quiz code on the Quiz page. (2) A <strong>past paper question</strong> submitted to the AI Marker — practising real AQA exam technique from the start. As the course progresses, you will also see <span class="cumulative-tag">CUMULATIVE</span> review questions testing topics from previous units.
+    </div>
+    <div class="key-box">
+      <div class="key-item"><div class="key-dot" style="background:var(--saffron)"></div>Unit 1</div>
+      <div class="key-item"><div class="key-dot" style="background:var(--teal)"></div>Unit 2</div>
+      <div class="key-item"><div class="key-dot" style="background:#2471A3"></div>Unit 6</div>
+      <div class="key-item"><div class="key-dot" style="background:var(--red)"></div>Unit 5</div>
+      <div class="key-item"><div class="key-dot" style="background:var(--purple)"></div>Unit 3</div>
+      <div class="key-item"><div class="key-dot" style="background:var(--green)"></div>Unit 4</div>
+      <div class="key-item"><div class="key-dot" style="background:#555"></div>Revision / Mock</div>
+    </div>
+  </div>
+
+  <!-- YEAR TABS -->
+  <div class="section">
+    <div class="year-tabs">
+      <div class="year-tab active" onclick="showYear(10)">Year 10</div>
+      <div class="year-tab" onclick="showYear(11)">Year 11</div>
+    </div>
+
+    <!-- ═══════ YEAR 10 ═══════ -->
+    <div id="year10">
+
+      <!-- AUTUMN 1 — Unit 1 -->
+      <div class="term-block">
+        <div class="term-header" style="background:var(--saffron)">Autumn 1 — Unit 1: Business in the Real World <span class="term-dates">September — October Half Term</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">1</td><td><span class="unit-tag" style="background:var(--saffron)">U1</span> Purpose of business activity — needs, wants, goods, services, sectors</td><td><span class="quiz-code">Y10-W01-U1</span></td><td><span class="ppq-ref">2023 P1 Q1.7</span><span class="ppq-marks">2m</span> Identify two stakeholders</td></tr>
+          <tr><td class="week-num">2</td><td><span class="unit-tag" style="background:var(--saffron)">U1</span> Enterprise and entrepreneurship — risk, reward, characteristics</td><td><span class="quiz-code">Y10-W02-U1</span></td><td><span class="ppq-ref">2020 P1 Q1.10</span><span class="ppq-marks">2m</span> Characteristics of an entrepreneur</td></tr>
+          <tr><td class="week-num">3</td><td><span class="unit-tag" style="background:var(--saffron)">U1</span> Business ownership — sole traders, partnerships</td><td><span class="quiz-code">Y10-W03-U1</span></td><td><span class="ppq-ref">2019 P2 Q2.3</span><span class="ppq-marks">9m</span> Recommend whether Jade should change ownership</td></tr>
+          <tr><td class="week-num">4</td><td><span class="unit-tag" style="background:var(--saffron)">U1</span> Business ownership — Ltd, Plc, social enterprise, not-for-profit</td><td><span class="quiz-code">Y10-W04-U1</span></td><td><span class="ppq-ref">2025 P1 Q1.2</span><span class="ppq-marks">1m</span> MCQ: Ltd and Plc + <span class="ppq-ref">2024 P1 Q1.7</span><span class="ppq-marks">2m</span> Method of growth</td></tr>
+          <tr><td class="week-num">5</td><td><span class="unit-tag" style="background:var(--saffron)">U1</span> Setting aims and objectives — survival, profit, growth</td><td><span class="quiz-code">Y10-W05-U1</span></td><td><span class="ppq-ref">2022 P1 Q2.4</span><span class="ppq-marks">4m</span> Explain two reasons why objectives change</td></tr>
+          <tr><td class="week-num">6</td><td><span class="unit-tag" style="background:var(--saffron)">U1</span> Stakeholders — conflicts, influence, mapping</td><td><span class="quiz-code">Y10-W06-U1</span></td><td><span class="ppq-ref">2023 P1 Q2.4</span><span class="ppq-marks">9m</span> Recommend whether business should change location</td></tr>
+          <tr><td class="week-num">7</td><td><span class="unit-tag" style="background:var(--saffron)">U1</span> Location, business planning, expanding a business</td><td><span class="quiz-code">Y10-W07-U1</span></td><td><span class="ppq-ref">2024 P1 Q2.6</span><span class="ppq-marks">6m</span> Analyse one benefit of a business plan</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- AUTUMN 2 — Unit 2 -->
+      <div class="term-block">
+        <div class="term-header" style="background:var(--teal)">Autumn 2 — Unit 2: Influences on Business <span class="term-dates">November — December</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">8</td><td><span class="unit-tag" style="background:var(--teal)">U2</span> Technology in business — e-commerce, social media, digital communication</td><td><span class="quiz-code">Y10-W08-U2</span></td><td><span class="ppq-ref">2020 P1 Q3.4</span><span class="ppq-marks">6m</span> Analyse one benefit of social media for customer service</td></tr>
+          <tr><td class="week-num">9</td><td><span class="unit-tag" style="background:var(--teal)">U2</span> Ethical and environmental considerations</td><td><span class="quiz-code">Y10-W09-U2</span></td><td><span class="ppq-ref">2019 P1 Q3.6</span><span class="ppq-marks">6m</span> Analyse one benefit of ethical trading</td></tr>
+          <tr><td class="week-num">10</td><td><span class="unit-tag" style="background:var(--teal)">U2</span> The economic climate — interest rates, exchange rates, inflation</td><td><span class="quiz-code">Y10-W10-U2</span></td><td><span class="ppq-ref">2019 P2 Q2.2</span><span class="ppq-marks">6m</span> Analyse impact of interest rate change <span class="cumulative-tag">+ U1 review</span></td></tr>
+          <tr><td class="week-num">11</td><td><span class="unit-tag" style="background:var(--teal)">U2</span> The economic climate — unemployment, government policy</td><td><span class="quiz-code">Y10-W11-U2</span></td><td><span class="ppq-ref">2025 P1 Q2.2</span><span class="ppq-marks">4m</span> Explain impact of exchange rates on exports</td></tr>
+          <tr><td class="week-num">12</td><td><span class="unit-tag" style="background:var(--teal)">U2</span> Globalisation — imports, exports, multinationals, barriers to trade</td><td><span class="quiz-code">Y10-W12-U2</span></td><td><span class="ppq-ref">2022 P2 Q2.6</span><span class="ppq-marks">6m</span> Analyse impact of globalisation on a business</td></tr>
+          <tr><td class="week-num">13</td><td><span class="unit-tag" style="background:var(--teal)">U2</span> Legislation — employment, consumer, health and safety</td><td><span class="quiz-code">Y10-W13-U2</span></td><td><span class="ppq-ref">2023 P2 Q3.6</span><span class="ppq-marks">6m</span> Analyse impact of legislation on business</td></tr>
+          <tr><td class="week-num">14</td><td><span class="unit-tag" style="background:var(--teal)">U2</span> The competitive environment + Unit 2 consolidation</td><td><span class="quiz-code">Y10-W14-U2</span></td><td><span class="ppq-ref">2024 P2 Q3.8</span><span class="ppq-marks">12m</span> Evaluate two options <span class="cumulative-tag">+ U1 review</span></td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SPRING 1 — Unit 6 -->
+      <div class="term-block">
+        <div class="term-header" style="background:#2471A3">Spring 1 — Unit 6: Finance <span class="term-dates">January — February Half Term</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">15</td><td><span class="unit-tag" style="background:#2471A3">U6</span> Sources of finance — short-term and long-term</td><td><span class="quiz-code">Y10-W15-U6</span></td><td><span class="ppq-ref">2024 P2 Q1.7</span><span class="ppq-marks">2m</span> Identify two pricing methods</td></tr>
+          <tr><td class="week-num">16</td><td><span class="unit-tag" style="background:#2471A3">U6</span> Cash flow — forecasts, inflows, outflows, managing cash flow</td><td><span class="quiz-code">Y10-W16-U6</span></td><td><span class="ppq-ref">2020 P2 Q2.5</span><span class="ppq-marks">2m</span> Explain role of cash in a business</td></tr>
+          <tr><td class="week-num">17</td><td><span class="unit-tag" style="background:#2471A3">U6</span> Financial terms — revenue, costs, profit, loss, break-even</td><td><span class="quiz-code">Y10-W17-U6</span></td><td><span class="ppq-ref">2022 P2 Q3.3</span><span class="ppq-marks">4m</span> Calculate profit margin + interpret</td></tr>
+          <tr><td class="week-num">18</td><td><span class="unit-tag" style="background:#2471A3">U6</span> Break-even analysis — charts, calculations, margin of safety</td><td><span class="quiz-code">Y10-W18-U6</span></td><td><span class="ppq-ref">2023 P2 Q2.5</span><span class="ppq-marks">2m</span> Calculation question <span class="cumulative-tag">+ U1/2 review</span></td></tr>
+          <tr><td class="week-num">19</td><td><span class="unit-tag" style="background:#2471A3">U6</span> Analysing financial performance — GPM, NPM, ARR</td><td><span class="quiz-code">Y10-W19-U6</span></td><td><span class="ppq-ref">2024 P2 Q2.7</span><span class="ppq-marks">9m</span> Recommend best source of finance</td></tr>
+          <tr><td class="week-num">20</td><td><span class="unit-tag" style="background:#2471A3">U6</span> Unit 6 consolidation + financial calculations practice</td><td><span class="quiz-code">Y10-W20-U6</span></td><td><span class="ppq-ref">2025 P2 Q3.8</span><span class="ppq-marks">12m</span> Evaluate two financial options</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SPRING 2 — Unit 5 starts -->
+      <div class="term-block">
+        <div class="term-header" style="background:var(--red)">Spring 2 — Unit 5: Marketing (Part 1) <span class="term-dates">February — Easter</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">21</td><td><span class="unit-tag" style="background:var(--red)">U5</span> Identifying and understanding customers — segmentation</td><td><span class="quiz-code">Y10-W21-U5</span></td><td><span class="ppq-ref">2019 P2 Q2.6</span><span class="ppq-marks">4m</span> Explain benefits of questionnaires</td></tr>
+          <tr><td class="week-num">22</td><td><span class="unit-tag" style="background:var(--red)">U5</span> Market research — primary vs secondary, qualitative vs quantitative</td><td><span class="quiz-code">Y10-W22-U5</span></td><td><span class="ppq-ref">2023 P2 Q2.3</span><span class="ppq-marks">9m</span> Recommend whether to use a questionnaire</td></tr>
+          <tr><td class="week-num">23</td><td><span class="unit-tag" style="background:var(--red)">U5</span> Marketing mix — Product (design, USP, product life cycle, Boston Matrix)</td><td><span class="quiz-code">Y10-W23-U5</span></td><td><span class="ppq-ref">2025 P2 Q2.3</span><span class="ppq-marks">6m</span> Analyse two impacts on product strategy</td></tr>
+          <tr><td class="week-num">24</td><td><span class="unit-tag" style="background:var(--red)">U5</span> Marketing mix — Price (strategies, penetration, skimming, competitive)</td><td><span class="quiz-code">Y10-W24-U5</span></td><td><span class="ppq-ref">2022 P2 Q3.6</span><span class="ppq-marks">6m</span> Analyse pricing decision <span class="cumulative-tag">+ U6 review</span></td></tr>
+          <tr><td class="week-num">25</td><td><span class="unit-tag" style="background:var(--red)">U5</span> Marketing mix — Place and Promotion</td><td><span class="quiz-code">Y10-W25-U5</span></td><td><span class="ppq-ref">2024 P2 Q3.3</span><span class="ppq-marks">6m</span> Analyse two ways of promoting a product</td></tr>
+          <tr><td class="week-num">26</td><td><span class="unit-tag" style="background:var(--red)">U5</span> Marketing strategy + Unit 5 Part 1 consolidation</td><td><span class="quiz-code">Y10-W26-U5</span></td><td><span class="ppq-ref">2022 P2 Q3.8</span><span class="ppq-marks">12m</span> Evaluate two marketing strategies</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SUMMER 1 — Unit 5 continues -->
+      <div class="term-block">
+        <div class="term-header" style="background:var(--red)">Summer 1 — Unit 5: Marketing (Part 2) + Review <span class="term-dates">April — May Half Term</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">27</td><td><span class="unit-tag" style="background:var(--red)">U5</span> E-commerce and m-commerce — advantages, disadvantages</td><td><span class="quiz-code">Y10-W27-U5</span></td><td><span class="ppq-ref">2019 P2 Q2.7</span><span class="ppq-marks">9m</span> Recommend selling online vs in-store</td></tr>
+          <tr><td class="week-num">28</td><td><span class="unit-tag" style="background:var(--red)">U5</span> Using the marketing mix to make business decisions</td><td><span class="quiz-code">Y10-W28-U5</span></td><td><span class="ppq-ref">2023 P2 Q3.8</span><span class="ppq-marks">12m</span> Evaluate impact on ice cream business <span class="cumulative-tag">+ U1/2 review</span></td></tr>
+          <tr><td class="week-num">29</td><td>Year 10 Mock Exam Preparation — Paper 2 focus</td><td><span class="quiz-code">Y10-W29-REV</span></td><td><span class="ppq-ref">Full Paper 2 Past Paper</span> — timed practice</td></tr>
+          <tr><td class="week-num">30</td><td>Year 10 Mock Exam Week</td><td>—</td><td>Mock examination — Paper 2</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SUMMER 2 — Consolidation -->
+      <div class="term-block">
+        <div class="term-header" style="background:#555">Summer 2 — Consolidation and Year 10 Review <span class="term-dates">June — July</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">31</td><td>Mock paper review — WWW/EBI analysis, gap filling</td><td><span class="quiz-code">Y10-W31-REV</span></td><td>Reattempt weakest question from mock + AI marker feedback</td></tr>
+          <tr><td class="week-num">32</td><td>Unit 1 and 2 retrieval practice</td><td><span class="quiz-code">Y10-W32-U1U2</span></td><td><span class="ppq-ref">2020 P1 Q3.7</span><span class="ppq-marks">12m</span> Evaluate two options <span class="cumulative-tag">U1+U2 combined</span></td></tr>
+          <tr><td class="week-num">33</td><td>Unit 5 and 6 retrieval practice</td><td><span class="quiz-code">Y10-W33-U5U6</span></td><td><span class="ppq-ref">2025 P2 Q2.6</span><span class="ppq-marks">6m</span> + <span class="ppq-ref">Q2.7</span><span class="ppq-marks">9m</span> <span class="cumulative-tag">U5+U6</span></td></tr>
+          <tr><td class="week-num">34</td><td>Summer challenge — independent revision using Exam Mastery Hub tools</td><td><span class="quiz-code">Y10-W34-ALL</span></td><td>Student choice — any past paper question from marker</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <!-- ═══════ YEAR 11 ═══════ -->
+    <div id="year11" style="display:none">
+
+      <!-- AUTUMN 1 — Unit 5 finish + Unit 3 -->
+      <div class="term-block">
+        <div class="term-header" style="background:var(--purple)">Autumn 1 — Unit 5 Completion + Unit 3: Business Operations <span class="term-dates">September — October Half Term</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">1</td><td><span class="unit-tag" style="background:var(--red)">U5</span> Marketing mix recap + extended marketing strategy</td><td><span class="quiz-code">Y11-W01-U5</span></td><td><span class="ppq-ref">2024 P2 Q2.6</span><span class="ppq-marks">6m</span> Analyse two marketing impacts <span class="cumulative-tag">+ U6 review</span></td></tr>
+          <tr><td class="week-num">2</td><td><span class="unit-tag" style="background:var(--purple)">U3</span> Production processes — job, batch, flow</td><td><span class="quiz-code">Y11-W02-U3</span></td><td><span class="ppq-ref">2023 P1 Q2.1</span><span class="ppq-marks">2m</span> Explain benefit of batch production</td></tr>
+          <tr><td class="week-num">3</td><td><span class="unit-tag" style="background:var(--purple)">U3</span> The role of procurement — suppliers, supply chain</td><td><span class="quiz-code">Y11-W03-U3</span></td><td><span class="ppq-ref">2025 P1 Q1.7</span><span class="ppq-marks">2m</span> Identify two factors when choosing a supplier</td></tr>
+          <tr><td class="week-num">4</td><td><span class="unit-tag" style="background:var(--purple)">U3</span> Managing quality — QC vs QA, TQM</td><td><span class="quiz-code">Y11-W04-U3</span></td><td><span class="ppq-ref">2023 P1 Q3.3</span><span class="ppq-marks">6m</span> Analyse two impacts of JIT stock control (2026 format)</td></tr>
+          <tr><td class="week-num">5</td><td><span class="unit-tag" style="background:var(--purple)">U3</span> Customer service — importance, methods, impact on sales</td><td><span class="quiz-code">Y11-W05-U3</span></td><td><span class="ppq-ref">2020 P1 Q2.6</span><span class="ppq-marks">6m</span> Analyse one benefit of quality management</td></tr>
+          <tr><td class="week-num">6</td><td><span class="unit-tag" style="background:var(--purple)">U3</span> Technology in operations + Unit 3 consolidation</td><td><span class="quiz-code">Y11-W06-U3</span></td><td><span class="ppq-ref">2022 P1 Q3.7</span><span class="ppq-marks">12m</span> Evaluate two options to improve productivity <span class="cumulative-tag">+ U1/2 review</span></td></tr>
+          <tr><td class="week-num">7</td><td>October Half Term — independent revision challenge</td><td><span class="quiz-code">Y11-W07-REV</span></td><td>Complete 3 past paper questions from units studied so far</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- AUTUMN 2 — Unit 4 -->
+      <div class="term-block">
+        <div class="term-header" style="background:var(--green)">Autumn 2 — Unit 4: Human Resources <span class="term-dates">November — December</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">8</td><td><span class="unit-tag" style="background:var(--green)">U4</span> Organisational structures — flat, tall, span of control, delegation</td><td><span class="quiz-code">Y11-W08-U4</span></td><td><span class="ppq-ref">2021 P1 Q2.5</span><span class="ppq-marks">6m</span> Analyse one benefit of flat structure</td></tr>
+          <tr><td class="week-num">9</td><td><span class="unit-tag" style="background:var(--green)">U4</span> Recruitment and selection — internal vs external, process</td><td><span class="quiz-code">Y11-W09-U4</span></td><td><span class="ppq-ref">2024 P1 Q1.2</span><span class="ppq-marks">1m</span> MCQ + <span class="ppq-ref">Q2.3</span><span class="ppq-marks">4m</span> Explain recruitment process</td></tr>
+          <tr><td class="week-num">10</td><td><span class="unit-tag" style="background:var(--green)">U4</span> Motivation — financial and non-financial methods, Maslow, Herzberg, Taylor</td><td><span class="quiz-code">Y11-W10-U4</span></td><td><span class="ppq-ref">2023 P1 Q2.5</span><span class="ppq-marks">6m</span> Analyse benefit of delegation to motivate employees</td></tr>
+          <tr><td class="week-num">11</td><td><span class="unit-tag" style="background:var(--green)">U4</span> Training and development — induction, on-the-job, off-the-job</td><td><span class="quiz-code">Y11-W11-U4</span></td><td><span class="ppq-ref">2020 P1 Q2.7</span><span class="ppq-marks">9m</span> Recommend motivation strategy <span class="cumulative-tag">+ U3 review</span></td></tr>
+          <tr><td class="week-num">12</td><td><span class="unit-tag" style="background:var(--green)">U4</span> Unit 4 consolidation + Paper 1 practice</td><td><span class="quiz-code">Y11-W12-U4</span></td><td><span class="ppq-ref">2023 P1 Q2.6</span><span class="ppq-marks">9m</span> Recommend whether to create taller structure</td></tr>
+          <tr><td class="week-num">13</td><td>Year 11 Mock Exam Preparation — Paper 1 focus</td><td><span class="quiz-code">Y11-W13-REV</span></td><td><span class="ppq-ref">Full Paper 1 Past Paper</span> — timed practice</td></tr>
+          <tr><td class="week-num">14</td><td>Year 11 Mock Exam Week — Paper 1 and Paper 2</td><td>—</td><td>Mock examinations — both papers</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SPRING 1 — Content completion + revision starts -->
+      <div class="term-block">
+        <div class="term-header" style="background:#555">Spring 1 — Content Completion + Intensive Revision Begins <span class="term-dates">January — February Half Term</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">15</td><td>Mock review — gap analysis, reattempt weak questions</td><td><span class="quiz-code">Y11-W15-REV</span></td><td>Reattempt weakest 9m or 12m from mock</td></tr>
+          <tr><td class="week-num">16</td><td>Paper 1 Unit Review — Units 1 and 2 rapid recall + exam technique</td><td><span class="quiz-code">Y11-W16-U1U2</span></td><td><span class="ppq-ref">2024 P1 Q3.7</span><span class="ppq-marks">12m</span> Evaluate two options (Paper 1 practice)</td></tr>
+          <tr><td class="week-num">17</td><td>Paper 1 Unit Review — Units 3 and 4 rapid recall + exam technique</td><td><span class="quiz-code">Y11-W17-U3U4</span></td><td><span class="ppq-ref">2025 P1 Q3.7</span><span class="ppq-marks">12m</span> Evaluate two options (Paper 1 practice)</td></tr>
+          <tr><td class="week-num">18</td><td>Paper 2 Unit Review — Units 5 and 6 rapid recall + exam technique</td><td><span class="quiz-code">Y11-W18-U5U6</span></td><td><span class="ppq-ref">2024 P2 Q3.8</span><span class="ppq-marks">12m</span> + <span class="ppq-ref">Q2.5</span><span class="ppq-marks">2m</span> calculation</td></tr>
+          <tr><td class="week-num">19</td><td>Chains of analysis masterclass — building AO3 skills across all units</td><td><span class="quiz-code">Y11-W19-CHAINS</span></td><td><span class="ppq-ref">2022 P1 Q2.6</span><span class="ppq-marks">6m</span> + <span class="ppq-ref">P2 Q3.6</span><span class="ppq-marks">6m</span> (one from each paper)</td></tr>
+          <tr><td class="week-num">20</td><td>AO2 application skills — data extraction and case study manipulation</td><td><span class="quiz-code">Y11-W20-AO2</span></td><td>Any 12-mark from practice question generator — focus on AO2</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SPRING 2 — Full revision -->
+      <div class="term-block">
+        <div class="term-header" style="background:var(--red)">Spring 2 — Full Revision Mode <span class="term-dates">February — Easter</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">21</td><td>Paper 1 full paper practice (timed — 1h45)</td><td><span class="quiz-code">Y11-W21-P1</span></td><td><span class="ppq-ref">2019 P1 Full Paper</span> — submit 12-marker to AI Marker</td></tr>
+          <tr><td class="week-num">22</td><td>Paper 2 full paper practice (timed — 1h45)</td><td><span class="quiz-code">Y11-W22-P2</span></td><td><span class="ppq-ref">2020 P2 Full Paper</span> — submit 12-marker to AI Marker</td></tr>
+          <tr><td class="week-num">23</td><td>Weak topic surgery — personalised revision based on quiz and marker data</td><td><span class="quiz-code">Y11-W23-WEAK</span></td><td>Student choice — weakest unit, highest mark question</td></tr>
+          <tr><td class="week-num">24</td><td>Calculation questions intensive — all financial calculations under timed conditions</td><td><span class="quiz-code">Y11-W24-CALC</span></td><td>All calculation questions from 2022-2025 papers</td></tr>
+          <tr><td class="week-num">25</td><td>Easter revision challenge — 1 quiz + 1 marker question per day</td><td><span class="quiz-code">Y11-W25-EASTER</span></td><td>Daily past paper question — schedule provided</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SUMMER 1 — Final exam prep -->
+      <div class="term-block">
+        <div class="term-header" style="background:var(--navy)">Summer 1 — Final Exam Preparation <span class="term-dates">Easter — Exam Dates</span></div>
+        <table class="week-table"><thead><tr><th>Wk</th><th>Topic</th><th>Quiz Code</th><th>Past Paper Question (AI Marker)</th></tr></thead><tbody>
+          <tr><td class="week-num">26</td><td>Paper 1 deep dive — Section C focus (6m + 12m questions)</td><td><span class="quiz-code">Y11-W26-P1C</span></td><td><span class="ppq-ref">2023 P1 Q3.7</span><span class="ppq-marks">12m</span> + <span class="ppq-ref">Q3.3</span><span class="ppq-marks">6m</span></td></tr>
+          <tr><td class="week-num">27</td><td>Paper 2 deep dive — Section C focus (6m + 12m questions)</td><td><span class="quiz-code">Y11-W27-P2C</span></td><td><span class="ppq-ref">2023 P2 Q3.8</span><span class="ppq-marks">12m</span> + <span class="ppq-ref">Q3.3</span><span class="ppq-marks">6m</span></td></tr>
+          <tr><td class="week-num">28</td><td>Final mock — Mock Paper Generator (fresh AI-generated paper)</td><td><span class="quiz-code">Y11-W28-MOCK</span></td><td>Generate and complete a full mock paper + self-mark</td></tr>
+          <tr><td class="week-num">29</td><td>Last revision — exam day strategy, timing, reading case studies</td><td><span class="quiz-code">Y11-W29-FINAL</span></td><td>Review all model answers from the year — no new content</td></tr>
+          <tr><td class="week-num">30</td><td style="font-weight:700;color:var(--navy)">EXAM WEEK — Paper 1 and Paper 2</td><td>—</td><td style="font-weight:700;color:var(--green)">You are ready. Peacefulness. Diligence. Determination.</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+
+<script>
+function showYear(y){
+  document.getElementById('year10').style.display=y===10?'block':'none';
+  document.getElementById('year11').style.display=y===11?'block':'none';
+  document.querySelectorAll('.year-tab').forEach((t,i)=>t.classList.toggle('active',i===(y===10?0:1)));
+}
+</script>
+
+
+    <footer style="background:#081A2E;color:rgba(250,247,241,0.75);padding:48px 0 28px;font-size:13.5px;margin-top:32px;font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <div style="max-width:1080px;margin:0 auto;padding:0 48px;">
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div>
+            <div style="font-family:'DM Serif Display',Georgia,serif;font-weight:500;font-size:19px;color:#FAF7F1;margin-bottom:10px;">GCSE Business Studies</div>
+            <div style="font-style:italic;color:#D4B570;font-size:13px;margin-bottom:14px;">Man Neeva, Mat Uchi</div>
+            <p style="font-size:13px;line-height:1.6;margin:0;max-width:320px;">AQA GCSE Business Studies revision resources from Nishkam School West London. Grounded in virtue, built for success.</p>
+          </div>
+          <div>
+            <h4 style="font-size:10.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#D4B570;margin:0 0 14px;">Revise</h4>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;">
+              <li><a href="unit1.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 1 &middot; Real World</a></li>
+              <li><a href="unit2.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 2 &middot; Influences</a></li>
+              <li><a href="unit3.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 3 &middot; Operations</a></li>
+              <li><a href="unit4.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 4 &middot; HR</a></li>
+              <li><a href="unit5.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 5 &middot; Marketing</a></li>
+              <li><a href="unit6.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 6 &middot; Finance</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size:10.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#D4B570;margin:0 0 14px;">Tools &amp; Plan</h4>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;">
+              <li><a href="marker.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Mark my work</a></li>
+              <li><a href="generator.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Practice questions</a></li>
+              <li><a href="mock.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Mock generator</a></li>
+              <li><a href="quiz.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Quick quiz</a></li>
+              <li><a href="resources.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Downloads</a></li>
+              <li><a href="assessments.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Schedule</a></li>
+            </ul>
+          </div>
+        </div>
+        <div style="padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;letter-spacing:0.04em;color:rgba(250,247,241,0.55);">
+          <span>&copy; Nishkam School West London &middot; AQA GCSE Business Studies</span>
+          <span>GCSE Business Studies</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const toggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const scrim = document.getElementById('sidebarScrim');
+  function openSidebar() { sidebar.classList.add('is-open'); scrim.classList.add('is-open'); }
+  function closeSidebar() { sidebar.classList.remove('is-open'); scrim.classList.remove('is-open'); }
+  if (toggle) toggle.addEventListener('click', openSidebar);
+  if (scrim) scrim.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 900) closeSidebar();
+  }));
+</script>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

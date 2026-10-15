@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark My Work — Nishkam School West London</title>
+<meta name="description" content="Submit your GCSE Business Studies exam answer and receive detailed feedback with WWW, EBI, colour-coded model answers and next steps.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* NISHKAM · MARK MY WORK
+   Design system: matches index.html gold standard
+   Palette: navy #0E2A47 · gold #B08A3E · parchment #FAF7F1
+   Type: DM Serif Display (display) + IBM Plex Sans (body/UI) */
+
+:root {
+  --navy: #0E2A47; --navy-deep: #081A2E; --navy-soft: #1F3F63;
+  --gold: #B08A3E; --gold-soft: #D4B570;
+  --ink: #1A1A1A; --ink-soft: #444; --muted: #6B6B6B;
+  --rule: #E5DFD2; --rule-strong: #C9C0AB;
+  --parchment: #FAF7F1; --parchment-warm: #F3ECDB; --paper: #FFFFFF;
+  --font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sidebar-w: 300px;
+  --maxw-content: 1080px;
+  --radius-sm: 4px; --radius: 6px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Feedback colours */
+  --green: #1A7A3A; --green-light: #EAFAF1;
+  --red: #9B3B30; --red-light: #FDF2F0;
+  --teal: #117A65; --teal-light: #E8F8F5;
+  --purple: #6C3483; --purple-light: #F5EEF8;
+  --saffron: #B08A3E; --saffron-light: #FBF5E9;
+  --orange-chain: #C07A28;
+  --blue-extract: #2471A3;
+  --green-eval: #1A7A3A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--font-sans); font-size: 16px; line-height: 1.6;
+  color: var(--ink); background: var(--parchment);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── LAYOUT ── */
+.layout { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
+
+/* ── SIDEBAR (identical to index.html) ── */
+.sidebar {
+  background: var(--navy); color: var(--parchment);
+  padding: 32px 28px;
+  position: sticky; top: 0; height: 100vh;
+  overflow-y: auto; border-right: 1px solid var(--navy-deep);
+}
+.sidebar__brand { padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid rgba(176,138,62,0.3); }
+.sidebar__school { font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--parchment); letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 6px; }
+.sidebar__motto { font-family: var(--font-display); font-style: italic; font-size: 12.5px; color: var(--gold-soft); letter-spacing: 0.01em; }
+.sidebar__eyebrow { margin-top: 16px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); }
+.sidebar__group { margin-bottom: 24px; }
+.sidebar__group:last-child { margin-bottom: 0; }
+.sidebar__heading { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin: 0 0 10px; }
+.sidebar__links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.sidebar__links a {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 7px 10px 7px 12px;
+  font-size: 14px; color: rgba(250,247,241,0.82);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s var(--ease);
+  border-left: 2px solid transparent;
+  margin-left: -12px;
+}
+.sidebar__links a:hover { color: var(--parchment); background: rgba(176,138,62,0.08); border-left-color: var(--gold); }
+.sidebar__links a.is-active { color: var(--gold-soft); border-left-color: var(--gold); font-weight: 500; }
+.sidebar__num { font-family: var(--font-display); font-style: italic; color: var(--gold); font-size: 13px; min-width: 14px; }
+.sidebar__links a svg { width: 11px; height: 11px; opacity: 0.6; margin-left: auto; flex-shrink: 0; }
+
+/* ── MOBILE BAR ── */
+.mobile-bar { display: none; position: sticky; top: 0; z-index: 60; background: var(--navy); color: var(--parchment); padding: 14px 20px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--navy-deep); }
+.mobile-bar__brand { font-family: var(--font-display); font-weight: 500; font-size: 16px; }
+.mobile-bar__toggle { background: none; border: 1px solid rgba(250,247,241,0.3); color: var(--parchment); width: 40px; height: 40px; border-radius: var(--radius-sm); font-size: 18px; cursor: pointer; display: grid; place-items: center; }
+
+/* ── MAIN ── */
+.main { min-width: 0; }
+.wrap { max-width: var(--maxw-content); margin: 0 auto; padding: 0 48px; }
+
+/* ── HERO (matches index.html) ── */
+.hero { padding: 88px 0 64px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  pointer-events: none; opacity: 0.9;
+}
+.hero__inner { position: relative; }
+.hero__eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.hero__eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+.hero__title { font-family: var(--font-display); font-weight: 500; font-size: clamp(40px, 6vw, 76px); line-height: 0.98; letter-spacing: -0.025em; color: var(--navy); margin: 0 0 24px; max-width: 14ch; }
+.hero__title em { font-style: italic; font-weight: 400; color: var(--gold); }
+.hero__lede { font-family: var(--font-display); font-weight: 400; font-size: 19px; line-height: 1.5; color: var(--ink-soft); max-width: 620px; margin: 0 0 36px; }
+
+/* ── SECTIONS (matches index.html) ── */
+.section { padding: 88px 0; position: relative; }
+.section--tinted { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.section__head { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: baseline; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+.section__num { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 19px; color: var(--gold); letter-spacing: 0.02em; white-space: nowrap; }
+.section__titleblock h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 3.6vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 10px; }
+.section__titleblock p { font-size: 15.5px; color: var(--muted); margin: 0; max-width: 640px; line-height: 1.55; }
+
+/* ── HOW IT WORKS STEPS ── */
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); }
+.how-step { background: var(--paper); padding: 32px 28px; border-right: 1px solid var(--rule); }
+.how-step:last-child { border-right: none; }
+.how-step__num { font-family: var(--font-display); font-style: italic; font-size: 32px; color: var(--gold); line-height: 1; margin-bottom: 14px; }
+.how-step__title { font-family: var(--font-display); font-weight: 500; font-size: 20px; color: var(--navy); margin: 0 0 8px; letter-spacing: -0.01em; }
+.how-step__body { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+/* ── FORM CARD ── */
+.form-card { background: var(--paper); border: 1px solid var(--rule); padding: 36px 32px; margin-top: 8px; }
+.form-row { display: grid; gap: 16px; margin-bottom: 20px; }
+.form-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.form-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.form-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; }
+.form-label .optional { text-transform: none; font-weight: 400; opacity: 0.6; letter-spacing: 0; }
+.form-input, .form-select, .form-textarea {
+  width: 100%; font-family: var(--font-sans); font-size: 15px;
+  padding: 11px 14px; border-radius: var(--radius-sm);
+  border: 1px solid var(--rule-strong); background: var(--paper); color: var(--ink);
+  transition: border-color 0.2s var(--ease);
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(176,138,62,0.12); }
+.form-textarea { min-height: 220px; resize: vertical; line-height: 1.7; padding: 16px 18px; }
+
+/* ── SOURCE & MODE TOGGLES ── */
+.toggle-group { display: flex; gap: 0; margin-bottom: 16px; border: 1px solid var(--rule-strong); border-radius: var(--radius-sm); overflow: hidden; }
+.toggle-btn {
+  padding: 10px 20px; border: none; background: var(--parchment);
+  color: var(--muted); font-family: var(--font-sans); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 0.15s var(--ease);
+  border-right: 1px solid var(--rule-strong); letter-spacing: 0.02em;
+}
+.toggle-btn:last-child { border-right: none; }
+.toggle-btn.active { background: var(--navy); color: var(--parchment); }
+
+/* ── QUESTION PREVIEW ── */
+.question-preview { background: var(--parchment-warm); border: 1px solid var(--rule-strong); border-left: 3px solid var(--gold); padding: 18px 22px; margin-top: 12px; display: none; }
+.question-preview.show { display: block; }
+.question-preview .qp-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 6px; }
+.question-preview .qp-q { font-size: 14px; color: var(--ink); line-height: 1.55; font-weight: 600; margin-bottom: 8px; }
+.question-preview .qp-meta { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+
+/* ── UPLOAD ── */
+.upload-box { border: 2px dashed var(--rule-strong); padding: 36px 24px; text-align: center; background: var(--paper); cursor: pointer; transition: border-color 0.2s var(--ease); }
+.upload-box:hover { border-color: var(--gold); }
+.upload-box.has-images { border-color: var(--gold); border-style: solid; }
+.upload-box .upload-icon { font-size: 32px; color: var(--gold); opacity: 0.6; margin-bottom: 12px; }
+.upload-box h4 { font-family: var(--font-display); font-size: 17px; color: var(--navy); margin: 0 0 6px; }
+.upload-box p { font-size: 13px; color: var(--muted); margin: 0; }
+#imagePreviews { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.img-thumb { position: relative; border: 1px solid var(--rule); background: var(--paper); padding: 6px; }
+.img-thumb img { display: block; max-width: 130px; max-height: 130px; object-fit: cover; }
+.img-thumb-label { text-align: center; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.img-thumb-remove { position: absolute; top: -8px; right: -8px; width: 22px; height: 22px; border-radius: 50%; border: none; background: var(--navy); color: var(--parchment); font-size: 14px; cursor: pointer; display: grid; place-items: center; line-height: 1; }
+#fileInput { display: none; }
+
+/* ── SUBMIT BUTTON ── */
+.submit-btn {
+  margin-top: 24px; padding: 15px 0; width: 100%;
+  background: var(--navy); color: var(--parchment); border: none;
+  font-family: var(--font-sans); font-size: 15px; font-weight: 500;
+  cursor: pointer; transition: all 0.2s var(--ease); letter-spacing: 0.01em;
+  border-radius: var(--radius);
+}
+.submit-btn:hover { background: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(14,42,71,0.45); }
+.submit-btn:disabled { background: var(--muted); cursor: wait; transform: none; box-shadow: none; }
+
+/* ── FEEDBACK REPORT ── */
+.feedback-wrapper { margin-top: 48px; display: none; }
+.feedback-wrapper.show { display: block; animation: riseIn 0.5s var(--ease) both; }
+@keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+.fb-header { background: var(--navy); padding: 36px 40px; position: relative; overflow: hidden; }
+.fb-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+.fb-eyebrow { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; color: var(--gold-soft); text-transform: uppercase; margin-bottom: 10px; position: relative; }
+.fb-header h3 { font-family: var(--font-display); font-size: 28px; color: var(--parchment); line-height: 1.15; margin: 0 0 8px; position: relative; font-weight: 500; }
+.fb-header h3 span { color: var(--gold-soft); }
+.fb-meta { font-size: 13.5px; color: rgba(250,247,241,0.6); position: relative; line-height: 1.55; }
+.fb-meta strong { color: rgba(250,247,241,0.85); }
+
+.mark-band { display: flex; border: 1px solid var(--rule); border-top: none; }
+.score-panel { background: var(--navy-deep); padding: 28px 36px; text-align: center; min-width: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.score-num { font-family: var(--font-display); font-size: 52px; font-weight: 500; color: var(--gold-soft); line-height: 1; }
+.score-of { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: rgba(250,247,241,0.4); margin-top: 6px; text-transform: uppercase; }
+.level-panel { background: var(--paper); padding: 24px 28px; flex: 1; }
+.level-badge { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); background: var(--parchment-warm); padding: 4px 12px; border: 1px solid var(--rule); display: inline-block; margin-bottom: 10px; border-radius: var(--radius-sm); }
+.level-desc { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; }
+.level-desc strong { color: var(--navy); }
+.level-bar { background: var(--parchment); border: 1px solid var(--rule); height: 10px; margin-top: 16px; position: relative; overflow: hidden; }
+.level-bar .fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-soft)); }
+.level-bar .markers { position: absolute; top: -20px; left: 0; right: 0; display: flex; justify-content: space-between; font-size: 9px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+
+.fb-section { border: 1px solid var(--rule); border-top: none; overflow: hidden; }
+.fb-section-head { padding: 16px 28px; display: flex; align-items: center; gap: 14px; }
+.fb-section-head .icon-circle { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; color: var(--paper); }
+.fb-section-head h4 { font-family: var(--font-display); font-size: 18px; font-weight: 500; margin: 0; }
+.fb-section-body { background: var(--paper); padding: 20px 32px 24px; }
+
+.fb-section.www .fb-section-head { background: var(--green-light); }
+.fb-section.www .icon-circle { background: var(--green); }
+.fb-section.www h4 { color: var(--green); }
+.fb-section.ebi .fb-section-head { background: var(--red-light); }
+.fb-section.ebi .icon-circle { background: var(--red); }
+.fb-section.ebi h4 { color: var(--red); }
+.fb-section.model-rw .fb-section-head { background: var(--parchment-warm); }
+.fb-section.model-rw .icon-circle { background: var(--navy); }
+.fb-section.model-rw h4 { color: var(--navy); }
+.fb-section.suggest .fb-section-head { background: var(--purple-light); }
+.fb-section.suggest .icon-circle { background: var(--purple); }
+.fb-section.suggest h4 { color: var(--purple); }
+
+.fb-list { list-style: none; padding: 0; margin: 0; }
+.fb-list li { padding: 10px 0 10px 22px; position: relative; border-bottom: 1px solid var(--rule); font-size: 14.5px; line-height: 1.6; }
+.fb-list li:last-child { border-bottom: none; }
+.fb-list li::before { position: absolute; left: 0; top: 12px; font-weight: 700; font-size: 13px; }
+.www .fb-list li::before { content: '\2713'; color: var(--green); }
+.ebi .fb-list li::before { content: '\2192'; color: var(--red); }
+
+.chain { color: var(--orange-chain); font-weight: 600; }
+.extract-data { color: var(--blue-extract); font-weight: 600; }
+.eval-text { color: var(--green-eval); font-weight: 600; }
+
+.colour-key { background: var(--parchment); border: 1px solid var(--rule); padding: 10px 16px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 12px; margin: 0 0 14px; }
+.colour-key-item { display: flex; align-items: center; gap: 6px; color: var(--ink-soft); }
+.colour-swatch { width: 14px; height: 14px; flex-shrink: 0; }
+
+.student-quote { background: var(--parchment); border-left: 3px solid var(--rule-strong); padding: 10px 14px; font-size: 13px; color: var(--muted); font-style: italic; margin: 8px 0; line-height: 1.5; }
+
+.model-rewrite-text { background: var(--parchment); border: 1px solid var(--rule); padding: 20px 24px; font-size: 14.5px; line-height: 1.75; margin-top: 10px; }
+
+/* ── SUGGESTED QUESTIONS ── */
+.suggest-q { background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--purple); padding: 16px 20px; margin-bottom: 10px; }
+.suggest-q:last-child { margin-bottom: 0; }
+.suggest-q .sq-meta { font-size: 10.5px; color: var(--purple); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+.suggest-q .sq-question { font-size: 14px; color: var(--ink); line-height: 1.5; font-weight: 600; margin-bottom: 6px; }
+.suggest-q .sq-reason { font-size: 12.5px; color: var(--muted); line-height: 1.5; font-style: italic; }
+
+/* Next steps */
+.next-steps-box { background: var(--parchment-warm); border-left: 3px solid var(--gold); padding: 20px 24px; margin-bottom: 16px; }
+.next-steps-box h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 10px; }
+.next-steps-box ol { padding-left: 20px; margin: 0; }
+.next-steps-box li { font-size: 13.5px; line-height: 1.6; padding: 4px 0; color: var(--ink-soft); }
+
+/* ── FOOTER (matches index.html) ── */
+.footer { background: var(--navy-deep); color: rgba(250,247,241,0.75); padding: 48px 0 28px; font-size: 13.5px; margin-top: 32px; }
+.footer__inner { max-width: var(--maxw-content); margin: 0 auto; padding: 0 48px; }
+.footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer__brand { font-family: var(--font-display); font-weight: 500; font-size: 19px; color: var(--parchment); margin-bottom: 10px; }
+.footer__motto { font-style: italic; color: var(--gold-soft); font-size: 13px; margin-bottom: 14px; }
+.footer__desc { font-size: 13px; line-height: 1.6; margin: 0; max-width: 320px; }
+.footer__col h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 14px; }
+.footer__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.footer__col a { color: rgba(250,247,241,0.75); font-size: 13px; transition: color 0.2s var(--ease); }
+.footer__col a:hover { color: var(--gold-soft); }
+.footer__bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; letter-spacing: 0.04em; color: rgba(250,247,241,0.55); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1200px) {
+  :root { --sidebar-w: 260px; }
+  .wrap { padding: 0 36px; }
+  .footer__inner { padding: 0 36px; }
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .mobile-bar { display: flex; }
+  .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 300px; max-width: 85vw; transform: translateX(-100%); transition: transform 0.3s var(--ease); z-index: 70; box-shadow: 0 0 40px rgba(0,0,0,0.25); }
+  .sidebar.is-open { transform: translateX(0); }
+  .sidebar-scrim { position: fixed; inset: 0; background: rgba(8,26,46,0.6); z-index: 65; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease); }
+  .sidebar-scrim.is-open { opacity: 1; pointer-events: auto; }
+  .wrap { padding: 0 24px; }
+  .footer__inner { padding: 0 24px; }
+  .hero { padding: 56px 0 40px; }
+  .section { padding: 64px 0; }
+  .how-grid { grid-template-columns: 1fr; }
+  .how-step { border-right: none; border-bottom: 1px solid var(--rule); }
+  .how-step:last-child { border-bottom: none; }
+  .form-row.cols-2, .form-row.cols-3 { grid-template-columns: 1fr; }
+  .section__head { grid-template-columns: 1fr; gap: 12px; }
+  .mark-band { flex-direction: column; }
+  .score-panel { flex-direction: row; gap: 12px; padding: 20px; }
+  .footer__top { grid-template-columns: 1fr; gap: 28px; }
+  .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: var(--radius); }
+
+@keyframes heroRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.hero__eyebrow, .hero__title, .hero__lede { animation: heroRise 0.7s var(--ease) both; }
+.hero__title { animation-delay: 0.05s; }
+.hero__lede  { animation-delay: 0.15s; }
+</style>
+</head>
+
+<body>
+
+<div class="mobile-bar">
+  <div class="mobile-bar__brand">GCSE Business Studies</div>
+  <button class="mobile-bar__toggle" id="sidebarToggle" aria-label="Open navigation">&#9776;</button>
+</div>
+<div class="sidebar-scrim" id="sidebarScrim"></div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar__brand">
+      <div class="sidebar__school">Nishkam School West London</div>
+      <div class="sidebar__motto">Man Neeva, Mat Uchi</div>
+      <div class="sidebar__eyebrow">AQA GCSE Business</div>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Overview</h3>
+      <ul class="sidebar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.nishkamschooltrust.org/nswl/page/?title=Virtue%2Dled+Education&amp;pid=255" target="_blank" rel="noopener">
+          Nishkam Virtues
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a></li>
+        <li><a href="faith.html">Faith &amp; Business</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Revision Units</h3>
+      <ul class="sidebar__links">
+        <li><a href="unit1.html"><span class="sidebar__num">1</span>Business in the Real World</a></li>
+        <li><a href="unit2.html"><span class="sidebar__num">2</span>Influences on Business</a></li>
+        <li><a href="unit3.html"><span class="sidebar__num">3</span>Business Operations</a></li>
+        <li><a href="unit4.html"><span class="sidebar__num">4</span>Human Resources</a></li>
+        <li><a href="unit5.html"><span class="sidebar__num">5</span>Marketing</a></li>
+        <li><a href="unit6.html"><span class="sidebar__num">6</span>Finance</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Resources</h3>
+      <ul class="sidebar__links">
+        <li><a href="resources.html">Download Booklets</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Study Tools</h3>
+      <ul class="sidebar__links">
+        <li><a href="marker.html" class="is-active">Mark My Work</a></li>
+        <li><a href="generator.html">Practice Questions</a></li>
+        <li><a href="mock.html">Mock Paper Generator</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Planning</h3>
+      <ul class="sidebar__links">
+        <li><a href="assessments.html">Assessment Schedule</a></li>
+        <li><a href="revision.html">How to Revise</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Beyond GCSE</h3>
+      <ul class="sidebar__links">
+        <li><a href="alevel.html">A Level Business</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero__inner">
+          <div class="hero__eyebrow">Exam Practice &middot; AQA GCSE Business Studies</div>
+          <h1 class="hero__title">
+            Mark my<br>
+            <em>work.</em>
+          </h1>
+          <p class="hero__lede">
+            Submit your exam answer and receive detailed, personalised feedback &mdash; with WWW, EBI, colour-coded model answers, virtue reflections and recommended next steps.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section--tinted">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Process</span>
+          <div class="section__titleblock">
+            <h2>Three steps to better answers.</h2>
+            <p>Select a past paper question or enter your own. Submit your answer. Receive detailed feedback in seconds.</p>
+          </div>
+        </div>
+
+        <div class="how-grid">
+          <div class="how-step">
+            <div class="how-step__num">1.</div>
+            <h3 class="how-step__title">Select &amp; submit</h3>
+            <p class="how-step__body">Enter your name. Pick a question from the 2019&ndash;2025 past paper bank, or paste a custom question. Type your answer or upload a photo of handwritten work.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step__num">2.</div>
+            <h3 class="how-step__title">Examiner analysis</h3>
+            <p class="how-step__body">Your answer is analysed against AQA mark scheme criteria &mdash; checking chains of analysis, data manipulation, case study application and evaluation quality.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step__num">3.</div>
+            <h3 class="how-step__title">Detailed feedback</h3>
+            <p class="how-step__body">Receive your mark band, WWW, EBI, a colour-coded model rewrite of your weakest paragraph, next steps and follow-up questions to practise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBMIT YOUR ANSWER -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Submit</span>
+          <div class="section__titleblock">
+            <h2>Submit your answer.</h2>
+            <p>All fields are required unless marked optional.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <!-- NAME -->
+          <div class="form-row">
+            <div>
+              <label class="form-label" for="studentName">Your Name</label>
+              <input type="text" id="studentName" class="form-input" placeholder="e.g. Amira Singh" required>
+            </div>
+          </div>
+
+          <!-- QUESTION SOURCE TOGGLE -->
+          <div>
+            <label class="form-label">Question Source</label>
+            <div class="toggle-group">
+              <button type="button" class="toggle-btn active" data-source="pastpaper" onclick="setSource('pastpaper')">Past Paper Question</button>
+              <button type="button" class="toggle-btn" data-source="custom" onclick="setSource('custom')">Custom Question</button>
+            </div>
+          </div>
+
+          <!-- PAST PAPER SELECTOR -->
+          <div id="pastPaperArea">
+            <div class="form-row cols-3">
+              <div>
+                <label class="form-label" for="paperSelect">Paper</label>
+                <select id="paperSelect" class="form-select" onchange="updateYears()">
+                  <option value="">Select paper</option>
+                  <option value="P1">Paper 1 (Operations &amp; HRM)</option>
+                  <option value="P2">Paper 2 (Marketing &amp; Finance)</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label" for="yearSelect">Year</label>
+                <select id="yearSelect" class="form-select" onchange="updateQuestions()" disabled>
+                  <option value="">Select year</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label" for="questionSelect">Question</label>
+                <select id="questionSelect" class="form-select" onchange="showQuestionPreview()" disabled>
+                  <option value="">Select question</option>
+                </select>
+              </div>
+            </div>
+            <div class="question-preview" id="questionPreview">
+              <span class="qp-label">Question Selected</span>
+              <div class="qp-q" id="qpText"></div>
+              <div class="qp-meta" id="qpMeta"></div>
+            </div>
+          </div>
+
+          <!-- CUSTOM QUESTION -->
+          <div id="customArea" style="display:none;">
+            <div class="form-row cols-2">
+              <div>
+                <label class="form-label" for="customMarks">Marks</label>
+                <select id="customMarks" class="form-select">
+                  <option value="4">4 marks &mdash; Explain</option>
+                  <option value="6" selected>6 marks &mdash; Analyse</option>
+                  <option value="9">9 marks &mdash; Recommend / Evaluate</option>
+                  <option value="12">12 marks &mdash; Evaluate (two options)</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label" for="customTopic">Topic <span class="optional">(optional)</span></label>
+                <input type="text" id="customTopic" class="form-input" placeholder="e.g. Marketing mix, Cash flow">
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="customQuestion">The Question</label>
+                <textarea id="customQuestion" class="form-input" style="min-height:70px;" placeholder="Paste the full question here..."></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="customCaseStudy">Case Study / Context <span class="optional">(optional but recommended for 4+ mark questions)</span></label>
+                <textarea id="customCaseStudy" class="form-input" style="min-height:90px;" placeholder="Paste any case study or business context the question refers to..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- MODE TOGGLE -->
+          <div style="margin-top:8px;">
+            <label class="form-label">Submission Type</label>
+            <div class="toggle-group">
+              <button type="button" class="toggle-btn active" data-mode="text" onclick="setMode('text')">Paste Text</button>
+              <button type="button" class="toggle-btn" data-mode="image" onclick="setMode('image')">Upload Photo</button>
+            </div>
+          </div>
+
+          <div id="textInputArea">
+            <textarea id="answerText" class="form-textarea" placeholder="Paste your full exam answer here..."></textarea>
+          </div>
+
+          <div id="imageInputArea" style="display:none;">
+            <div id="imagePreviews"></div>
+            <div class="upload-box" id="uploadBox" onclick="document.getElementById('fileInput').click()">
+              <div id="uploadEmpty">
+                <div class="upload-icon">&#8679;</div>
+                <h4 id="uploadTitle">Upload your handwritten answer</h4>
+                <p id="uploadHint">Tap to select one or more photos. If your answer spans multiple pages, upload each page separately.</p>
+              </div>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" multiple onchange="handleImageUpload(event)">
+          </div>
+
+          <button class="submit-btn" onclick="submitAnswer()">Mark My Answer</button>
+        </div>
+
+        <!-- FEEDBACK REPORT -->
+        <div id="feedbackWrapper" class="feedback-wrapper">
+          <div class="fb-header">
+            <div class="fb-eyebrow">Examiner Feedback</div>
+            <h3 id="fbTitle">Your <span>Feedback</span></h3>
+            <div class="fb-meta" id="fbMeta"></div>
+          </div>
+
+          <div class="mark-band">
+            <div class="score-panel">
+              <div class="score-num" id="scoreNum">&mdash;</div>
+              <div class="score-of" id="scoreOf">out of &mdash;</div>
+            </div>
+            <div class="level-panel">
+              <div class="level-badge" id="levelBadge">Level &mdash;</div>
+              <div class="level-desc" id="levelDesc"></div>
+              <div class="level-bar">
+                <div class="markers"><span>L1</span><span>L2</span><span>L3</span><span>L4</span></div>
+                <div class="fill" id="levelFill" style="width:0%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fb-section www">
+            <div class="fb-section-head"><div class="icon-circle">&#10003;</div><h4>What Went Well (WWW)</h4></div>
+            <div class="fb-section-body"><ul class="fb-list" id="wwwList"></ul></div>
+          </div>
+
+          <div class="fb-section ebi">
+            <div class="fb-section-head"><div class="icon-circle">&#8594;</div><h4>Even Better If (EBI)</h4></div>
+            <div class="fb-section-body"><ul class="fb-list" id="ebiList"></ul></div>
+          </div>
+
+          <div class="fb-section model-rw">
+            <div class="fb-section-head"><div class="icon-circle">M</div><h4>Model Rewrite &mdash; Your Weakest Section</h4></div>
+            <div class="fb-section-body">
+              <div class="colour-key">
+                <div class="colour-key-item"><div class="colour-swatch" style="background:var(--orange-chain);"></div>Chains of analysis</div>
+                <div class="colour-key-item"><div class="colour-swatch" style="background:var(--blue-extract);"></div>Data / Evidence</div>
+                <div class="colour-key-item"><div class="colour-swatch" style="background:var(--green-eval);"></div>Evaluation</div>
+              </div>
+              <div class="model-rewrite-text" id="modelRewrite"></div>
+            </div>
+          </div>
+
+          <div class="fb-section suggest">
+            <div class="fb-section-head"><div class="icon-circle">Q</div><h4>Recommended Next Questions</h4></div>
+            <div class="fb-section-body" id="suggestBody"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__top">
+          <div>
+            <div class="footer__brand">GCSE Business Studies</div>
+            <div class="footer__motto">Man Neeva, Mat Uchi</div>
+            <p class="footer__desc">AQA GCSE Business Studies revision resources from Nishkam School West London. Grounded in virtue, built for success.</p>
+          </div>
+          <div class="footer__col">
+            <h4>Revise</h4>
+            <ul>
+              <li><a href="unit1.html">Unit 1 &middot; Real World</a></li>
+              <li><a href="unit2.html">Unit 2 &middot; Influences</a></li>
+              <li><a href="unit3.html">Unit 3 &middot; Operations</a></li>
+              <li><a href="unit4.html">Unit 4 &middot; HR</a></li>
+              <li><a href="unit5.html">Unit 5 &middot; Marketing</a></li>
+              <li><a href="unit6.html">Unit 6 &middot; Finance</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Tools &amp; Plan</h4>
+            <ul>
+              <li><a href="marker.html">Mark my work</a></li>
+              <li><a href="generator.html">Practice questions</a></li>
+              <li><a href="mock.html">Mock generator</a></li>
+              <li><a href="quiz.html">Quick quiz</a></li>
+              <li><a href="resources.html">Downloads</a></li>
+              <li><a href="assessments.html">Schedule</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; Nishkam School West London &middot; AQA GCSE Business Studies</span>
+          <span>GCSE Business Studies</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  // ── PAST PAPERS DATABASE — All 4, 6, 9, 12-mark written questions from 2019-2025 ──
+  const PAST_PAPERS = {
+    "P1": {
+      "2019": [
+        { q: "1.7", marks: 2, text: "Give two reasons why people might leave their jobs." },
+        { q: "1.8", marks: 2, text: "Explain one effect of delayering on a business." },
+        { q: "2.4", marks: 4, text: "Using Item A, explain one reason why Xanthe should use a flat organisational structure.", item: "Xanthe \u2014 fashion business, 15 employees" },
+        { q: "2.5", marks: 6, text: "Analyse one advantage to Xanthe of using a flat organisational structure.", item: "Xanthe \u2014 fashion business" },
+        { q: "2.6", marks: 9, text: "Recommend whether Xanthe should move to a taller organisational structure as she expands.", item: "Xanthe \u2014 fashion business" },
+        { q: "3.6", marks: 6, text: "Analyse one way Adventures could motivate employees using non-financial methods.", item: "Adventures \u2014 outdoor activities" },
+        { q: "3.8", marks: 12, text: "Recommend which method (piece rate or profit sharing) Adventures should use. Evaluate which will have the biggest impact on motivating employees.", item: "Adventures \u2014 outdoor activities" }
+      ],
+      "2020": [
+        { q: "2.4", marks: 6, text: "Analyse one advantage to JCC Shoes of using lean production.", item: "JCC Shoes \u2014 footwear manufacturer" },
+        { q: "2.6", marks: 9, text: "Recommend whether JCC Shoes should continue using just-in-time stock control.", item: "JCC Shoes \u2014 footwear manufacturer" },
+        { q: "3.4", marks: 6, text: "Analyse one way in which greater use of social media can improve customer service for JCC Shoes.", item: "JCC Shoes \u2014 footwear manufacturer" },
+        { q: "3.8", marks: 12, text: "Evaluate which option (cutting costs or improving customer service) will have the biggest impact on JCC Shoes\u2019 competitiveness.", item: "JCC Shoes \u2014 footwear manufacturer" }
+      ],
+      "2022": [
+        { q: "2.4", marks: 6, text: "Analyse one way Premium Motors could benefit from using live chat on its website.", item: "Premium Motors \u2014 car dealership" },
+        { q: "2.6", marks: 9, text: "Recommend whether Janet should use e-commerce to improve customer service at Premium Motors.", item: "Premium Motors \u2014 car dealership" },
+        { q: "3.7", marks: 6, text: "Analyse one way Skate4U Ltd could benefit from external recruitment.", item: "Skate4U Ltd \u2014 skateboard manufacturer" },
+        { q: "3.8", marks: 12, text: "Evaluate which option will have the biggest impact on Skate4U\u2019s profitability.", item: "Skate4U Ltd \u2014 skateboard manufacturer" }
+      ],
+      "2023": [
+        { q: "2.4", marks: 6, text: "Analyse one advantage to XTA of using online training.", item: "XTA \u2014 accountancy firm" },
+        { q: "2.6", marks: 9, text: "Recommend whether XTA should introduce performance-related pay.", item: "XTA \u2014 accountancy firm" },
+        { q: "3.6", marks: 6, text: "Analyse one way that total quality management could benefit Xanthe\u2019s business.", item: "Xanthe \u2014 fashion manufacturer" },
+        { q: "3.8", marks: 12, text: "Evaluate which option (e-commerce vs produce new electric car in Spain) will have the biggest impact on NIST\u2019s sales.", item: "NIST \u2014 electric vehicle manufacturer" }
+      ],
+      "2024": [
+        { q: "1.7", marks: 2, text: "Give one method of growth a business could use." },
+        { q: "1.9", marks: 2, text: "Explain one reason why a person specification is useful in shortlisting." },
+        { q: "2.6", marks: 6, text: "Analyse one benefit to Bootmills of introducing flow production.", item: "Bootmills \u2014 boot manufacturer" },
+        { q: "3.2", marks: 4, text: "Using Item C, explain one benefit of total quality management to Bootmills.", item: "Bootmills \u2014 boot manufacturer" },
+        { q: "3.6", marks: 9, text: "Recommend whether Bootmills should invest in training for workers.", item: "Bootmills \u2014 boot manufacturer" },
+        { q: "3.7", marks: 12, text: "Evaluate which option (introducing flow production OR changing the role of the workforce) will have the bigger impact on Bootmills competing internationally.", item: "Bootmills \u2014 boot manufacturer" }
+      ],
+      "2025": [
+        { q: "2.6", marks: 6, text: "Analyse how the organisational structure of the production department will change with the expansion.", item: "D@SO Ltd \u2014 production business" },
+        { q: "2.7", marks: 9, text: "Recommend whether D@SO Ltd should allow the two employees to job share the supervisor\u2019s role.", item: "D@SO Ltd \u2014 production business" },
+        { q: "3.2", marks: 4, text: "Using Item C, explain one way in which CP focuses on sustainability.", item: "Charlie Paul (CP) \u2014 family retailer" },
+        { q: "3.3", marks: 6, text: "Analyse how CP might benefit from good customer service.", item: "Charlie Paul (CP) \u2014 family retailer" },
+        { q: "3.7", marks: 6, text: "Analyse how CP will benefit from the use of digital technology.", item: "Charlie Paul (CP) \u2014 family retailer" },
+        { q: "3.8", marks: 12, text: "Evaluate which option (converting to a Plc or reducing the cost of supplies) will have the biggest impact on CP\u2019s ability to maintain its current objectives.", item: "Charlie Paul (CP) \u2014 family retailer" }
+      ]
+    },
+    "P2": {
+      "2019": [
+        { q: "2.4", marks: 6, text: "Analyse one reason why Jade\u2019s Swim to Success brand is important to the business.", item: "Jade \u2014 Swim to Success (swimwear)" },
+        { q: "2.6", marks: 9, text: "Recommend whether Jade should sell her products using e-commerce on the STS website.", item: "Jade \u2014 Swim to Success" },
+        { q: "3.2", marks: 6, text: "Analyse one benefit to HelloFresh of operating as an environmentally responsible company.", item: "HelloFresh \u2014 meal-kit delivery" },
+        { q: "3.3", marks: 6, text: "Analyse one risk of new product development for HelloFresh.", item: "HelloFresh \u2014 meal-kit delivery" },
+        { q: "3.8", marks: 12, text: "Evaluate which option (cutting costs or increasing marketing spend) will have the biggest impact on HelloFresh\u2019s net profit.", item: "HelloFresh \u2014 meal-kit delivery" }
+      ],
+      "2020": [
+        { q: "2.6", marks: 9, text: "Recommend whether a business should use skimming pricing for a new product.", item: "Business context from Paper 2" },
+        { q: "3.8", marks: 12, text: "Evaluate two options for improving financial performance.", item: "Business context from Paper 2" }
+      ],
+      "2022": [
+        { q: "2.3", marks: 9, text: "Recommend whether Skate4U Ltd should use its overdraft to fund the sponsorship.", item: "Skate4U Ltd \u2014 skateboard brand" },
+        { q: "2.6", marks: 6, text: "Analyse one benefit to Skyline plc of using telesales.", item: "Skyline plc \u2014 budget airline" },
+        { q: "3.8", marks: 12, text: "Evaluate which option (loss leader pricing or sustainability approach) will have the biggest impact on Skyline\u2019s profit.", item: "Skyline plc \u2014 budget airline" }
+      ],
+      "2023": [
+        { q: "2.4", marks: 6, text: "Analyse one benefit of using a price-penetration strategy for a new product.", item: "Business context \u2014 Paper 2" },
+        { q: "3.6", marks: 6, text: "Analyse one action Emilios could take to reduce its costs.", item: "Emilios \u2014 ice cream shop (Cornwall)" },
+        { q: "3.7", marks: 12, text: "Evaluate which option (new range of desserts for restaurant chain OR opening a new shop in the town) will have the biggest impact on Emilios\u2019 sales revenue.", item: "Emilios \u2014 ice cream shop (Cornwall)" }
+      ],
+      "2024": [
+        { q: "2.6", marks: 9, text: "Recommend whether a business should change its marketing strategy.", item: "Business context from 2024 P2" },
+        { q: "2.7", marks: 9, text: "Recommend whether SWD should use retained profits to purchase the new computers.", item: "SWD \u2014 business context" },
+        { q: "3.8", marks: 12, text: "Evaluate which option (TV advertising for UK OR new design for global market) will have the biggest impact on FT\u2019s revenue.", item: "FT \u2014 fitness equipment" }
+      ],
+      "2025": [
+        { q: "2.6", marks: 9, text: "Recommend a financial option for a business.", item: "Business context from 2025 P2" },
+        { q: "3.8", marks: 12, text: "Evaluate two options in marketing or finance.", item: "Solar Scene Ltd / 2025 P2 context" }
+      ]
+    }
+  };
+
+  // ── QUESTION SOURCE TOGGLE ──
+  let currentSource = 'pastpaper';
+  function setSource(s) {
+    currentSource = s;
+    document.querySelectorAll('.toggle-btn[data-source]').forEach(b => b.classList.toggle('active', b.dataset.source === s));
+    document.getElementById('pastPaperArea').style.display = s === 'pastpaper' ? 'block' : 'none';
+    document.getElementById('customArea').style.display = s === 'custom' ? 'block' : 'none';
+  }
+
+  // ── POPULATE YEARS ──
+  function updateYears() {
+    const paper = document.getElementById('paperSelect').value;
+    const yearSel = document.getElementById('yearSelect');
+    const qSel = document.getElementById('questionSelect');
+    yearSel.innerHTML = '<option value="">Select year</option>';
+    qSel.innerHTML = '<option value="">Select question</option>';
+    document.getElementById('questionPreview').classList.remove('show');
+    if (!paper) { yearSel.disabled = true; qSel.disabled = true; return; }
+    Object.keys(PAST_PAPERS[paper]).forEach(y => {
+      const opt = document.createElement('option');
+      opt.value = y; opt.textContent = 'June ' + y;
+      yearSel.appendChild(opt);
+    });
+    yearSel.disabled = false; qSel.disabled = true;
+  }
+
+  // ── POPULATE QUESTIONS ──
+  function updateQuestions() {
+    const paper = document.getElementById('paperSelect').value;
+    const year = document.getElementById('yearSelect').value;
+    const qSel = document.getElementById('questionSelect');
+    qSel.innerHTML = '<option value="">Select question</option>';
+    document.getElementById('questionPreview').classList.remove('show');
+    if (!paper || !year) { qSel.disabled = true; return; }
+    PAST_PAPERS[paper][year].forEach((q, i) => {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = 'Q' + q.q + ' (' + q.marks + ' marks) \u2014 ' + q.text.substring(0, 60) + (q.text.length > 60 ? '\u2026' : '');
+      qSel.appendChild(opt);
+    });
+    qSel.disabled = false;
+  }
+
+  // ── QUESTION PREVIEW ──
+  function showQuestionPreview() {
+    const paper = document.getElementById('paperSelect').value;
+    const year = document.getElementById('yearSelect').value;
+    const qIdx = document.getElementById('questionSelect').value;
+    const preview = document.getElementById('questionPreview');
+    if (qIdx === '') { preview.classList.remove('show'); return; }
+    const q = PAST_PAPERS[paper][year][parseInt(qIdx)];
+    document.getElementById('qpText').textContent = q.text;
+    document.getElementById('qpMeta').innerHTML = paper + ' \u00b7 June ' + year + ' \u00b7 Question ' + q.q + ' \u00b7 ' + q.marks + ' marks' + (q.item ? ' \u00b7 ' + q.item : '');
+    preview.classList.add('show');
+  }
+
+  // ── SUBMISSION MODE ──
+  let currentMode = 'text';
+  function setMode(m) {
+    currentMode = m;
+    document.querySelectorAll('.toggle-btn[data-mode]').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+    document.getElementById('textInputArea').style.display = m === 'text' ? 'block' : 'none';
+    document.getElementById('imageInputArea').style.display = m === 'image' ? 'block' : 'none';
+  }
+
+  // ── IMAGE UPLOAD (multi-page support, with compression) ──
+  let uploadedImages = [];
+
+  function handleImageUpload(e) {
+    const files = Array.from(e.target.files);
+    if (!files.length) return;
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        compressImage(reader.result, function(compressed) {
+          uploadedImages.push(compressed);
+          renderImagePreviews();
+        });
+      };
+      reader.readAsDataURL(file);
+    });
+    e.target.value = '';
+  }
+
+  // Compress image to stay well under the 5MB API limit
+  function compressImage(dataUrl, callback) {
+    const img = new Image();
+    img.onload = function() {
+      const canvas = document.createElement('canvas');
+      // Scale down if width > 1600px (keeps it sharp enough for reading handwriting)
+      let w = img.width;
+      let h = img.height;
+      const MAX = 1600;
+      if (w > MAX || h > MAX) {
+        if (w > h) { h = Math.round(h * MAX / w); w = MAX; }
+        else       { w = Math.round(w * MAX / h); h = MAX; }
+      }
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      // Start at 0.85 quality, reduce until under 3.5MB base64 (~4.6MB raw)
+      let quality = 0.85;
+      let result = canvas.toDataURL('image/jpeg', quality);
+      while (result.length > 3500000 && quality > 0.4) {
+        quality -= 0.1;
+        result = canvas.toDataURL('image/jpeg', quality);
+      }
+      callback(result);
+    };
+    img.src = dataUrl;
+  }
+
+  function renderImagePreviews() {
+    const container = document.getElementById('imagePreviews');
+    container.innerHTML = uploadedImages.map((src, i) =>
+      '<div class="img-thumb">' +
+        '<img src="' + src + '" alt="Page ' + (i + 1) + '">' +
+        '<div class="img-thumb-label">Page ' + (i + 1) + '</div>' +
+        '<button class="img-thumb-remove" onclick="removeImage(' + i + ')" title="Remove">&times;</button>' +
+      '</div>'
+    ).join('');
+    const title = document.getElementById('uploadTitle');
+    const hint = document.getElementById('uploadHint');
+    const box = document.getElementById('uploadBox');
+    if (uploadedImages.length > 0) {
+      title.textContent = uploadedImages.length + ' page' + (uploadedImages.length > 1 ? 's' : '') + ' uploaded';
+      hint.textContent = 'Tap to add more pages';
+      box.classList.add('has-images');
+    } else {
+      title.textContent = 'Upload your handwritten answer';
+      hint.textContent = 'Tap to select one or more photos. If your answer spans multiple pages, upload each page separately.';
+      box.classList.remove('has-images');
+    }
+  }
+
+  function removeImage(idx) {
+    uploadedImages.splice(idx, 1);
+    renderImagePreviews();
+  }
+
+
+
+  const LEVEL_INFO = {
+    1: { name: 'Level 1', pct: 20, desc: 'Basic generic discussion. Add more context and develop chains further.' },
+    2: { name: 'Level 2', pct: 45, desc: 'Sound analysis in isolation. Add deeper chains and integrate functional areas.' },
+    3: { name: 'Level 3', pct: 70, desc: 'Detailed analysis with a justified conclusion. Push for fuller chains and clearer integration to reach Level 4.' },
+    4: { name: 'Level 4', pct: 95, desc: 'Developed, integrated analysis with sustained judgement. Excellent work.' }
+  };
+
+  // ── PROXY URL ──
+  const PROXY_URL = 'https://nishkam-marker.j-kerrisk.workers.dev';
+
+  // ── BUILD SYSTEM PROMPT ──
+  function buildSystemPrompt(questionData) {
+    const marks = questionData.marks;
+    const questionText = questionData.text;
+    const caseStudy = questionData.item || '';
+
+    let methodology = '';
+    if (marks <= 2) {
+      methodology = 'This is a 1-2 mark question. Award marks for: correct identification (1 mark) + brief development/explanation (1 mark). Keep feedback concise.';
+    } else if (marks === 4) {
+      methodology = '4-MARK EXPLAIN: Award marks for a clear point + 3 chains of analysis + case study evidence. The student should use connectors like "this means that", "as a result", "therefore" to build chains. Check they reference specific data from the case study (AO2).';
+    } else if (marks === 6) {
+      methodology = '6-MARK ANALYSE: Award marks for TWO developed arguments (from 2026 format). Each argument needs: Point with case study evidence (blue/AO2), then 3-4 chains of analysis using connectors (orange/AO3). NO evaluation needed in 6-mark answers. Check for: generic vs contextual language (generic = Level 1), chunks of copied case study without application (Level 1-2), shallow chains that stop after 1-2 links (Level 2 max).';
+    } else if (marks === 9) {
+      methodology = '9-MARK RECOMMEND/EVALUATE: Three paragraphs. Para 1: Argument with 4 chains + case study data manipulation. Para 2: Purely evaluative paragraph \u2014 "more balanced view", "further limitation", "it also depends on". NO new argument, just weighing risks. Para 3: Conclusion \u2014 "Overall, I believe" + NEW information (not in paras 1 or 2) + short/long term reasoning + "Therefore". CRITICAL CHECKS: A conclusion that merely repeats paragraph 1 = Level 2 maximum (examiners confirm this every year). Must use the stem (final sentence of the question) to focus the conclusion. No fence-sitting \u2014 must commit to a clear recommendation.';
+    } else if (marks === 12) {
+      methodology = '12-MARK EVALUATE (TWO OPTIONS): Para 1: Option 1 \u2014 4 chains + data manipulation + "depends on". Short evaluative paragraph for Option 1 (2-3 sentences max). Para 2: Option 2 \u2014 4 chains + data manipulation + "depends on". Short evaluative paragraph for Option 2. Para 3: Conclusion with 5 steps: (1) "To conclude..." (2) "Although... this is outweighed by..." (3) "However, this depends on..." (4) "The most important factor" + NEW information (5) "Therefore...". CRITICAL FOR LEVEL 4: Must integrate across functional areas (e.g. costs to pricing to competitiveness to revenue to profit). Analysis in isolation = Level 3 max. No fence-sitting.';
+    }
+
+    return `You are an expert AQA GCSE Business Studies examiner at Nishkam School West London. You are marking a ${marks}-mark answer.
+
+QUESTION: ${questionText}
+${caseStudy ? 'CASE STUDY CONTEXT: ' + caseStudy : ''}
+
+MARKING METHODOLOGY:
+${methodology}
+
+EXAMINER INSIGHTS (from AQA examiner reports 2019-2025):
+- Students who copy lumps of case study text without applying it lose AO2 marks. Flag this if you see it.
+- Generic lines of argument (not linked to the specific business) cap marks at Level 1-2.
+- Over-long answers that repeat themselves do NOT gain extra marks. Conciseness with depth is rewarded.
+- For evaluative questions, students should use the stem (final sentence) to focus their conclusion.
+- Definitions alone are not rewarded in extended responses but showing understanding of the concept helps.
+- Students adding extra pages rarely improve their level \u2014 they tend to add more reasons rather than extending their line of argument.
+- Integration across functional areas is essential for Level 4 in 12-mark questions.
+
+NISHKAM SCHOOL VIRTUE REFLECTION:
+After providing feedback, include a brief reflection connecting the student's work to one of Nishkam's three classroom virtues (Peacefulness, Diligence, Determination). For example, if the student showed thorough analysis, commend their Diligence. If they need to push through harder questions, encourage Determination. If their evaluation was balanced and considered, link it to Peacefulness. Include this as a "virtueReflection" field.
+
+COLOUR CODING for your model rewrite:
+- Wrap chains of analysis in: [CHAIN]text[/CHAIN]
+- Wrap case study data/evidence in: [DATA]text[/DATA]
+- Wrap evaluation in: [EVAL]text[/EVAL]
+
+RESPOND IN EXACTLY THIS JSON FORMAT (no markdown, no backticks, just raw JSON):
+{
+  "mark": <number>,
+  "maxMark": ${marks},
+  "level": <1-4>,
+  "levelSummary": "<one sentence explaining why this level>",
+  "www": ["<strength 1>", "<strength 2>", "<strength 3>"],
+  "ebi": ["<improvement 1 \u2014 be specific, quote from their answer where relevant>", "<improvement 2>", "<improvement 3>"],
+  "modelRewriteIntro": "<one sentence explaining what you are rewriting and why>",
+  "modelRewrite": "<rewrite their weakest paragraph to top level standard using [CHAIN], [DATA], [EVAL] tags>",
+  "virtueReflection": "<1-2 sentences connecting their work to Peacefulness, Diligence or Determination>",
+  "nextSteps": ["<action 1>", "<action 2>", "<action 3>"],
+  "suggestedQuestions": [
+    {"source": "<e.g. P1 June 2024 Q3.7>", "marks": <number>, "text": "<question text>", "reason": "<why this question targets their weakness>"},
+    {"source": "<paper ref>", "marks": <number>, "text": "<question text>", "reason": "<reason>"}
+  ]
+}
+
+Be encouraging but precise. Students are targeting Grade 7-9. Be specific in your EBI \u2014 quote from their answer to show exactly where they went wrong. In the model rewrite, demonstrate what Level 4 looks like for this specific question.`;
+  }
+
+  // ── PARSE AI RESPONSE ──
+  function parseAIResponse(name, questionData, responseText) {
+    try {
+      let clean = responseText.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+      if (clean.charAt(0) !== '{') {
+        const jsonStart = clean.indexOf('{');
+        const jsonEnd = clean.lastIndexOf('}');
+        if (jsonStart !== -1 && jsonEnd !== -1 && jsonEnd > jsonStart) {
+          clean = clean.substring(jsonStart, jsonEnd + 1);
+        }
+      }
+      const data = JSON.parse(clean);
+
+      const mark = data.mark !== undefined ? data.mark : (data.score !== undefined ? data.score : (data.markAwarded !== undefined ? data.markAwarded : '?'));
+      const level = data.level !== undefined ? data.level : (data.levelAwarded !== undefined ? data.levelAwarded : 0);
+      const www = data.www || data.WWW || data.strengths || data.whatWentWell || [];
+      const ebi = data.ebi || data.EBI || data.improvements || data.evenBetterIf || [];
+      const modelRewrite = data.modelRewrite || data.modelAnswer || data.model_rewrite || data.model_answer || '';
+      const modelIntro = data.modelRewriteIntro || data.modelIntro || '';
+      const nextSteps = data.nextSteps || data.next_steps || [];
+      const suggestedQs = data.suggestedQuestions || data.suggested_questions || data.recommendations || [];
+      const virtueReflection = data.virtueReflection || data.virtue_reflection || '';
+
+      const formatModel = (text) => {
+        return text
+          .replace(/\[CHAIN\]/g, '<span class="chain">')
+          .replace(/\[\/CHAIN\]/g, '</span>')
+          .replace(/\[DATA\]/g, '<span class="extract-data">')
+          .replace(/\[\/DATA\]/g, '</span>')
+          .replace(/\[EVAL\]/g, '<span class="eval-text">')
+          .replace(/\[\/EVAL\]/g, '</span>');
+      };
+
+      const isPastPaper = questionData.source === 'pastpaper';
+      return {
+        name: name,
+        source: isPastPaper ? (questionData.paper + ' \u00b7 June ' + questionData.year + ' \u00b7 Q' + questionData.qRef) : 'Custom Question',
+        questionText: questionData.text,
+        item: questionData.item || '',
+        marks: data.maxMark || questionData.marks,
+        score: mark,
+        level: level,
+        levelSummary: data.levelSummary || '',
+        www: (Array.isArray(www) ? www : [www]).map(w => String(w)),
+        ebi: (Array.isArray(ebi) ? ebi : [ebi]).map(e => String(e)),
+        rewriteIntro: modelIntro,
+        rewrite: formatModel(modelRewrite),
+        virtueReflection: virtueReflection,
+        nextSteps: Array.isArray(nextSteps) ? nextSteps : [],
+        suggestions: (Array.isArray(suggestedQs) ? suggestedQs : []).map(s => ({
+          source: s.source || '',
+          marks: s.marks || '',
+          text: s.text || '',
+          reason: s.reason || ''
+        }))
+      };
+    } catch (err) {
+      console.error('Parse error:', err, 'Response:', responseText.substring(0, 200));
+      return {
+        name: name,
+        source: questionData.source === 'pastpaper' ? (questionData.paper + ' \u00b7 June ' + questionData.year + ' \u00b7 Q' + questionData.qRef) : 'Custom Question',
+        questionText: questionData.text,
+        item: questionData.item || '',
+        marks: questionData.marks,
+        score: '?',
+        level: 2,
+        levelSummary: 'Could not parse structured feedback \u2014 raw response shown below.',
+        www: ['See raw feedback below.'],
+        ebi: ['See raw feedback below.'],
+        rewriteIntro: 'Raw response:',
+        rewrite: responseText,
+        virtueReflection: '',
+        nextSteps: [],
+        suggestions: []
+      };
+    }
+  }
+
+  // ── RENDER FEEDBACK ──
+  function renderFeedback(fb) {
+    document.getElementById('fbTitle').innerHTML = fb.name + ' \u2014 <span>' + fb.marks + '-mark</span>';
+    document.getElementById('fbMeta').innerHTML = '<strong>' + fb.source + '</strong><br>' + fb.questionText + (fb.item ? '<br><em style="opacity:.7;">Case study: ' + fb.item + '</em>' : '');
+
+    document.getElementById('scoreNum').textContent = fb.score;
+    document.getElementById('scoreOf').textContent = 'out of ' + fb.marks;
+
+    const li = LEVEL_INFO[fb.level] || LEVEL_INFO[2];
+    document.getElementById('levelBadge').textContent = li.name;
+    document.getElementById('levelDesc').innerHTML = fb.levelSummary || li.desc;
+    document.getElementById('levelFill').style.width = li.pct + '%';
+
+    document.getElementById('wwwList').innerHTML = fb.www.map(i => '<li>' + i + '</li>').join('');
+    document.getElementById('ebiList').innerHTML = fb.ebi.map(i => '<li>' + i + '</li>').join('');
+    document.getElementById('modelRewrite').innerHTML = '<p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:14px;">' + fb.rewriteIntro + '</p><p>' + fb.rewrite + '</p>';
+
+    // Virtue reflection
+    let suggestHtml = '';
+    if (fb.virtueReflection) {
+      suggestHtml += '<div style="background:var(--navy);color:var(--parchment);padding:20px 24px;margin-bottom:16px;border-left:3px solid var(--gold);"><h4 style="font-size:10.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 8px;">Nishkam Virtue Reflection</h4><p style="font-size:13.5px;line-height:1.6;margin:0;color:rgba(250,247,241,0.85);">' + fb.virtueReflection + '</p></div>';
+    }
+
+    // Next steps
+    if (fb.nextSteps && fb.nextSteps.length > 0) {
+      suggestHtml += '<div class="next-steps-box"><h4>Your Next Steps</h4><ol>' + fb.nextSteps.map(s => '<li>' + s + '</li>').join('') + '</ol></div>';
+    }
+
+    // Suggested questions
+    if (fb.suggestions && fb.suggestions.length > 0) {
+      suggestHtml += fb.suggestions.map(s =>
+        '<div class="suggest-q"><div class="sq-meta">' + s.source + ' \u00b7 ' + s.marks + ' marks</div><div class="sq-question">' + s.text + '</div><div class="sq-reason">' + s.reason + '</div></div>'
+      ).join('');
+    }
+
+    document.getElementById('suggestBody').innerHTML = suggestHtml;
+
+    document.getElementById('feedbackWrapper').classList.add('show');
+    setTimeout(() => { document.getElementById('feedbackWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+  }
+
+  // ── SUBMIT ANSWER ──
+  async function submitAnswer() {
+    const name = document.getElementById('studentName').value.trim();
+    const answerText = document.getElementById('answerText').value.trim();
+
+    if (!name) { alert('Please enter your name.'); return; }
+    if (currentMode === 'text' && !answerText) { alert('Please paste your answer before submitting.'); return; }
+    if (currentMode === 'image' && uploadedImages.length === 0) { alert('Please upload at least one photo of your answer before submitting.'); return; }
+
+    let questionData;
+    if (currentSource === 'pastpaper') {
+      const paper = document.getElementById('paperSelect').value;
+      const year = document.getElementById('yearSelect').value;
+      const qIdx = document.getElementById('questionSelect').value;
+      if (!paper || !year || qIdx === '') { alert('Please select a past paper question, or switch to "Custom Question" mode.'); return; }
+      const q = PAST_PAPERS[paper][year][parseInt(qIdx)];
+      questionData = { source: 'pastpaper', paper: paper, year: year, qRef: q.q, text: q.text, marks: q.marks, item: q.item };
+    } else {
+      const customQ = document.getElementById('customQuestion').value.trim();
+      if (!customQ) { alert('Please paste the question for marking.'); return; }
+      questionData = {
+        source: 'custom',
+        text: customQ,
+        marks: parseInt(document.getElementById('customMarks').value),
+        item: document.getElementById('customCaseStudy').value.trim()
+      };
+    }
+
+    const btn = document.querySelector('.submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Analysing your answer\u2026';
+
+    const systemPrompt = buildSystemPrompt(questionData);
+
+    let messages = [];
+    if (currentMode === 'image' && uploadedImages.length > 0) {
+      const contentBlocks = uploadedImages.map((img, i) => ({
+        type: 'image',
+        source: { type: 'base64', media_type: img.split(';')[0].split(':')[1], data: img.split(',')[1] }
+      }));
+      contentBlocks.push({
+        type: 'text',
+        text: 'Mark this handwritten answer (' + uploadedImages.length + ' page' + (uploadedImages.length > 1 ? 's' : '') + '). The question is: ' + questionData.text + ' (' + questionData.marks + ' marks)'
+      });
+      messages.push({ role: 'user', content: contentBlocks });
+    } else {
+      messages.push({
+        role: 'user',
+        content: 'Mark this student answer:\n\n' + answerText
+      });
+    }
+
+    try {
+      const response = await fetch(PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 4096,
+          system: systemPrompt,
+          messages: messages
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error?.message || 'Error (status ' + response.status + ')');
+      }
+
+      const data = await response.json();
+      const responseText = (data.content || []).map(b => b.text || '').join('\n');
+
+      if (!responseText) {
+        throw new Error('Empty response received.');
+      }
+
+      const fb = parseAIResponse(name, questionData, responseText);
+      renderFeedback(fb);
+      logToSheet(fb);
+
+    } catch (err) {
+      alert('Marking failed: ' + err.message + '\n\nPlease try again. If this keeps happening, contact your teacher.');
+      console.error('Marker error:', err);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Mark My Answer';
+  }
+
+  // ── GOOGLE SHEET LOGGING ──
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxbOyg1Ggz2m3c3wAL5ulRAoPgK_sw7YWrlavz4eIf3hKsOlmlrIrfADTXRvxkXVjtj0A/exec';
+
+  function logToSheet(fb) {
+    try {
+      const payload = {
+        name: fb.name || '',
+        question: fb.source + ' \u2014 ' + (fb.questionText || '').substring(0, 120),
+        maxMark: fb.marks || '',
+        mark: fb.score || '',
+        level: fb.level || '',
+        www1: (fb.www && fb.www[0]) ? stripHtml(fb.www[0]).substring(0, 200) : '',
+        www2: (fb.www && fb.www[1]) ? stripHtml(fb.www[1]).substring(0, 200) : '',
+        ebi1: (fb.ebi && fb.ebi[0]) ? stripHtml(fb.ebi[0]).substring(0, 200) : '',
+        ebi2: (fb.ebi && fb.ebi[1]) ? stripHtml(fb.ebi[1]).substring(0, 200) : '',
+        tool: 'marker'
+      };
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = SHEET_URL;
+      form.target = 'sheet_iframe';
+      form.style.display = 'none';
+      const input = document.createElement('input');
+      input.name = 'payload';
+      input.value = JSON.stringify(payload);
+      form.appendChild(input);
+
+      let iframe = document.getElementById('sheet_iframe');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = 'sheet_iframe';
+        iframe.id = 'sheet_iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    } catch (e) {
+      console.error('Sheet logging failed:', e);
+    }
+  }
+
+  function stripHtml(str) {
+    return str.replace(/<[^>]*>/g, '').replace(/&[a-z]+;/gi, ' ').trim();
+  }
+
+  // ── SIDEBAR TOGGLE (mobile) ──
+  const toggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const scrim = document.getElementById('sidebarScrim');
+  function openSidebar() { sidebar.classList.add('is-open'); scrim.classList.add('is-open'); }
+  function closeSidebar() { sidebar.classList.remove('is-open'); scrim.classList.remove('is-open'); }
+  if (toggle) toggle.addEventListener('click', openSidebar);
+  if (scrim) scrim.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 900) closeSidebar();
+  }));
+</script>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

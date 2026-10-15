@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Questions — Nishkam School West London</title>
+<meta name="description" content="Generate fresh AQA GCSE Business Studies exam questions with worked solutions, exam traps and technique tips.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #0E2A47; --navy-deep: #081A2E; --navy-soft: #1F3F63;
+  --gold: #B08A3E; --gold-soft: #D4B570;
+  --ink: #1A1A1A; --ink-soft: #444; --muted: #6B6B6B;
+  --rule: #E5DFD2; --rule-strong: #C9C0AB;
+  --parchment: #FAF7F1; --parchment-warm: #F3ECDB; --paper: #FFFFFF;
+  --font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sidebar-w: 300px;
+  --maxw-content: 1080px;
+  --radius-sm: 4px; --radius: 6px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --green: #1A7A3A; --green-light: #EAFAF1;
+  --red: #9B3B30; --red-light: #FDF2F0;
+  --teal: #117A65; --teal-light: #E8F8F5;
+  --purple: #6C3483; --purple-light: #F5EEF8;
+  --saffron: #B08A3E; --saffron-light: #FBF5E9;
+  --orange-chain: #C07A28; --blue-extract: #2471A3; --green-eval: #1A7A3A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--font-sans); font-size: 16px; line-height: 1.6;
+  color: var(--ink); background: var(--parchment);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+
+.layout { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
+
+.sidebar {
+  background: var(--navy); color: var(--parchment);
+  padding: 32px 28px; position: sticky; top: 0; height: 100vh;
+  overflow-y: auto; border-right: 1px solid var(--navy-deep);
+}
+.sidebar__brand { padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid rgba(176,138,62,0.3); }
+.sidebar__school { font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--parchment); letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 6px; }
+.sidebar__motto { font-family: var(--font-display); font-style: italic; font-size: 12.5px; color: var(--gold-soft); letter-spacing: 0.01em; }
+.sidebar__eyebrow { margin-top: 16px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); }
+.sidebar__group { margin-bottom: 24px; }
+.sidebar__group:last-child { margin-bottom: 0; }
+.sidebar__heading { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin: 0 0 10px; }
+.sidebar__links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.sidebar__links a {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 7px 10px 7px 12px; font-size: 14px; color: rgba(250,247,241,0.82);
+  border-radius: var(--radius-sm); transition: all 0.2s var(--ease);
+  border-left: 2px solid transparent; margin-left: -12px;
+}
+.sidebar__links a:hover { color: var(--parchment); background: rgba(176,138,62,0.08); border-left-color: var(--gold); }
+.sidebar__links a.is-active { color: var(--gold-soft); border-left-color: var(--gold); font-weight: 500; }
+.sidebar__num { font-family: var(--font-display); font-style: italic; color: var(--gold); font-size: 13px; min-width: 14px; }
+.sidebar__links a svg { width: 11px; height: 11px; opacity: 0.6; margin-left: auto; flex-shrink: 0; }
+
+.mobile-bar { display: none; position: sticky; top: 0; z-index: 60; background: var(--navy); color: var(--parchment); padding: 14px 20px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--navy-deep); }
+.mobile-bar__brand { font-family: var(--font-display); font-weight: 500; font-size: 16px; }
+.mobile-bar__toggle { background: none; border: 1px solid rgba(250,247,241,0.3); color: var(--parchment); width: 40px; height: 40px; border-radius: var(--radius-sm); font-size: 18px; cursor: pointer; display: grid; place-items: center; }
+
+.main { min-width: 0; }
+.wrap { max-width: var(--maxw-content); margin: 0 auto; padding: 0 48px; }
+
+.hero { padding: 88px 0 64px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  pointer-events: none; opacity: 0.9;
+}
+.hero__inner { position: relative; }
+.hero__eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.hero__eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+.hero__title { font-family: var(--font-display); font-weight: 500; font-size: clamp(40px, 6vw, 76px); line-height: 0.98; letter-spacing: -0.025em; color: var(--navy); margin: 0 0 24px; max-width: 14ch; }
+.hero__title em { font-style: italic; font-weight: 400; color: var(--gold); }
+.hero__lede { font-family: var(--font-display); font-weight: 400; font-size: 19px; line-height: 1.5; color: var(--ink-soft); max-width: 620px; margin: 0; }
+
+.section { padding: 88px 0; position: relative; }
+.section--tinted { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.section__head { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: baseline; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+.section__num { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 19px; color: var(--gold); letter-spacing: 0.02em; white-space: nowrap; }
+.section__titleblock h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 3.6vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 10px; }
+.section__titleblock p { font-size: 15.5px; color: var(--muted); margin: 0; max-width: 640px; line-height: 1.55; }
+
+.footer { background: var(--navy-deep); color: rgba(250,247,241,0.75); padding: 48px 0 28px; font-size: 13.5px; margin-top: 32px; }
+.footer__inner { max-width: var(--maxw-content); margin: 0 auto; padding: 0 48px; }
+.footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer__brand { font-family: var(--font-display); font-weight: 500; font-size: 19px; color: var(--parchment); margin-bottom: 10px; }
+.footer__motto { font-style: italic; color: var(--gold-soft); font-size: 13px; margin-bottom: 14px; }
+.footer__desc { font-size: 13px; line-height: 1.6; margin: 0; max-width: 320px; }
+.footer__col h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 14px; }
+.footer__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.footer__col a { color: rgba(250,247,241,0.75); font-size: 13px; transition: color 0.2s var(--ease); }
+.footer__col a:hover { color: var(--gold-soft); }
+.footer__bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; letter-spacing: 0.04em; color: rgba(250,247,241,0.55); }
+
+@media (max-width: 1200px) {
+  :root { --sidebar-w: 260px; }
+  .wrap { padding: 0 36px; }
+  .footer__inner { padding: 0 36px; }
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .mobile-bar { display: flex; }
+  .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 300px; max-width: 85vw; transform: translateX(-100%); transition: transform 0.3s var(--ease); z-index: 70; box-shadow: 0 0 40px rgba(0,0,0,0.25); }
+  .sidebar.is-open { transform: translateX(0); }
+  .sidebar-scrim { position: fixed; inset: 0; background: rgba(8,26,46,0.6); z-index: 65; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease); }
+  .sidebar-scrim.is-open { opacity: 1; pointer-events: auto; }
+  .wrap { padding: 0 24px; }
+  .footer__inner { padding: 0 24px; }
+  .hero { padding: 56px 0 40px; }
+  .section { padding: 64px 0; }
+  .section__head { grid-template-columns: 1fr; gap: 12px; }
+  .footer__top { grid-template-columns: 1fr; gap: 28px; }
+  .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: var(--radius); }
+@keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.hero__eyebrow, .hero__title, .hero__lede { animation: riseIn 0.7s var(--ease) both; }
+.hero__title { animation-delay: 0.05s; }
+.hero__lede  { animation-delay: 0.15s; }
+
+
+/* Form */
+.form-card { background: var(--paper); border: 1px solid var(--rule); padding: 36px 32px; }
+.form-row { display: grid; gap: 16px; margin-bottom: 20px; }
+.form-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.form-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; }
+.form-select {
+  width: 100%; font-family: var(--font-sans); font-size: 15px;
+  padding: 11px 14px; border-radius: var(--radius-sm);
+  border: 1px solid var(--rule-strong); background: var(--paper); color: var(--ink);
+  transition: border-color 0.2s var(--ease);
+}
+.form-select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(176,138,62,0.12); }
+
+.generate-btn {
+  margin-top: 16px; padding: 15px 0; width: 100%;
+  background: var(--navy); color: var(--parchment); border: none;
+  font-family: var(--font-sans); font-size: 15px; font-weight: 500;
+  cursor: pointer; transition: all 0.2s var(--ease); border-radius: var(--radius);
+}
+.generate-btn:hover { background: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(14,42,71,0.45); }
+.generate-btn:disabled { background: var(--muted); cursor: wait; transform: none; box-shadow: none; }
+
+/* How grid */
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); }
+.how-step { background: var(--paper); padding: 32px 28px; border-right: 1px solid var(--rule); }
+.how-step:last-child { border-right: none; }
+.how-step__num { font-family: var(--font-display); font-style: italic; font-size: 32px; color: var(--gold); line-height: 1; margin-bottom: 14px; }
+.how-step__title { font-family: var(--font-display); font-weight: 500; font-size: 20px; color: var(--navy); margin: 0 0 8px; }
+.how-step__body { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+/* Output */
+.output-wrapper { margin-top: 48px; display: none; }
+.output-wrapper.show { display: block; animation: riseIn 0.5s var(--ease) both; }
+
+.output-header { background: var(--navy); padding: 32px 36px; position: relative; overflow: hidden; }
+.output-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+.output-header .oh-eyebrow { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; color: var(--gold-soft); text-transform: uppercase; margin-bottom: 8px; position: relative; }
+.output-header h3 { font-family: var(--font-display); font-size: 24px; color: var(--parchment); line-height: 1.15; position: relative; font-weight: 500; margin: 0; }
+.output-header h3 span { color: var(--gold-soft); }
+
+.output-section { border: 1px solid var(--rule); border-top: none; overflow: hidden; }
+.output-section-head { padding: 16px 28px; display: flex; align-items: center; gap: 14px; }
+.output-section-head .icon-circle { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; color: var(--paper); }
+.output-section-head h4 { font-family: var(--font-display); font-size: 18px; font-weight: 500; margin: 0; }
+.output-section-body { background: var(--paper); padding: 24px 32px 28px; font-size: 15px; line-height: 1.75; }
+
+.output-section.questions .output-section-head { background: var(--parchment-warm); }
+.output-section.questions .icon-circle { background: var(--gold); }
+.output-section.questions h4 { color: var(--gold); }
+.output-section.solutions .output-section-head { background: var(--teal-light); }
+.output-section.solutions .icon-circle { background: var(--teal); }
+.output-section.solutions h4 { color: var(--teal); }
+
+.output-text { white-space: pre-wrap; }
+.chain-tag { color: var(--orange-chain); font-weight: 600; }
+.data-tag { color: var(--blue-extract); font-weight: 600; }
+.eval-tag { color: var(--green-eval); font-weight: 600; }
+
+.colour-key { background: var(--parchment); border: 1px solid var(--rule); padding: 10px 16px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 12px; margin: 0 0 16px; }
+.colour-key-item { display: flex; align-items: center; gap: 6px; color: var(--ink-soft); }
+.colour-swatch { width: 14px; height: 14px; flex-shrink: 0; }
+
+.tip-box { background: var(--parchment-warm); border-left: 3px solid var(--gold); padding: 12px 16px; margin: 14px 0; font-size: 13px; line-height: 1.55; }
+.tip-box strong { color: var(--gold); }
+.trap-box { background: var(--red-light); border-left: 3px solid var(--red); padding: 12px 16px; margin: 14px 0; font-size: 13px; line-height: 1.55; }
+.trap-box strong { color: var(--red); }
+
+@media (max-width: 900px) {
+  .how-grid { grid-template-columns: 1fr; }
+  .how-step { border-right: none; border-bottom: 1px solid var(--rule); }
+  .how-step:last-child { border-bottom: none; }
+  .form-row.cols-2 { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="mobile-bar">
+  <div class="mobile-bar__brand">GCSE Business Studies</div>
+  <button class="mobile-bar__toggle" id="sidebarToggle" aria-label="Open navigation">&#9776;</button>
+</div>
+<div class="sidebar-scrim" id="sidebarScrim"></div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar__brand">
+      <div class="sidebar__school">Nishkam School West London</div>
+      <div class="sidebar__motto">Man Neeva, Mat Uchi</div>
+      <div class="sidebar__eyebrow">AQA GCSE Business</div>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Overview</h3>
+      <ul class="sidebar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.nishkamschooltrust.org/nswl/page/?title=Virtue%2Dled+Education&amp;pid=255" target="_blank" rel="noopener">
+          Nishkam Virtues
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a></li>
+        <li><a href="faith.html">Faith &amp; Business</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Revision Units</h3>
+      <ul class="sidebar__links">
+        <li><a href="unit1.html"><span class="sidebar__num">1</span>Business in the Real World</a></li>
+        <li><a href="unit2.html"><span class="sidebar__num">2</span>Influences on Business</a></li>
+        <li><a href="unit3.html"><span class="sidebar__num">3</span>Business Operations</a></li>
+        <li><a href="unit4.html"><span class="sidebar__num">4</span>Human Resources</a></li>
+        <li><a href="unit5.html"><span class="sidebar__num">5</span>Marketing</a></li>
+        <li><a href="unit6.html"><span class="sidebar__num">6</span>Finance</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Resources</h3>
+      <ul class="sidebar__links">
+        <li><a href="resources.html">Download Booklets</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Study Tools</h3>
+      <ul class="sidebar__links">
+        <li><a href="marker.html">Mark My Work</a></li>
+        <li><a href="generator.html" class="is-active">Practice Questions</a></li>
+        <li><a href="mock.html">Mock Paper Generator</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Planning</h3>
+      <ul class="sidebar__links">
+        <li><a href="assessments.html">Assessment Schedule</a></li>
+        <li><a href="revision.html">How to Revise</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Beyond GCSE</h3>
+      <ul class="sidebar__links">
+        <li><a href="alevel.html">A Level Business</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero__inner">
+          <div class="hero__eyebrow">Exam Practice &middot; AQA GCSE Business Studies</div>
+          <h1 class="hero__title">Practice<br><em>questions.</em></h1>
+          <p class="hero__lede">Generate fresh exam-style questions with detailed worked solutions, exam traps to avoid and technique tips — tailored to any unit, topic and question type.</p>
+        </div>
+      </div>
+    </header>
+
+
+    <section class="section section--tinted">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Process</span>
+          <div class="section__titleblock">
+            <h2>Three steps to exam-ready practice.</h2>
+            <p>Choose your unit and topic. Select a question type and how many you need. Receive fresh questions with full worked solutions.</p>
+          </div>
+        </div>
+        <div class="how-grid">
+          <div class="how-step">
+            <div class="how-step__num">1.</div>
+            <h3 class="how-step__title">Choose your focus</h3>
+            <p class="how-step__body">Select the unit, topic, question type (1 to 12 marks), and how many questions you want to practise.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step__num">2.</div>
+            <h3 class="how-step__title">Generate</h3>
+            <p class="how-step__body">Authentic AQA-style questions are created with realistic case studies, financial data and business contexts for 4+ mark questions.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step__num">3.</div>
+            <h3 class="how-step__title">Study solutions</h3>
+            <p class="how-step__body">Section 1 gives you the questions to attempt. Section 2 provides full worked solutions with colour-coded chains, exam traps and technique tips.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Generate</span>
+          <div class="section__titleblock">
+            <h2>Build your practice set.</h2>
+            <p>Select your options below and generate a fresh set of exam-style questions with worked solutions.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-row cols-2">
+            <div>
+              <label class="form-label" for="unitSelect">Unit</label>
+              <select id="unitSelect" class="form-select" onchange="updateTopics()">
+                <option value="1">Unit 1: Business in the Real World</option>
+                <option value="2">Unit 2: Influences on Business</option>
+                <option value="3">Unit 3: Business Operations</option>
+                <option value="4">Unit 4: Human Resources</option>
+                <option value="5">Unit 5: Marketing</option>
+                <option value="6">Unit 6: Finance</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="topicSelect">Topic</label>
+              <select id="topicSelect" class="form-select"></select>
+            </div>
+          </div>
+          <div class="form-row cols-2">
+            <div>
+              <label class="form-label" for="marksSelect">Question Type</label>
+              <select id="marksSelect" class="form-select">
+                <option value="1">1-mark &mdash; State / Identify</option>
+                <option value="2">2-mark &mdash; State and explain</option>
+                <option value="4">4-mark &mdash; Explain with context</option>
+                <option value="6" selected>6-mark &mdash; Analyse</option>
+                <option value="9">9-mark &mdash; Recommend / Evaluate</option>
+                <option value="12">12-mark &mdash; Evaluate (two options)</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="numSelect">Number of Questions</label>
+              <select id="numSelect" class="form-select">
+                <option value="1">1 question</option>
+                <option value="2">2 questions</option>
+                <option value="3" selected>3 questions</option>
+                <option value="4">4 questions</option>
+                <option value="5">5 questions</option>
+              </select>
+            </div>
+          </div>
+          <button class="generate-btn" onclick="generate()">Generate Practice Set</button>
+        </div>
+
+        <div id="outputWrapper" class="output-wrapper">
+          <div class="output-header">
+            <div class="oh-eyebrow">Your Practice Set</div>
+            <h3 id="outputTitle">Questions <span>Generated</span></h3>
+          </div>
+
+          <div class="output-section questions">
+            <div class="output-section-head"><div class="icon-circle">Q</div><h4>Section 1 &mdash; Questions</h4></div>
+            <div class="output-section-body">
+              <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:16px;">Attempt these questions before scrolling down to the worked solutions. Time yourself under exam conditions where possible.</p>
+              <div class="output-text" id="questionsText"></div>
+            </div>
+          </div>
+
+          <div class="output-section solutions">
+            <div class="output-section-head"><div class="icon-circle">A</div><h4>Section 2 &mdash; Worked Solutions</h4></div>
+            <div class="output-section-body">
+              <div class="colour-key">
+                <div class="colour-key-item"><div class="colour-swatch" style="background:var(--orange-chain);"></div>Chains of Analysis</div>
+                <div class="colour-key-item"><div class="colour-swatch" style="background:var(--blue-extract);"></div>Data / Evidence</div>
+                <div class="colour-key-item"><div class="colour-swatch" style="background:var(--green-eval);"></div>Evaluation</div>
+              </div>
+              <div class="output-text" id="solutionsText"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__top">
+          <div>
+            <div class="footer__brand">GCSE Business Studies</div>
+            <div class="footer__motto">Man Neeva, Mat Uchi</div>
+            <p class="footer__desc">AQA GCSE Business Studies revision resources from Nishkam School West London. Grounded in virtue, built for success.</p>
+          </div>
+          <div class="footer__col">
+            <h4>Revise</h4>
+            <ul>
+              <li><a href="unit1.html">Unit 1 &middot; Real World</a></li>
+              <li><a href="unit2.html">Unit 2 &middot; Influences</a></li>
+              <li><a href="unit3.html">Unit 3 &middot; Operations</a></li>
+              <li><a href="unit4.html">Unit 4 &middot; HR</a></li>
+              <li><a href="unit5.html">Unit 5 &middot; Marketing</a></li>
+              <li><a href="unit6.html">Unit 6 &middot; Finance</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Tools &amp; Plan</h4>
+            <ul>
+              <li><a href="marker.html">Mark my work</a></li>
+              <li><a href="generator.html">Practice questions</a></li>
+              <li><a href="mock.html">Mock generator</a></li>
+              <li><a href="quiz.html">Quick quiz</a></li>
+              <li><a href="resources.html">Downloads</a></li>
+              <li><a href="assessments.html">Schedule</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; Nishkam School West London &middot; AQA GCSE Business Studies</span>
+          <span>GCSE Business Studies</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<script>
+  const PROXY_URL = 'https://nishkam-marker.j-kerrisk.workers.dev';
+
+  const UNITS = {
+    1: { title: 'Business in the Real World', spec: '3.1', topics: ['Purpose of business','Enterprise and entrepreneurship','Business ownership','Setting aims and objectives','Stakeholders','Business location','Business planning','Expanding a business'] },
+    2: { title: 'Influences on Business', spec: '3.2', topics: ['Technology in business','Ethical and environmental considerations','The economic climate','Globalisation','Legislation','The competitive environment'] },
+    3: { title: 'Business Operations', spec: '3.3', topics: ['Production processes','The role of procurement','Managing quality','The sales process and customer service'] },
+    4: { title: 'Human Resources', spec: '3.4', topics: ['Organisational structures','Recruitment and selection','Motivation and retention','Training and development'] },
+    5: { title: 'Marketing', spec: '3.5', topics: ['Identifying and understanding customers','Market research','The marketing mix (4Ps)','Marketing strategy'] },
+    6: { title: 'Finance', spec: '3.6', topics: ['Sources of finance','Cash flow','Financial terms and calculations','Analysing financial performance'] }
+  };
+
+  function toggleNav() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.getElementById('sidebarOverlay').classList.toggle('open');
+  }
+
+  function updateTopics() {
+    const unitId = document.getElementById('unitSelect').value;
+    const topicSel = document.getElementById('topicSelect');
+    topicSel.innerHTML = '';
+    UNITS[unitId].topics.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t;
+      opt.textContent = t;
+      topicSel.appendChild(opt);
+    });
+  }
+  updateTopics();
+
+  function formatOutput(text) {
+    return text
+      .replace(/\[CHAIN\](.*?)\[\/CHAIN\]/g, '<span class="chain-tag">$1</span>')
+      .replace(/\[DATA\](.*?)\[\/DATA\]/g, '<span class="data-tag">$1</span>')
+      .replace(/\[EVAL\](.*?)\[\/EVAL\]/g, '<span class="eval-tag">$1</span>')
+      .replace(/EXAM TRAP:(.*?)(?=\n|$)/g, '<div class="trap-box"><strong>EXAM TRAP:</strong>$1</div>')
+      .replace(/TECHNIQUE TIP:(.*?)(?=\n|$)/g, '<div class="tip-box"><strong>TECHNIQUE TIP:</strong>$1</div>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/^(Question \d+)/gm, '<strong style="color:var(--purple);font-size:17px;">$1</strong>')
+      .replace(/^(Answer \d+|Model Answer \d+|Worked Solution \d+)/gm, '<strong style="color:var(--teal);font-size:17px;">$1</strong>');
+  }
+
+  async function generate() {
+    const unitId = document.getElementById('unitSelect').value;
+    const unit = UNITS[unitId];
+    const topic = document.getElementById('topicSelect').value;
+    const marks = document.getElementById('marksSelect').value;
+    const num = document.getElementById('numSelect').value;
+
+    const btn = document.querySelector('.generate-btn');
+    btn.disabled = true;
+    btn.textContent = 'Generating your practice set...';
+    document.getElementById('outputWrapper').classList.remove('show');
+
+    const marksLabel = marks + '-mark';
+
+    const systemPrompt = `You are an expert AQA GCSE Business Studies question writer for Nishkam School West London. Generate ${num} practice ${marksLabel} questions on the topic "${topic}" from Unit ${unitId}: ${unit.title} (Spec ref: ${unit.spec}).
+
+SPEC BOUNDARY — ONLY USE TOPICS THAT ARE ON THE AQA 8132 SPECIFICATION:
+Topics ON the spec: purpose of business, enterprise, business ownership (sole trader, partnership, Ltd, Plc, franchise, social enterprise), aims and objectives, stakeholders, location, business planning, expanding a business, technology, ethics, environment, economic climate, globalisation, legislation, competition, job production, flow production, lean production, JIT, JIC, procurement, quality (TQM, quality control, quality assurance), customer service, organisational structures, recruitment, motivation (financial and non-financial methods only — do NOT name Herzberg, Maslow, Taylor or Mayo), training, marketing mix (4Ps), market research, segmentation, marketing strategy, sources of finance, cash flow, financial calculations (profit, revenue, costs, gross profit margin, net profit margin, ARR, payback), financial performance analysis.
+NEVER USE: batch production, PED, YED, Herzberg, Maslow, Taylor, Mayo, capacity utilisation, buffer stock diagrams, stock control charts, exchange rate calculations, market maps as a drawn exercise, drawing break-even charts.
+
+QUESTION WRITING RULES:
+- Match authentic AQA style and command words exactly.
+- For 4+ mark questions: write a 3-5 sentence case study with a realistic fictional business, specific data (revenue, costs, staff numbers, percentages), and a clear business context.
+- For 6-mark questions (2026 format): use "Analyse two..." command. Students must write TWO distinctly different developed arguments, each in its own paragraph with context. One point only with context = Level 2 max. Both points detailed with context = Level 3 (full marks).
+- For 9-mark questions: use "Recommend whether..." with a clear decision to make and financial data to manipulate.
+- For 12-mark questions: give TWO bullet-pointed options and use "Analyse the effect of each of these two options... Evaluate which will have the biggest impact on..."
+- Every case study must have a different fictional business with a different scenario.
+
+FORMAT YOUR RESPONSE IN EXACTLY TWO SECTIONS:
+
+=== SECTION 1: QUESTIONS ===
+Number each question. Show marks in brackets [X marks]. Include the full case study context before each question where applicable. Students will attempt these BEFORE seeing solutions.
+
+=== SECTION 2: WORKED SOLUTIONS ===
+For each question provide:
+1. A full model answer at Level 3/4 top-mark standard.
+2. Use these tags for colour coding: [CHAIN]chain text[/CHAIN] for chains of analysis, [DATA]data text[/DATA] for case study evidence/data manipulation, [EVAL]evaluation text[/EVAL] for evaluation.
+3. After each model answer include:
+   EXAM TRAP: One specific mistake students commonly make on this type of question.
+   TECHNIQUE TIP: One concrete technique to score higher.
+
+For 6-mark answers: TWO developed arguments, each with 3-4 chains. No evaluation. Both points must be distinctly different. Both contextualised. Note in the worked solution that evaluation is NOT needed and would waste time.
+For 9-mark answers: Three paragraphs — (1) ARGUMENT ONLY: 4 chains + data manipulation, ending on a clear business outcome. No "however" or "depends on" in Para 1 — that is Para 2's job. (2) PURELY EVALUATIVE: no new argument, just weighing and qualifying Para 1 using "however / more balanced view / it also depends on / a further limitation is". (3) CONCLUSION: NEW info not in Paras 1 or 2 + short/long term + "Therefore". No fence-sitting. The conclusion must draw together functional areas of business (e.g. the decision links to costs, then pricing, then revenue, then profit). Note in worked solution: conclusion repeating Para 1 = Level 2 maximum.
+For 12-mark answers: Analyse Option 1 (4 chains + data + short evaluation woven in), Analyse Option 2 (4 chains + data + short evaluation woven in), Conclusion with 5 steps: (1) To conclude (2) Although... outweighed by (3) However depends on (4) Most important factor + NEW information (5) Therefore. Note: evaluation can be woven throughout, not just at the end. Must integrate across functional areas (costs to pricing to revenue to profit) — isolated analysis = Level 3 max.`;
+
+    try {
+      const response = await fetch(PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 4096,
+          system: systemPrompt,
+          messages: [{ role: 'user', content: 'Generate the practice set now. Remember: Section 1 (questions only) then Section 2 (full worked solutions with colour tags, exam traps, and technique tips).' }]
+        })
+      });
+
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.error?.message || 'API error (status ' + response.status + ')');
+      }
+
+      const data = await response.json();
+      const fullText = (data.content || []).map(b => b.text || '').join('\n');
+
+      if (!fullText) throw new Error('Empty response from AI.');
+
+      // Split into questions and solutions sections
+      let questionsHtml = '';
+      let solutionsHtml = '';
+
+      const sectionSplit = fullText.split(/={3,}\s*SECTION 2/i);
+      if (sectionSplit.length >= 2) {
+        let qRaw = sectionSplit[0].replace(/={3,}\s*SECTION 1.*?={3,}/i, '').trim();
+        let sRaw = sectionSplit[1].replace(/.*?={3,}/i, '').trim();
+        questionsHtml = formatOutput(qRaw);
+        solutionsHtml = formatOutput(sRaw);
+      } else {
+        // Fallback — show everything in questions section
+        questionsHtml = formatOutput(fullText);
+        solutionsHtml = '<p style="color:var(--grey);font-style:italic;">Solutions are included above.</p>';
+      }
+
+      document.getElementById('outputTitle').innerHTML = num + ' &times; ' + marksLabel + ' &mdash; <span>' + topic + '</span>';
+      document.getElementById('questionsText').innerHTML = questionsHtml;
+      document.getElementById('solutionsText').innerHTML = solutionsHtml;
+      document.getElementById('outputWrapper').classList.add('show');
+
+      setTimeout(() => {
+        document.getElementById('outputWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+
+    } catch (err) {
+      alert('Generation failed: ' + err.message + '\n\nPlease try again.');
+      console.error('Generator error:', err);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Generate Practice Set';
+  }
+</script>
+
+<script>
+  const toggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const scrim = document.getElementById('sidebarScrim');
+  function openSidebar() { sidebar.classList.add('is-open'); scrim.classList.add('is-open'); }
+  function closeSidebar() { sidebar.classList.remove('is-open'); scrim.classList.remove('is-open'); }
+  if (toggle) toggle.addEventListener('click', openSidebar);
+  if (scrim) scrim.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 900) closeSidebar();
+  }));
+</script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

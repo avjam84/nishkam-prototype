@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Level Business — Nishkam School West London</title>
+<meta name="description" content="What comes after GCSE? Everything you need to know about AQA A Level Business, the new 2026 specification, how it compares to A Level Economics, and where it leads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #0E2A47; --navy-deep: #081A2E; --navy-soft: #1F3F63;
+  --gold: #B08A3E; --gold-soft: #D4B570;
+  --ink: #1A1A1A; --ink-soft: #444; --muted: #6B6B6B;
+  --rule: #E5DFD2; --rule-strong: #C9C0AB;
+  --parchment: #FAF7F1; --parchment-warm: #F3ECDB; --paper: #FFFFFF;
+  --font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sidebar-w: 300px;
+  --maxw-content: 1080px;
+  --radius-sm: 4px; --radius: 6px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --green: #1A7A3A; --green-light: #EAFAF1;
+  --red: #9B3B30; --red-light: #FDF2F0;
+  --teal: #117A65; --teal-light: #E8F8F5;
+  --purple: #6C3483; --purple-light: #F5EEF8;
+  --saffron: #B08A3E; --saffron-light: #FBF5E9;
+  --orange-chain: #C07A28; --blue-extract: #2471A3; --green-eval: #1A7A3A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--font-sans); font-size: 16px; line-height: 1.6;
+  color: var(--ink); background: var(--parchment);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+
+.layout { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
+
+.sidebar {
+  background: var(--navy); color: var(--parchment);
+  padding: 32px 28px; position: sticky; top: 0; height: 100vh;
+  overflow-y: auto; border-right: 1px solid var(--navy-deep);
+}
+.sidebar__brand { padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid rgba(176,138,62,0.3); }
+.sidebar__school { font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--parchment); letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 6px; }
+.sidebar__motto { font-family: var(--font-display); font-style: italic; font-size: 12.5px; color: var(--gold-soft); letter-spacing: 0.01em; }
+.sidebar__eyebrow { margin-top: 16px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); }
+.sidebar__group { margin-bottom: 24px; }
+.sidebar__group:last-child { margin-bottom: 0; }
+.sidebar__heading { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin: 0 0 10px; }
+.sidebar__links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.sidebar__links a {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 7px 10px 7px 12px; font-size: 14px; color: rgba(250,247,241,0.82);
+  border-radius: var(--radius-sm); transition: all 0.2s var(--ease);
+  border-left: 2px solid transparent; margin-left: -12px;
+}
+.sidebar__links a:hover { color: var(--parchment); background: rgba(176,138,62,0.08); border-left-color: var(--gold); }
+.sidebar__links a.is-active { color: var(--gold-soft); border-left-color: var(--gold); font-weight: 500; }
+.sidebar__num { font-family: var(--font-display); font-style: italic; color: var(--gold); font-size: 13px; min-width: 14px; }
+.sidebar__links a svg { width: 11px; height: 11px; opacity: 0.6; margin-left: auto; flex-shrink: 0; }
+
+.mobile-bar { display: none; position: sticky; top: 0; z-index: 60; background: var(--navy); color: var(--parchment); padding: 14px 20px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--navy-deep); }
+.mobile-bar__brand { font-family: var(--font-display); font-weight: 500; font-size: 16px; }
+.mobile-bar__toggle { background: none; border: 1px solid rgba(250,247,241,0.3); color: var(--parchment); width: 40px; height: 40px; border-radius: var(--radius-sm); font-size: 18px; cursor: pointer; display: grid; place-items: center; }
+
+.main { min-width: 0; }
+.wrap { max-width: var(--maxw-content); margin: 0 auto; padding: 0 48px; }
+
+.hero { padding: 88px 0 64px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  pointer-events: none; opacity: 0.9;
+}
+.hero__inner { position: relative; }
+.hero__eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.hero__eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+.hero__title { font-family: var(--font-display); font-weight: 500; font-size: clamp(40px, 6vw, 76px); line-height: 0.98; letter-spacing: -0.025em; color: var(--navy); margin: 0 0 24px; max-width: 14ch; }
+.hero__title em { font-style: italic; font-weight: 400; color: var(--gold); }
+.hero__lede { font-family: var(--font-display); font-weight: 400; font-size: 19px; line-height: 1.5; color: var(--ink-soft); max-width: 620px; margin: 0; }
+
+.section { padding: 88px 0; position: relative; }
+.section--tinted { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.section__head { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: baseline; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+.section__num { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 19px; color: var(--gold); letter-spacing: 0.02em; white-space: nowrap; }
+.section__titleblock h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 3.6vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 10px; }
+.section__titleblock p { font-size: 15.5px; color: var(--muted); margin: 0; max-width: 640px; line-height: 1.55; }
+
+.footer { background: var(--navy-deep); color: rgba(250,247,241,0.75); padding: 48px 0 28px; font-size: 13.5px; margin-top: 32px; }
+.footer__inner { max-width: var(--maxw-content); margin: 0 auto; padding: 0 48px; }
+.footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer__brand { font-family: var(--font-display); font-weight: 500; font-size: 19px; color: var(--parchment); margin-bottom: 10px; }
+.footer__motto { font-style: italic; color: var(--gold-soft); font-size: 13px; margin-bottom: 14px; }
+.footer__desc { font-size: 13px; line-height: 1.6; margin: 0; max-width: 320px; }
+.footer__col h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 14px; }
+.footer__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.footer__col a { color: rgba(250,247,241,0.75); font-size: 13px; transition: color 0.2s var(--ease); }
+.footer__col a:hover { color: var(--gold-soft); }
+.footer__bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; letter-spacing: 0.04em; color: rgba(250,247,241,0.55); }
+
+@media (max-width: 1200px) {
+  :root { --sidebar-w: 260px; }
+  .wrap { padding: 0 36px; }
+  .footer__inner { padding: 0 36px; }
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .mobile-bar { display: flex; }
+  .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 300px; max-width: 85vw; transform: translateX(-100%); transition: transform 0.3s var(--ease); z-index: 70; box-shadow: 0 0 40px rgba(0,0,0,0.25); }
+  .sidebar.is-open { transform: translateX(0); }
+  .sidebar-scrim { position: fixed; inset: 0; background: rgba(8,26,46,0.6); z-index: 65; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease); }
+  .sidebar-scrim.is-open { opacity: 1; pointer-events: auto; }
+  .wrap { padding: 0 24px; }
+  .footer__inner { padding: 0 24px; }
+  .hero { padding: 56px 0 40px; }
+  .section { padding: 64px 0; }
+  .section__head { grid-template-columns: 1fr; gap: 12px; }
+  .footer__top { grid-template-columns: 1fr; gap: 28px; }
+  .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: var(--radius); }
+@keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.hero__eyebrow, .hero__title, .hero__lede { animation: riseIn 0.7s var(--ease) both; }
+.hero__title { animation-delay: 0.05s; }
+.hero__lede  { animation-delay: 0.15s; }
+
+
+/* Content sections using index.html patterns */
+.content-prose { font-size: 15.5px; line-height: 1.7; color: var(--ink-soft); max-width: 780px; }
+.content-prose p { margin: 0 0 16px; }
+.content-prose strong { color: var(--navy); }
+
+/* Comparison table */
+.compare-table { width: 100%; border-collapse: collapse; border: 1px solid var(--rule); margin: 24px 0; }
+.compare-table thead th { background: var(--navy); color: var(--parchment); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 18px; text-align: left; border: 1px solid var(--navy-deep); }
+.compare-table td { padding: 12px 18px; font-size: 14px; border: 1px solid var(--rule); line-height: 1.55; color: var(--ink-soft); vertical-align: top; }
+.compare-table tr:nth-child(even) { background: var(--parchment); }
+.compare-table .col-label { font-weight: 600; color: var(--navy); min-width: 140px; }
+
+/* Info cards grid */
+.info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid var(--rule); margin: 24px 0; }
+.info-card { background: var(--paper); padding: 28px 24px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.info-card:nth-child(2n) { border-right: none; }
+.info-card:nth-last-child(-n+2) { border-bottom: none; }
+.info-card__tag { font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.info-card__title { font-family: var(--font-display); font-weight: 500; font-size: 20px; color: var(--navy); margin: 0 0 8px; letter-spacing: -0.01em; }
+.info-card__body { font-size: 14px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+/* Spec unit cards */
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); margin: 24px 0; }
+.spec-card { background: var(--paper); padding: 28px 24px; border-right: 1px solid var(--rule); }
+.spec-card:last-child { border-right: none; }
+.spec-card__num { font-family: var(--font-display); font-style: italic; font-size: 28px; color: var(--gold); margin-bottom: 8px; }
+.spec-card__title { font-family: var(--font-display); font-weight: 500; font-size: 18px; color: var(--navy); margin: 0 0 10px; }
+.spec-card__body { font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+.spec-card__topics { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 6px; }
+.topic-tag { font-size: 11px; padding: 3px 9px; background: var(--parchment); color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 100px; }
+
+/* Assessment cards */
+.assess-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); margin: 24px 0; }
+.assess-card { background: var(--paper); padding: 24px; border-right: 1px solid var(--rule); }
+.assess-card:last-child { border-right: none; }
+.assess-card__label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.assess-card__title { font-family: var(--font-display); font-weight: 500; font-size: 22px; color: var(--navy); margin: 0 0 4px; }
+.assess-card__detail { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin: 0 0 12px; }
+.assess-card__stat { font-family: var(--font-display); font-size: 28px; color: var(--gold); margin-bottom: 2px; }
+.assess-card__stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* Virtue callout */
+.virtue-callout { background: var(--navy); color: var(--parchment); padding: 32px; margin: 32px 0; position: relative; overflow: hidden; }
+.virtue-callout::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+.virtue-callout__title { font-family: var(--font-display); font-size: 20px; color: var(--gold-soft); margin: 0 0 12px; font-weight: 500; }
+.virtue-callout__body { font-size: 14.5px; line-height: 1.65; color: rgba(250,247,241,0.85); margin: 0; }
+
+/* Pullquote */
+.pullquote { margin: 48px auto; max-width: 780px; text-align: center; padding: 32px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.pullquote__mark { font-family: var(--font-display); font-size: 64px; line-height: 1; color: var(--gold); opacity: 0.35; margin-bottom: -16px; }
+.pullquote__text { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--navy); margin: 0 0 12px; }
+.pullquote__cite { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+/* Warning/New spec callout */
+.new-spec-banner { background: var(--parchment-warm); border: 1px solid var(--rule-strong); border-left: 4px solid var(--gold); padding: 20px 24px; margin: 24px 0; }
+.new-spec-banner__title { font-family: var(--font-display); font-size: 17px; color: var(--navy); margin: 0 0 8px; font-weight: 500; }
+.new-spec-banner__body { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .info-grid, .spec-grid, .assess-grid { grid-template-columns: 1fr; }
+  .info-card, .spec-card, .assess-card { border-right: none; border-bottom: 1px solid var(--rule); }
+  .info-card:last-child, .spec-card:last-child, .assess-card:last-child { border-bottom: none; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="mobile-bar">
+  <div class="mobile-bar__brand">GCSE Business Studies</div>
+  <button class="mobile-bar__toggle" id="sidebarToggle" aria-label="Open navigation">&#9776;</button>
+</div>
+<div class="sidebar-scrim" id="sidebarScrim"></div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar__brand">
+      <div class="sidebar__school">Nishkam School West London</div>
+      <div class="sidebar__motto">Man Neeva, Mat Uchi</div>
+      <div class="sidebar__eyebrow">AQA GCSE Business</div>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Overview</h3>
+      <ul class="sidebar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.nishkamschooltrust.org/nswl/page/?title=Virtue%2Dled+Education&amp;pid=255" target="_blank" rel="noopener">
+          Nishkam Virtues
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a></li>
+        <li><a href="faith.html">Faith &amp; Business</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Revision Units</h3>
+      <ul class="sidebar__links">
+        <li><a href="unit1.html"><span class="sidebar__num">1</span>Business in the Real World</a></li>
+        <li><a href="unit2.html"><span class="sidebar__num">2</span>Influences on Business</a></li>
+        <li><a href="unit3.html"><span class="sidebar__num">3</span>Business Operations</a></li>
+        <li><a href="unit4.html"><span class="sidebar__num">4</span>Human Resources</a></li>
+        <li><a href="unit5.html"><span class="sidebar__num">5</span>Marketing</a></li>
+        <li><a href="unit6.html"><span class="sidebar__num">6</span>Finance</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Resources</h3>
+      <ul class="sidebar__links">
+        <li><a href="resources.html">Download Booklets</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Study Tools</h3>
+      <ul class="sidebar__links">
+        <li><a href="marker.html">Mark My Work</a></li>
+        <li><a href="generator.html">Practice Questions</a></li>
+        <li><a href="mock.html">Mock Paper Generator</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Planning</h3>
+      <ul class="sidebar__links">
+        <li><a href="assessments.html">Assessment Schedule</a></li>
+        <li><a href="revision.html">How to Revise</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Beyond GCSE</h3>
+      <ul class="sidebar__links">
+        <li><a href="alevel.html" class="is-active">A Level Business</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero__inner">
+          <div class="hero__eyebrow">Beyond GCSE · AQA GCSE Business Studies</div>
+          <h1 class="hero__title">A Level<br><em style="font-style:italic;font-weight:400;color:#B08A3E;">Business.</em></h1>
+          <p class="hero__lede">What comes next? The new AQA specification, how your GCSE prepares you, how Business compares to Economics, and the university and career pathways it opens up.</p>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- NEW SPEC ALERT -->
+    <section class="section section--tinted">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">New</span>
+          <div class="section__titleblock">
+            <h2>A brand new specification.</h2>
+            <p>The AQA A Level Business specification is changing. Here is everything you need to know about what is coming and how your GCSE prepares you for it.</p>
+          </div>
+        </div>
+
+        <div class="new-spec-banner">
+          <div class="new-spec-banner__title">New specification: AQA A Level Business (7138)</div>
+          <div class="new-spec-banner__body">First teaching September 2026. First AS exams 2027. First A Level exams 2028. The current specification (7132) has its final exams in summer 2026. If you are starting Year 12 in September 2026, you will be on the new spec. It has been completely redesigned with modern, future-focused content including digital technology, ESG reporting, employee wellbeing and business ethics at its core.</div>
+        </div>
+
+        <div class="content-prose" style="margin-top:24px;">
+          <p>AQA describes the new specification as being reimagined for the modern world. The old 10-topic structure has been replaced with a cleaner three-unit model that integrates topics more naturally. The assessment has also changed: simplified command words, consistent paper structures across all three papers, and more time per mark. Real-world case studies are used throughout, and synoptic thinking (connecting ideas across the whole course) is built into Paper 3 from the start.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIFICATION STRUCTURE -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Structure</span>
+          <div class="section__titleblock">
+            <h2>Three units, three papers.</h2>
+            <p>The new specification is built around three integrated units. Units 1 and 2 are taught across both years. Unit 3 is A Level only and is fully synoptic.</p>
+          </div>
+        </div>
+
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card__num">1.</div>
+            <div class="spec-card__title">What is business? Managing marketing and finance</div>
+            <div class="spec-card__body">The foundations: business objectives, forms of business, stakeholders, marketing management (including digital marketing, CRM, data analytics, elasticity of demand) and financial management (break-even, budgets, cash flow, financial reporting, ratios).</div>
+            <div class="spec-card__topics">
+              <span class="topic-tag">Entrepreneurs</span><span class="topic-tag">Business planning</span><span class="topic-tag">SMART objectives</span><span class="topic-tag">Stakeholders</span><span class="topic-tag">Shares &amp; dividends</span><span class="topic-tag">Marketing mix</span><span class="topic-tag">Elasticity of demand</span><span class="topic-tag">Digital marketing &amp; AI</span><span class="topic-tag">CRM &amp; data analytics</span><span class="topic-tag">Boston Matrix</span><span class="topic-tag">Break-even</span><span class="topic-tag">Budgets &amp; variance</span><span class="topic-tag">Cash flow &amp; liquidity</span><span class="topic-tag">Financial ratios</span><span class="topic-tag">ROCE &amp; gearing</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__num">2.</div>
+            <div class="spec-card__title">Managing people and operations</div>
+            <div class="spec-card__body">People management (HR objectives and data, leadership styles, Hackman's model of team effectiveness, motivation theories, employee wellbeing, flexible working), operations management (efficiency, quality, supply chains, inventory, network analysis and critical path, economies of scale, AI in operations) and managing business culture (A Level only).</div>
+            <div class="spec-card__topics">
+              <span class="topic-tag">HR objectives</span><span class="topic-tag">Leadership styles</span><span class="topic-tag">Hackman's teams</span><span class="topic-tag">Motivation theories</span><span class="topic-tag">Employee wellbeing</span><span class="topic-tag">Lean production</span><span class="topic-tag">Quality &amp; TQM</span><span class="topic-tag">Supply chains</span><span class="topic-tag">Network analysis</span><span class="topic-tag">Economies of scale</span><span class="topic-tag">AI in operations</span><span class="topic-tag">Business culture</span>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card__num">3.</div>
+            <div class="spec-card__title">Business and society, external environment, and strategy</div>
+            <div class="spec-card__body">A Level only. Business and society (sustainability, Triple Bottom Line, Carroll's CSR pyramid, ESG reporting), the external environment (Porter's Five Forces, political/legal, economic, social, technological forces), strategy (Ansoff Matrix, positioning, stakeholder mapping, investment appraisal including NPV, business growth and global strategy) and change (Kotter and Schlesinger's resistance model, Lewin's Force Field analysis, risk management, scenario planning, agile business).</div>
+            <div class="spec-card__topics">
+              <span class="topic-tag">CSR &amp; Carroll's pyramid</span><span class="topic-tag">ESG reporting</span><span class="topic-tag">Triple Bottom Line</span><span class="topic-tag">Porter's Five Forces</span><span class="topic-tag">Ansoff Matrix</span><span class="topic-tag">SWOT</span><span class="topic-tag">Stakeholder mapping</span><span class="topic-tag">Investment appraisal</span><span class="topic-tag">Global strategy</span><span class="topic-tag">Digital strategy</span><span class="topic-tag">Kotter &amp; Schlesinger</span><span class="topic-tag">Lewin's Force Field</span><span class="topic-tag">Risk &amp; uncertainty</span><span class="topic-tag">Scenario planning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assessment structure -->
+        <div class="assess-grid" style="margin-top:32px;">
+          <div class="assess-card">
+            <div class="assess-card__label">A Level</div>
+            <div class="assess-card__title">Paper 1</div>
+            <div class="assess-card__detail">Unit 1 content. Two case studies, five questions each.</div>
+            <div class="assess-card__stat">2 hrs</div>
+            <div class="assess-card__stat-label">90 marks &middot; 33.3%</div>
+          </div>
+          <div class="assess-card">
+            <div class="assess-card__label">A Level</div>
+            <div class="assess-card__title">Paper 2</div>
+            <div class="assess-card__detail">Unit 2 with links to Unit 1. Two case studies, five questions each.</div>
+            <div class="assess-card__stat">2 hrs</div>
+            <div class="assess-card__stat-label">90 marks &middot; 33.3%</div>
+          </div>
+          <div class="assess-card">
+            <div class="assess-card__label">A Level</div>
+            <div class="assess-card__title">Paper 3</div>
+            <div class="assess-card__detail">Unit 3 with synoptic links to Units 1 and 2. Two case studies, five questions each.</div>
+            <div class="assess-card__stat">2 hrs</div>
+            <div class="assess-card__stat-label">90 marks &middot; 33.3%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GCSE TO A LEVEL BRIDGE -->
+    <section class="section section--tinted">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Bridge</span>
+          <div class="section__titleblock">
+            <h2>From GCSE to A Level.</h2>
+            <p>Your GCSE Business Studies course gives you a strong foundation. Here is what stays the same, what goes deeper, and what is entirely new.</p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card__tag">Builds on GCSE</div>
+            <div class="info-card__title">Marketing</div>
+            <div class="info-card__body">You already know the 4Ps. A Level adds elasticity of demand (price and income), digital marketing strategy (SEO, PPC, CRM, data analytics), correlation analysis, market mapping, and international marketing. You learn to calculate and interpret market data quantitatively.</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__tag">Builds on GCSE</div>
+            <div class="info-card__title">Finance</div>
+            <div class="info-card__body">GCSE covers cash flow and basic profit. A Level adds income statements, statements of financial position (balance sheets), ROCE, gearing, dividend yield, market capitalisation, return on investment, payables and receivables days, current and acid test ratios, investment appraisal (payback, ARR, NPV), budgeting with variance analysis, and zero-based budgeting. You will also learn to amend financial statements, not just interpret them.</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__tag">Builds on GCSE</div>
+            <div class="info-card__title">Human Resources</div>
+            <div class="info-card__body">GCSE covers motivation theories and recruitment. A Level goes deeper into employee wellbeing, flexible working, business culture, equality/diversity/inclusion/belonging, and HR planning as a strategic function linked to business objectives.</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__tag">Entirely new</div>
+            <div class="info-card__title">Strategy and Change</div>
+            <div class="info-card__body">This does not exist at GCSE. A Level introduces strategic models (Ansoff Matrix, Porter's Five Forces, stakeholder mapping), SWOT analysis as a decision-making tool, investment appraisal (payback, ARR, NPV), Carroll's CSR pyramid, ESG reporting, Triple Bottom Line, network analysis with critical path, Lewin's Force Field analysis for managing change, Kotter and Schlesinger's reasons for resistance, scenario planning, and the distinction between risk and uncertainty.</div>
+          </div>
+        </div>
+
+        <div class="virtue-callout">
+          <div class="virtue-callout__title">Determination in action</div>
+          <div class="virtue-callout__body">Moving from GCSE to A Level Business requires a step change in the depth and sophistication of your thinking. The content is broader, the analysis must be deeper, and the evaluation must be sharper. But the chains-of-analysis skills you have built at GCSE are exactly the foundation you need. Every 9-mark and 12-mark answer you have practised has been training you for this.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS vs ECONOMICS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Compare</span>
+          <div class="section__titleblock">
+            <h2>A Level Business vs A Level Economics.</h2>
+            <p>Both are excellent subjects, but they are fundamentally different. Understanding the distinction will help you make the right choice for your interests and ambitions.</p>
+          </div>
+        </div>
+
+        <div class="content-prose">
+          <p>A Level Business studies how individual organisations operate. You analyse real companies, make decisions about marketing, finance, HR and operations, and evaluate strategic options using case studies. It is practical, applied, and rooted in how businesses actually work.</p>
+          <p>A Level Economics studies how entire economies function. You learn about supply and demand, market structures, inflation, unemployment, fiscal and monetary policy, and international trade. It is more theoretical and abstract, with a heavier emphasis on diagrams, models and essay writing.</p>
+          <p>They are not the same subject, and they are not interchangeable. Some universities (including Oxford, Cambridge and LSE) will count them as too similar if you take both, meaning they would treat your three A Levels as effectively two. If you are considering both, check the entry requirements of the universities you are interested in.</p>
+        </div>
+
+        <table class="compare-table">
+          <thead>
+            <tr><th style="width:22%;">Dimension</th><th>A Level Business</th><th>A Level Economics</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="col-label">Focus</td><td>How individual businesses operate, compete and grow</td><td>How markets and entire economies function</td></tr>
+            <tr><td class="col-label">Approach</td><td>Applied and practical &mdash; case studies, real companies, decision-making</td><td>Theoretical and analytical &mdash; models, diagrams, policy evaluation</td></tr>
+            <tr><td class="col-label">Maths</td><td>Quantitative skills (ratios, percentages, break-even, elasticity) but within business contexts</td><td>More mathematical &mdash; diagrams with axes, elasticity calculations, multiplier effects. An Economics degree usually requires A Level Maths</td></tr>
+            <tr><td class="col-label">Writing style</td><td>Structured responses using case study evidence, chains of analysis, and supported conclusions</td><td>Extended essays requiring theoretical frameworks, diagram annotation, and policy evaluation</td></tr>
+            <tr><td class="col-label">Content overlap</td><td>Some macro topics (interest rates, exchange rates, globalisation) appear in both</td><td>Some micro topics (costs, revenue, market structures) appear in both</td></tr>
+            <tr><td class="col-label">University perception</td><td>Respected and valued for Business, Management, Accounting, Marketing degrees. Some top universities view it as less academic than Economics</td><td>Considered a traditional academic subject. Required or strongly preferred for Economics degrees at Russell Group universities</td></tr>
+            <tr><td class="col-label">Best for</td><td>Students interested in running or managing businesses, marketing, HR, finance, entrepreneurship, or management consulting</td><td>Students interested in economic policy, government, banking, financial analysis, research, or academic economics</td></tr>
+            <tr><td class="col-label">Key difference</td><td>You study one business at a time and make decisions about it</td><td>You study the whole economy and evaluate policies that affect millions of people</td></tr>
+          </tbody>
+        </table>
+
+        <div class="content-prose" style="margin-top:24px;">
+          <p><strong>The honest advice:</strong> If you enjoyed GCSE Business Studies and want to go deeper into how companies actually work, A Level Business is the natural next step. If you found the economic climate section of Unit 2 (interest rates, exchange rates, inflation) the most interesting part of the course and want to explore that world in much more depth, Economics might be for you. If you are aiming for a top Economics degree, you will almost certainly need A Level Maths alongside it.</p>
+          <p><strong>Can you do both?</strong> Yes, but be cautious. Some Russell Group universities will only count one of them towards your entry requirements. Check before you commit. If you want to keep both options open, pairing one of them with A Level Maths is the strongest combination.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS THAT TRANSFER -->
+    <section class="section section--tinted">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Skills</span>
+          <div class="section__titleblock">
+            <h2>What transfers from GCSE.</h2>
+            <p>The skills you have built in this course are not just for passing an exam. They are the foundation for A Level success and beyond.</p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card__tag">Exam technique</div>
+            <div class="info-card__title">Chains of analysis</div>
+            <div class="info-card__body">The chain-building methodology you have practised (point, evidence, consequence, business impact) is identical at A Level. The chains are longer and the context is more complex, but the skill is the same. You are already ahead of students who have not studied Business at GCSE.</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__tag">Exam technique</div>
+            <div class="info-card__title">Data manipulation</div>
+            <div class="info-card__body">Using case study data to calculate percentages, profit margins, and break-even is a core skill at A Level. You have been doing this since Year 10. At A Level, the calculations are more varied (ROCE, gearing, dividend yield, NPV) but the principle is the same: extract the numbers, calculate, then analyse what they mean.</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__tag">Critical thinking</div>
+            <div class="info-card__title">Evaluation and judgement</div>
+            <div class="info-card__body">Your 12-mark conclusion framework (To conclude... Although... However, this depends on... The most important factor... Therefore...) is directly transferable. A Level evaluation requires the same structure but with more sophistication and theoretical backing.</div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__tag">Knowledge</div>
+            <div class="info-card__title">Business fundamentals</div>
+            <div class="info-card__body">Revenue, costs, profit, cash flow, stakeholders, marketing mix, motivation theories, organisational structures, production methods, quality management, ethics, globalisation. You already know all of this. A Level builds on it rather than starting from scratch.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAREERS AND PATHWAYS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Futures</span>
+          <div class="section__titleblock">
+            <h2>Where A Level Business leads.</h2>
+            <p>University degrees, apprenticeships, and careers that A Level Business opens up.</p>
+          </div>
+        </div>
+
+        <div class="content-prose">
+          <p><strong>University degrees:</strong> Business Management, Accounting and Finance, Marketing, International Business, Entrepreneurship, Human Resource Management, Supply Chain Management, Business Analytics, Real Estate, Hospitality Management. At Russell Group universities, typical offers range from ABB to AAA depending on the course and institution.</p>
+          <p><strong>Russell Group universities offering Business/Management degrees:</strong> University of Bath, University of Birmingham, University of Bristol, Durham University, University of Edinburgh, University of Exeter, King's College London, Lancaster University, University of Leeds, University of Liverpool, London School of Economics (Management only), University of Manchester, Newcastle University, University of Nottingham, Queen Mary University of London, University of Sheffield, University of Southampton, University of Warwick, University of York.</p>
+          <p><strong>Degree apprenticeships:</strong> Chartered Manager Degree Apprenticeship (Level 6), Digital and Technology Solutions (Level 6), Accountancy/Taxation Professional (Level 7), Senior Leader Apprenticeship (Level 7). These combine full-time paid employment with a degree qualification. Companies offering them include PwC, Deloitte, KPMG, Unilever, Rolls-Royce, BAE Systems, NHS, Civil Service, and many more. No tuition fees. You earn while you learn.</p>
+          <p><strong>Career paths:</strong> Management consulting, financial analysis, investment banking, marketing management, HR management, operations management, supply chain logistics, data analytics, product management, entrepreneurship, public sector management, project management, business journalism.</p>
+        </div>
+
+        <div class="virtue-callout">
+          <div class="virtue-callout__title">Peacefulness, Diligence, Determination</div>
+          <div class="virtue-callout__body">Whatever path you choose after GCSE, the three virtues you have practised every lesson will serve you. Peacefulness gives you the composure to think clearly under pressure. Diligence gives you the discipline to master complex material. Determination gives you the resilience to push through when the work gets hard. These are not just classroom behaviours. They are the qualities that employers, universities and communities value most.</div>
+        </div>
+
+        <figure class="pullquote">
+          <div class="pullquote__mark">&ldquo;</div>
+          <blockquote class="pullquote__text">Man neeva, mat uchi &mdash; to be humble, to be wise.</blockquote>
+          <figcaption class="pullquote__cite">Nishkam School West London</figcaption>
+        </figure>
+      </div>
+    </section>
+
+
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__top">
+          <div>
+            <div class="footer__brand">GCSE Business Studies</div>
+            <div class="footer__motto">Man Neeva, Mat Uchi</div>
+            <p class="footer__desc">AQA GCSE Business Studies revision resources from Nishkam School West London. Grounded in virtue, built for success.</p>
+          </div>
+          <div class="footer__col">
+            <h4>Revise</h4>
+            <ul>
+              <li><a href="unit1.html">Unit 1 &middot; Real World</a></li>
+              <li><a href="unit2.html">Unit 2 &middot; Influences</a></li>
+              <li><a href="unit3.html">Unit 3 &middot; Operations</a></li>
+              <li><a href="unit4.html">Unit 4 &middot; HR</a></li>
+              <li><a href="unit5.html">Unit 5 &middot; Marketing</a></li>
+              <li><a href="unit6.html">Unit 6 &middot; Finance</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Tools &amp; Plan</h4>
+            <ul>
+              <li><a href="marker.html">Mark my work</a></li>
+              <li><a href="generator.html">Practice questions</a></li>
+              <li><a href="mock.html">Mock generator</a></li>
+              <li><a href="quiz.html">Quick quiz</a></li>
+              <li><a href="resources.html">Downloads</a></li>
+              <li><a href="assessments.html">Schedule</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; Nishkam School West London &middot; AQA GCSE Business Studies</span>
+          <span>GCSE Business Studies</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+
+
+<script>
+  const toggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const scrim = document.getElementById('sidebarScrim');
+  function openSidebar() { sidebar.classList.add('is-open'); scrim.classList.add('is-open'); }
+  function closeSidebar() { sidebar.classList.remove('is-open'); scrim.classList.remove('is-open'); }
+  if (toggle) toggle.addEventListener('click', openSidebar);
+  if (scrim) scrim.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 900) closeSidebar();
+  }));
+</script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faith &amp; Business · Nishkam School West London</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0E2A47; --navy-deep: #081A2E; --navy-soft: #1F3F63;
+  --gold: #B08A3E; --gold-soft: #D4B570;
+  --ink: #1A1A1A; --ink-soft: #444; --muted: #6B6B6B;
+  --rule: #E5DFD2; --rule-strong: #C9C0AB;
+  --parchment: #FAF7F1; --parchment-warm: #F3ECDB; --paper: #FFFFFF;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-sans);font-size:16px;line-height:1.6;color:var(--ink);background:var(--parchment);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* === NISHKAM SIDEBAR SYSTEM === */
+.layout { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+.sidebar { background: #0E2A47; color: #FAF7F1; padding: 32px 28px; position: sticky; top: 0; height: 100vh; overflow-y: auto; border-right: 1px solid #081A2E; font-family: var(--font-sans); }
+.sidebar__brand { padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid rgba(176,138,62,0.3); }
+.sidebar__school { font-family: var(--font-display); font-size: 17px; color: #FAF7F1; line-height: 1.25; margin-bottom: 6px; }
+.sidebar__motto { font-family: var(--font-display); font-style: italic; font-size: 12.5px; color: #D4B570; }
+.sidebar__eyebrow { margin-top: 16px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D4B570; }
+.sidebar__group { margin-bottom: 24px; }.sidebar__group:last-child { margin-bottom: 0; }
+.sidebar__heading { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #B08A3E; margin: 0 0 10px; }
+.sidebar__links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.sidebar__links a { display: flex; align-items: baseline; gap: 10px; padding: 7px 10px 7px 12px; font-size: 14px; color: rgba(250,247,241,0.82); border-radius: 4px; transition: all 0.2s var(--ease); border-left: 2px solid transparent; margin-left: -12px; }
+.sidebar__links a:hover { color: #FAF7F1; background: rgba(176,138,62,0.08); border-left-color: #B08A3E; }
+.sidebar__links a.is-active { color: #D4B570; border-left-color: #B08A3E; font-weight: 500; }
+.sidebar__num { font-family: var(--font-display); font-style: italic; color: #B08A3E; font-size: 13px; min-width: 14px; }
+.sidebar__links a svg { width: 11px; height: 11px; opacity: 0.6; margin-left: auto; flex-shrink: 0; }
+.mobile-bar { display: none; position: sticky; top: 0; z-index: 60; background: #0E2A47; color: #FAF7F1; padding: 14px 20px; align-items: center; justify-content: space-between; border-bottom: 1px solid #081A2E; }
+.mobile-bar__brand { font-family: var(--font-display); font-size: 16px; }
+.mobile-bar__toggle { background: none; border: 1px solid rgba(250,247,241,0.3); color: #FAF7F1; width: 40px; height: 40px; border-radius: 4px; font-size: 18px; cursor: pointer; display: grid; place-items: center; }
+.sidebar-scrim { position: fixed; inset: 0; background: rgba(8,26,46,0.6); z-index: 65; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease); }
+.sidebar-scrim.is-open { opacity: 1; pointer-events: auto; }
+.main { min-width: 0; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .mobile-bar { display: flex; } .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 300px; max-width: 85vw; transform: translateX(-100%); transition: transform 0.3s var(--ease); z-index: 70; box-shadow: 0 0 40px rgba(0,0,0,0.25); } .sidebar.is-open { transform: translateX(0); } }
+/* === END SIDEBAR SYSTEM === */
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
+.hero { padding: 88px 0 64px; position: relative; }
+.hero__eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.hero__eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+.hero__title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); line-height: 1.05; color: var(--navy); margin: 0 0 24px; max-width: 16ch; }
+.hero__title em { font-style: italic; color: var(--gold); }
+.hero__lede { font-family: var(--font-display); font-size: 19px; line-height: 1.5; color: var(--ink-soft); max-width: 620px; margin: 0; }
+
+.section { padding: 72px 0; position: relative; }
+.section--tinted { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+
+.faith-intro { font-family: var(--font-display); font-size: 17px; line-height: 1.65; color: var(--ink-soft); max-width: 720px; margin: 0 0 28px; }
+.faith-intro strong { color: var(--navy); font-weight: 400; }
+
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-bottom: 48px; }
+.pillar { padding: 32px 24px; border-right: 1px solid var(--rule); }
+.pillar:last-child { border-right: none; }
+.pillar__tag { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.pillar__title { font-family: var(--font-display); font-size: 22px; color: var(--navy); margin: 0 0 10px; }
+.pillar__body { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+.virtue-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid var(--rule); margin-bottom: 48px; }
+.v-card { background: var(--paper); padding: 32px 28px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.v-card:nth-child(2n) { border-right: none; }
+.v-card:nth-child(n+3) { border-bottom: none; }
+.v-card__name { font-family: var(--font-display); font-size: 28px; margin: 0 0 4px; }
+.v-card__form { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.v-card__quote { font-family: var(--font-display); font-style: italic; font-size: 14.5px; color: var(--muted); margin: 0 0 12px; line-height: 1.5; }
+.v-card__body { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+.v-card--compassion .v-card__name { color: var(--gold); }
+.v-card--contentment .v-card__name { color: var(--navy); }
+.v-card--humility .v-card__name { color: #7B68AE; }
+.v-card--truth .v-card__name { color: #B85C5C; }
+
+.classroom-virtues { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
+.cv-card { background: var(--navy); color: var(--parchment); padding: 32px 28px; border-radius: 6px; position: relative; overflow: hidden; }
+.cv-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+.cv-card__name { font-family: var(--font-display); font-size: 22px; color: var(--gold-soft); margin: 0 0 6px; }
+.cv-card__where { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(212,181,112,0.65); margin-bottom: 14px; }
+.cv-card__body { font-size: 14px; line-height: 1.6; color: rgba(250,247,241,0.85); margin: 0; }
+
+.pullquote { max-width: 720px; margin: 0 auto; text-align: center; padding: 48px 0; border-top: 1px solid var(--rule); }
+.pullquote__mark { font-family: var(--font-display); font-size: 72px; line-height: 1; color: var(--gold); opacity: 0.35; margin-bottom: -20px; }
+.pullquote__text { font-family: var(--font-display); font-style: italic; font-size: clamp(18px, 2vw, 24px); line-height: 1.4; color: var(--navy); margin: 0 0 16px; }
+.pullquote__text strong { font-style: normal; }
+.pullquote__cite { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+.guru-section { max-width: 720px; margin: 0 auto 48px; }
+.guru-section h3 { font-family: var(--font-display); font-size: 26px; color: var(--navy); margin: 0 0 16px; }
+.guru-section p { font-size: 15.5px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 16px; }
+.guru-section em { color: var(--gold); font-style: italic; }
+
+.footer { background: var(--navy-deep); color: rgba(250,247,241,0.55); padding: 32px 0; text-align: center; font-size: 12px; }
+.footer__motto { font-family: var(--font-display); font-style: italic; font-size: 16px; color: var(--gold-soft); margin-bottom: 8px; }
+
+@media (max-width: 900px) { .wrap { padding: 0 24px; } .pillars, .classroom-virtues { grid-template-columns: 1fr; } .virtue-grid { grid-template-columns: 1fr; } .v-card { border-right: none; border-bottom: 1px solid var(--rule); } .v-card:last-child { border-bottom: none; } .pillar { border-right: none; border-bottom: 1px solid var(--rule); } .pillar:last-child { border-bottom: none; } }
+.footer__inner { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
+.footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer__brand { font-family: var(--font-display); font-weight: 500; font-size: 19px; color: var(--parchment); margin-bottom: 10px; }
+.footer__desc { font-size: 13px; line-height: 1.6; margin: 0; max-width: 320px; }
+.footer__col h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 14px; }
+.footer__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.footer__col a { color: rgba(250,247,241,0.75); font-size: 13px; transition: color 0.2s; }
+.footer__col a:hover { color: var(--gold-soft); }
+.footer__bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; letter-spacing: 0.04em; color: rgba(250,247,241,0.55); }
+@media (max-width: 900px) { .footer__top { grid-template-columns: 1fr; gap: 28px; } .footer__bottom { flex-direction: column; gap: 8px; text-align: center; } .footer__inner { padding: 0 24px; } }
+</style>
+</head>
+<body>
+
+<div class="mobile-bar">
+  <div class="mobile-bar__brand">GCSE Business Studies</div>
+  <button class="mobile-bar__toggle" id="sidebarToggle" aria-label="Open navigation">&#9776;</button>
+</div>
+<div class="sidebar-scrim" id="sidebarScrim"></div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar__brand">
+      <div class="sidebar__school">Nishkam School West London</div>
+      <div class="sidebar__motto">Man Neeva, Mat Uchi</div>
+      <div class="sidebar__eyebrow">AQA GCSE Business</div>
+    </div>
+    <div class="sidebar__group"><h3 class="sidebar__heading">Overview</h3><ul class="sidebar__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="https://www.nishkamschooltrust.org/nswl/page/?title=Virtue%2Dled+Education&amp;pid=255" target="_blank" rel="noopener">Nishkam Virtues <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a></li>
+      <li><a href="faith.html" class="is-active">Faith &amp; Business</a></li>
+    </ul></div>
+    <div class="sidebar__group"><h3 class="sidebar__heading">Revision Units</h3><ul class="sidebar__links">
+      <li><a href="unit1.html"><span class="sidebar__num">1</span>Business in the Real World</a></li>
+      <li><a href="unit2.html"><span class="sidebar__num">2</span>Influences on Business</a></li>
+      <li><a href="unit3.html"><span class="sidebar__num">3</span>Business Operations</a></li>
+      <li><a href="unit4.html"><span class="sidebar__num">4</span>Human Resources</a></li>
+      <li><a href="unit5.html"><span class="sidebar__num">5</span>Marketing</a></li>
+      <li><a href="unit6.html"><span class="sidebar__num">6</span>Finance</a></li>
+    </ul></div>
+    <div class="sidebar__group"><h3 class="sidebar__heading">Resources</h3><ul class="sidebar__links"><li><a href="resources.html">Download Booklets</a></li></ul></div>
+    <div class="sidebar__group"><h3 class="sidebar__heading">Study Tools</h3><ul class="sidebar__links">
+      <li><a href="marker.html">Mark My Work</a></li>
+      <li><a href="generator.html">Practice Questions</a></li>
+      <li><a href="mock.html">Mock Paper Generator</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+    </ul></div>
+    <div class="sidebar__group"><h3 class="sidebar__heading">Planning</h3><ul class="sidebar__links">
+      <li><a href="assessments.html">Assessment Schedule</a></li>
+      <li><a href="revision.html">How to Revise</a></li>
+    </ul></div>
+    <div class="sidebar__group"><h3 class="sidebar__heading">Beyond GCSE</h3><ul class="sidebar__links"><li><a href="alevel.html">A Level Business</a></li></ul></div>
+  </aside>
+
+  <main class="main">
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero__eyebrow">Nishkam School West London</div>
+        <h1 class="hero__title">Business through the lens of <em>faith.</em></h1>
+        <p class="hero__lede">At Nishkam, the world of business is not separate from the world of virtue. Every decision a business makes is an ethical act — and every topic you study connects to the kind of person you are becoming.</p>
+      </div>
+    </header>
+
+    <!-- NISHKAM STORY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="guru-section">
+          <h3>A True and Worthwhile Investment</h3>
+          <p>The word <strong>Nishkam</strong> means <em>selfless</em> — acting without desire for personal reward. It comes from the Sikh tradition of <em>Nishkam Seva</em>, selfless service, but its meaning speaks across all faiths and all people.</p>
+          <p>When Guru Nanak Dev Ji was a young man, his father Mehta Kalu Ji gave him money to go to the market and make a good trade. On the way, Guru Nanak and his companion Bhai Bala Ji came across a group of hungry holy men — <em>sadhus</em> — who had not eaten for many days. Guru Nanak used the money to buy food and clothing for them. When he returned home, his father was angry. But Guru Nanak gently explained that he had made <em>sacha sauda</em> — <strong>a true and worthwhile investment</strong>. The profit was not financial. The return was human goodness.</p>
+          <p>Today, <em>Gurdwara Sacha Sauda</em> stands at the site where Guru Nanak fed the hungry. The town of Chuharkana is now known as Farooqabad, and remains a busy market city — a reminder that the most valuable trade is the one that serves others.</p>
+          <p>This is the lens through which we study business at Nishkam School West London. Yes, we learn about revenue, profit margins and market share. But we also ask: <strong>what is a business for?</strong> Is it only to make money — or is it to serve people, create livelihoods, treat workers with dignity, and leave the world better than we found it?</p>
+        </div>
+
+        <div class="guru-section">
+          <h3>The Udasi Journeys</h3>
+          <p>Guru Nanak Dev Ji travelled across the known world for almost 25 years — four great journeys known as the <em>Udasi</em>. He crossed deserts, mountains and oceans. He visited places sacred to Hindus, Muslims, Buddhists and Jains. In every place, he asked the same question: <strong>are you living truthfully?</strong></p>
+          <p>In Punjabi, each of Guru Nanak's journeys is called an <em>udasi</em> — a word that suggests stepping back from the world to see it more clearly. When you step back and look at a business case study in your exam, you are doing something similar: observing with a clear mind, analysing what is really happening, and making a judgement based on evidence rather than assumption.</p>
+          <p>The question Guru Nanak asked in every place he visited is the same question at the heart of every 12-mark answer you will ever write: <em>what is the right thing to do — and why?</em></p>
+        </div>
+
+        <div class="guru-section">
+          <h3>Dharam-Yudh — The True Inner Battle</h3>
+          <p>The Sikh concept of <em>Dharam-yudh</em> describes the inner battle every person faces: the struggle between virtues like love, truth, compassion, humility and contentment on one side, and the five thieves — anger, ego, greed, attachment and lust — on the other.</p>
+          <p>In Business Studies, this inner battle plays out in every ethical decision. Should a business cut costs by using cheaper suppliers with poor working conditions? Should a company prioritise short-term profit over long-term sustainability? When you evaluate these decisions in your exam, you are engaging in your own <em>dharam-yudh</em> — weighing what is profitable against what is right.</p>
+          <p>The Sikh principle of <em>Kirat</em> — honest, hard work — and <em>Vand Chakko</em> — sharing what you earn with others — are not just religious teachings. They are the foundation of every ethical business you will study in this course.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREE PILLARS -->
+    <section class="section section--tinted">
+      <div class="wrap">
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar__tag">Pillar I</div>
+            <h3 class="pillar__title">Faith-Inspired</h3>
+            <p class="pillar__body">Learning from the wisdom of all traditions. Businesses that act with integrity and compassion reflect values at the heart of every great faith. In Business Studies, we connect every topic to these deeper principles.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar__tag">Pillar II</div>
+            <h3 class="pillar__title">Virtues-Led</h3>
+            <p class="pillar__body">Fostering compassion, humility, justice and courage. Every business decision is an ethical choice — a chance to practise virtue or fall short of it. Our 45 core virtues guide how we learn, how we treat each other, and how we approach our work.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar__tag">Pillar III</div>
+            <h3 class="pillar__title">Aspiring for Excellence</h3>
+            <p class="pillar__body">Becoming the best human beings we can possibly be. In Business Studies, this means thinking critically, writing with precision, and approaching every question with diligence and determination.</p>
+          </div>
+        </div>
+
+        <figure class="pullquote">
+          <div class="pullquote__mark">&ldquo;</div>
+          <blockquote class="pullquote__text">To empower children with <strong>virtues</strong> that enable them to excel <strong>academically and spiritually</strong>, inspiring them to serve humanity <strong>selflessly</strong> — with an abundance of love, compassion and forgiveness.</blockquote>
+          <figcaption class="pullquote__cite">Nishkam School Trust &middot; Mission Statement</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FOUR FORM GROUP VIRTUES -->
+    <section class="section">
+      <div class="wrap">
+        <div class="guru-section" style="margin-bottom:32px">
+          <h3>Our Four Form Group Virtues</h3>
+          <p>Every year group at Nishkam School West London is organised into four form groups, each named after a virtue that shapes how we live and learn together. These are not just names — they are qualities we practise every day.</p>
+        </div>
+
+        <div class="virtue-grid">
+          <div class="v-card v-card--compassion">
+            <h3 class="v-card__name">Compassion</h3>
+            <div class="v-card__form">Form Group Virtue</div>
+            <p class="v-card__quote">&ldquo;Those who know their Lord and Master, show compassion; then, they become immortal, and attain the state of eternal dignity.&rdquo; &mdash; Sri Guru Granth Sahib, p. 340</p>
+            <p class="v-card__body">Compassion is understanding and caring for someone who is in trouble, is hurt, or has made a mistake. In Business Studies, compassion means considering the impact of decisions on all stakeholders — not just shareholders. When a business chooses to pay a living wage or source materials ethically, it is choosing compassion over convenience.</p>
+          </div>
+          <div class="v-card v-card--contentment">
+            <h3 class="v-card__name">Contentment</h3>
+            <div class="v-card__form">Form Group Virtue</div>
+            <p class="v-card__quote">&ldquo;To be content doesn&rsquo;t mean you don&rsquo;t desire more, it means you&rsquo;re thankful for what you have and patient for what&rsquo;s to come.&rdquo;</p>
+            <p class="v-card__body">Contentment is an awareness of sufficiency — a sense that we have enough and we are enough. In Business Studies, contentment teaches us that growth for growth's sake is not always wise. A business that expands too fast without solid foundations may collapse. Sustainable, patient growth is a sign of wisdom, not weakness.</p>
+          </div>
+          <div class="v-card v-card--humility">
+            <h3 class="v-card__name">Humility</h3>
+            <div class="v-card__form">Form Group Virtue</div>
+            <p class="v-card__quote">&ldquo;True humility is not thinking less of yourself; it is thinking of yourself less.&rdquo; &mdash; C. S. Lewis</p>
+            <p class="v-card__body">When you are humble, you don't consider yourself more important than other people. You are happy to serve others. In Business Studies, humility means acknowledging what you don't know and being willing to learn from evidence. The best business leaders listen to their employees and customers. Our motto says it all: <em>Man neeva, mat uchi</em> — to be humble, to be wise.</p>
+          </div>
+          <div class="v-card v-card--truth">
+            <h3 class="v-card__name">Truth</h3>
+            <div class="v-card__form">Form Group Virtue</div>
+            <p class="v-card__quote">&ldquo;Three things cannot be long hidden: the sun, the moon, and the truth.&rdquo; &mdash; Buddha</p>
+            <p class="v-card__body">Truthfulness means your words and actions are full of truth. You live by your own true nature. In Business Studies, truth means being honest in your analysis — write what the evidence shows, not what you think the examiner wants to hear. When a business publishes transparent financial reports or admits a product recall, it is practising truth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASSROOM VIRTUES -->
+    <section class="section section--tinted">
+      <div class="wrap">
+        <div class="guru-section" style="margin-bottom:32px">
+          <h3>Our Three Classroom Virtues</h3>
+          <p>In every Business Studies lesson, three virtues guide how we learn, how we work, and how we approach challenges. These are the virtues you will see embedded in every unit of this course.</p>
+        </div>
+
+        <div class="classroom-virtues">
+          <article class="cv-card">
+            <h3 class="cv-card__name">Peacefulness</h3>
+            <div class="cv-card__where">In Every Lesson</div>
+            <p class="cv-card__body">Approach complex questions with a calm, focused mind. Listen to different stakeholder perspectives with respect. Create a learning environment where every voice is valued. In the exam, peacefulness means staying composed under pressure — if you get stuck, move on and come back.</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card__name">Diligence</h3>
+            <div class="cv-card__where">In Every Lesson</div>
+            <p class="cv-card__body">Commit fully to mastering each topic. Check your chains of analysis, refine your evaluations, and never submit work that is less than your best. Show your working on every calculation. Read every case study twice. Diligence is the difference between a student who knows the content and a student who earns top marks.</p>
+          </article>
+          <article class="cv-card">
+            <h3 class="cv-card__name">Determination</h3>
+            <div class="cv-card__where">In Every Lesson</div>
+            <p class="cv-card__body">Persevere through challenging 9 and 12-mark questions. Treat every mistake as a stepping stone. Keep pushing toward your target grade and beyond. In the exam, determination means never leaving a question blank — even a partial answer can earn marks. The students who keep writing are the ones who reach the highest levels.</p>
+          </article>
+        </div>
+
+        <figure class="pullquote">
+          <div class="pullquote__mark">&ldquo;</div>
+          <blockquote class="pullquote__text">Guru Nanak Dev Ji travelled across the known world for 25 years — not to trade goods, but to trade <strong>wisdom</strong>. He met people of every faith and background, and in each place he asked the same question: <strong>are you living truthfully?</strong> That question is at the heart of every business decision you will ever study.</blockquote>
+          <figcaption class="pullquote__cite">Inspired by the Udasi journeys of Guru Nanak Dev Ji</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__top">
+          <div>
+            <div class="footer__brand">GCSE Business Studies</div>
+            <div class="footer__motto">Man Neeva, Mat Uchi</div>
+            <p class="footer__desc">AQA GCSE Business Studies revision resources from Nishkam School West London. Grounded in virtue, built for success.</p>
+          </div>
+          <div class="footer__col">
+            <h4>Revise</h4>
+            <ul>
+              <li><a href="unit1.html">Unit 1 &middot; Real World</a></li>
+              <li><a href="unit2.html">Unit 2 &middot; Influences</a></li>
+              <li><a href="unit3.html">Unit 3 &middot; Operations</a></li>
+              <li><a href="unit4.html">Unit 4 &middot; HR</a></li>
+              <li><a href="unit5.html">Unit 5 &middot; Marketing</a></li>
+              <li><a href="unit6.html">Unit 6 &middot; Finance</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Tools &amp; Plan</h4>
+            <ul>
+              <li><a href="marker.html">Mark my work</a></li>
+              <li><a href="generator.html">Practice questions</a></li>
+              <li><a href="mock.html">Mock generator</a></li>
+              <li><a href="quiz.html">Quick quiz</a></li>
+              <li><a href="resources.html">Downloads</a></li>
+              <li><a href="assessments.html">Schedule</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; Nishkam School West London &middot; AQA GCSE Business Studies</span>
+          <span>GCSE Business Studies</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const toggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const scrim = document.getElementById('sidebarScrim');
+  function openSidebar() { sidebar.classList.add('is-open'); scrim.classList.add('is-open'); }
+  function closeSidebar() { sidebar.classList.remove('is-open'); scrim.classList.remove('is-open'); }
+  if (toggle) toggle.addEventListener('click', openSidebar);
+  if (scrim) scrim.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if (window.innerWidth <= 900) closeSidebar(); }));
+</script>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

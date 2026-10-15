@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — Knowledge Check · Nishkam School West London</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1B3A6B;--navy-deep:#0f2347;--gold:#C9932F;--gold-warm:#D4A843;--saffron:#E8841A;--saffron-light:#FEF3E2;--gold-light:#F5E6C8;--red:#C0392B;--red-light:#FDEDEC;--green:#1A7A3A;--green-light:#EAFAF1;--teal:#117A65;--teal-light:#E8F8F5;--purple:#6C3483;--purple-light:#F5EEF8;--grey:#5D6D7E;--grey-light:#F2F3F4;--white:#FFF;--ink:#1a1a2e;--paper:#FAFAF7}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.7}a{text-decoration:none}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  .main{min-width:0}
+
+  
+  
+  
+  
+  
+  
+
+  .section{padding:48px 80px;border-bottom:1px solid rgba(0,0,0,.06)}
+  .section-header{margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--gold-light)}
+  .section-title h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--navy)}
+  .section-title .spec-ref{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--grey);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+
+  .form-card{background:white;border-radius:12px;padding:32px;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 16px rgba(0,0,0,.05)}
+  .form-row{display:grid;gap:14px;margin-bottom:18px}.form-row.cols-2{grid-template-columns:1fr 1fr}
+  .form-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--grey);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:6px;font-weight:600}
+  .form-input,.form-select{width:100%;font-family:'Source Serif 4',serif;font-size:15px;padding:11px 14px;border-radius:8px;border:1px solid var(--gold-light);background:white;color:var(--ink)}
+  .form-select:focus,.form-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,147,47,.15)}
+
+  .mode-toggle{display:flex;gap:8px;margin-bottom:18px}
+  .mode-btn{padding:10px 22px;border-radius:8px;border:2px solid rgba(0,0,0,.1);background:white;color:var(--grey);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+  .mode-btn.active{border-color:var(--saffron);background:rgba(232,132,26,.06);color:var(--saffron)}
+
+  .start-btn{margin-top:8px;padding:16px 0;width:100%;background:linear-gradient(135deg,var(--saffron),#c57510);color:white;border:none;border-radius:10px;font-family:'Source Serif 4',serif;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 2px 12px rgba(232,132,26,.25)}
+  .start-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(232,132,26,.35)}
+  .start-btn:disabled{background:var(--grey);cursor:wait;transform:none;box-shadow:none}
+
+  /* QUIZ AREA */
+  .quiz-area{display:none}.quiz-area.show{display:block;animation:fadeUp .4s forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+  .quiz-topbar{display:flex;justify-content:space-between;align-items:center;background:var(--navy-deep);border-radius:10px;padding:16px 24px;margin-bottom:24px;flex-wrap:wrap;gap:10px}
+  .quiz-topbar .qt-title{font-family:'Playfair Display',serif;font-size:16px;color:white;font-weight:700}
+  .quiz-topbar .qt-timer{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--gold);font-weight:700;letter-spacing:.08em}
+  .quiz-topbar .qt-progress{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,.5)}
+
+  .q-card{background:white;border-radius:10px;padding:28px 32px;margin-bottom:16px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 8px rgba(0,0,0,.04);transition:border-color .3s}
+  .q-card.correct{border-color:var(--green);border-width:2px}
+  .q-card.incorrect{border-color:var(--red);border-width:2px}
+  .q-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--saffron);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  .q-text{font-size:15px;font-weight:600;color:var(--navy);line-height:1.5;margin-bottom:16px}
+  .q-type-badge{font-family:'JetBrains Mono',monospace;font-size:9px;background:var(--grey-light);color:var(--grey);padding:2px 8px;border-radius:3px;margin-left:8px;font-weight:600}
+
+  /* MCQ OPTIONS */
+  .mcq-options{list-style:none;padding:0}
+  .mcq-opt{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border:2px solid var(--grey-light);border-radius:8px;margin-bottom:8px;cursor:pointer;transition:all .15s;font-size:14px;line-height:1.5}
+  .mcq-opt:hover{border-color:var(--gold-light);background:rgba(201,147,47,.03)}
+  .mcq-opt.selected{border-color:var(--saffron);background:rgba(232,132,26,.06)}
+  .mcq-opt.correct-answer{border-color:var(--green);background:var(--green-light)}
+  .mcq-opt.wrong-answer{border-color:var(--red);background:var(--red-light)}
+  .mcq-letter{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--grey);width:24px;height:24px;border-radius:50%;border:2px solid var(--grey-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+  .mcq-opt.selected .mcq-letter{border-color:var(--saffron);color:var(--saffron)}
+  .mcq-opt.correct-answer .mcq-letter{border-color:var(--green);color:var(--green);background:var(--green-light)}
+  .mcq-opt.wrong-answer .mcq-letter{border-color:var(--red);color:var(--red)}
+
+  /* SHORT ANSWER */
+  .sa-input{width:100%;font-family:'Source Serif 4',serif;font-size:15px;padding:12px 16px;border-radius:8px;border:1px solid var(--gold-light);background:white;line-height:1.6}
+  .sa-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,147,47,.15)}
+
+  /* EXPLANATION */
+  .q-explanation{display:none;margin-top:14px;padding:12px 16px;border-radius:8px;font-size:13px;line-height:1.6}
+  .q-explanation.show{display:block}
+  .q-explanation.correct-exp{background:var(--green-light);border-left:4px solid var(--green);color:#155724}
+  .q-explanation.incorrect-exp{background:var(--red-light);border-left:4px solid var(--red);color:#721c24}
+  .q-explanation strong{color:inherit}
+
+  .submit-quiz-btn{margin-top:12px;padding:16px 0;width:100%;background:linear-gradient(135deg,var(--green),#15692e);color:white;border:none;border-radius:10px;font-family:'Source Serif 4',serif;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 2px 12px rgba(26,122,58,.25)}
+  .submit-quiz-btn:hover{transform:translateY(-1px)}
+  .submit-quiz-btn:disabled{background:var(--grey);cursor:default;transform:none;box-shadow:none}
+
+  /* RESULTS */
+  .results-card{background:linear-gradient(145deg,var(--navy-deep),#081a36);border-radius:12px;padding:36px 40px;margin-bottom:24px;text-align:center;position:relative;overflow:hidden}
+  .results-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(201,147,47,.06)}
+  .results-score{font-family:'Playfair Display',serif;font-size:56px;font-weight:900;color:var(--gold);line-height:1;position:relative}
+  .results-of{font-family:'JetBrains Mono',monospace;font-size:14px;color:rgba(255,255,255,.45);margin-top:6px;position:relative}
+  .results-pct{font-family:'JetBrains Mono',monospace;font-size:20px;color:white;margin-top:10px;position:relative}
+  .results-msg{font-size:15px;color:rgba(255,255,255,.6);margin-top:12px;position:relative;font-style:italic}
+  .results-bar{background:rgba(255,255,255,.1);border-radius:20px;height:12px;margin-top:18px;overflow:hidden;position:relative}
+  .results-bar-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--red),var(--saffron),var(--green));transition:width 1s ease}
+
+  .retry-btn{margin-top:20px;padding:12px 32px;background:var(--saffron);color:white;border:none;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.06em}
+
+  .footer{background:var(--navy-deep);color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-family:'JetBrains Mono',monospace;font-size:11px}
+  .footer-motto{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--gold-warm);font-weight:600;display:block;margin-bottom:8px}
+
+  .mobile-nav-btn{display:none;position:fixed;top:16px;left:16px;z-index:200;background:var(--navy);color:white;border:none;border-radius:8px;padding:10px 14px;font-size:18px;cursor:pointer}
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
+  @media(max-width:900px){.sidebar{transform:translateX(-100%);transition:transform .3s}.sidebar.open{transform:translateX(0)}.sidebar-overlay.open{display:block}.mobile-nav-btn{display:block}.main{margin-left:0;width:100%}.hero,.section{padding-left:24px;padding-right:24px}.form-row.cols-2{grid-template-columns:1fr}.quiz-topbar{flex-direction:column;text-align:center}}
+
+/* === NISHKAM SIDEBAR SYSTEM === */
+.layout { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+.sidebar {
+  background: #0E2A47; color: #FAF7F1;
+  padding: 32px 28px;
+  position: sticky; top: 0; height: 100vh;
+  overflow-y: auto; border-right: 1px solid #081A2E;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.sidebar__brand { padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid rgba(176,138,62,0.3); }
+.sidebar__school { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 17px; color: #FAF7F1; letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 6px; }
+.sidebar__motto { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; font-size: 12.5px; color: #D4B570; letter-spacing: 0.01em; }
+.sidebar__eyebrow { margin-top: 16px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D4B570; }
+.sidebar__group { margin-bottom: 24px; }
+.sidebar__group:last-child { margin-bottom: 0; }
+.sidebar__heading { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #B08A3E; margin: 0 0 10px; }
+.sidebar__links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.sidebar__links a {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 7px 10px 7px 12px;
+  font-size: 14px; color: rgba(250,247,241,0.82);
+  border-radius: 4px; transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  border-left: 2px solid transparent; margin-left: -12px; text-decoration: none;
+}
+.sidebar__links a:hover { color: #FAF7F1; background: rgba(176,138,62,0.08); border-left-color: #B08A3E; }
+.sidebar__links a.is-active { color: #D4B570; border-left-color: #B08A3E; font-weight: 500; }
+.sidebar__num { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; color: #B08A3E; font-size: 13px; min-width: 14px; }
+.sidebar__links a svg { width: 11px; height: 11px; opacity: 0.6; margin-left: auto; flex-shrink: 0; }
+.mobile-bar { display: none; position: sticky; top: 0; z-index: 60; background: #0E2A47; color: #FAF7F1; padding: 14px 20px; align-items: center; justify-content: space-between; border-bottom: 1px solid #081A2E; }
+.mobile-bar__brand { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 16px; }
+.mobile-bar__toggle { background: none; border: 1px solid rgba(250,247,241,0.3); color: #FAF7F1; width: 40px; height: 40px; border-radius: 4px; font-size: 18px; cursor: pointer; display: grid; place-items: center; }
+.sidebar-scrim { position: fixed; inset: 0; background: rgba(8,26,46,0.6); z-index: 65; opacity: 0; pointer-events: none; transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1); }
+.sidebar-scrim.is-open { opacity: 1; pointer-events: auto; }
+.main { min-width: 0; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .mobile-bar { display: flex; }
+  .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 300px; max-width: 85vw; transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); z-index: 70; box-shadow: 0 0 40px rgba(0,0,0,0.25); }
+  .sidebar.is-open { transform: translateX(0); }
+}
+/* === END SIDEBAR SYSTEM === */
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="mobile-bar">
+  <div class="mobile-bar__brand">GCSE Business Studies</div>
+  <button class="mobile-bar__toggle" id="sidebarToggle" aria-label="Open navigation">&#9776;</button>
+</div>
+<div class="sidebar-scrim" id="sidebarScrim"></div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar__brand">
+      <div class="sidebar__school">Nishkam School West London</div>
+      <div class="sidebar__motto">Man Neeva, Mat Uchi</div>
+      <div class="sidebar__eyebrow">AQA GCSE Business</div>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Overview</h3>
+      <ul class="sidebar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.nishkamschooltrust.org/nswl/page/?title=Virtue%2Dled+Education&amp;pid=255" target="_blank" rel="noopener">
+          Nishkam Virtues
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a></li>
+        <li><a href="faith.html">Faith &amp; Business</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Revision Units</h3>
+      <ul class="sidebar__links">
+        <li><a href="unit1.html"><span class="sidebar__num">1</span>Business in the Real World</a></li>
+        <li><a href="unit2.html"><span class="sidebar__num">2</span>Influences on Business</a></li>
+        <li><a href="unit3.html"><span class="sidebar__num">3</span>Business Operations</a></li>
+        <li><a href="unit4.html"><span class="sidebar__num">4</span>Human Resources</a></li>
+        <li><a href="unit5.html"><span class="sidebar__num">5</span>Marketing</a></li>
+        <li><a href="unit6.html"><span class="sidebar__num">6</span>Finance</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Resources</h3>
+      <ul class="sidebar__links">
+        <li><a href="resources.html">Download Booklets</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Study Tools</h3>
+      <ul class="sidebar__links">
+        <li><a href="marker.html">Mark My Work</a></li>
+        <li><a href="generator.html">Practice Questions</a></li>
+        <li><a href="mock.html">Mock Paper Generator</a></li>
+        <li><a href="quiz.html" class="is-active">Quiz</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Planning</h3>
+      <ul class="sidebar__links">
+        <li><a href="assessments.html">Assessment Schedule</a></li>
+        <li><a href="revision.html">How to Revise</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Beyond GCSE</h3>
+      <ul class="sidebar__links">
+        <li><a href="alevel.html">A Level Business</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+  <header class="hero" style="padding:88px 0 64px;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>&quot;);pointer-events:none;opacity:0.9;"></div>
+      <div style="max-width:1080px;margin:0 auto;padding:0 48px;position:relative;">
+        <div style="font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#B08A3E;margin-bottom:24px;display:flex;align-items:center;gap:12px;"><span style="width:36px;height:1px;background:#B08A3E;display:inline-block;"></span>Knowledge Check &middot; AQA GCSE Business Studies</div>
+        <h1 style="font-family:'DM Serif Display',Georgia,serif;font-weight:500;font-size:clamp(40px,6vw,76px);line-height:0.98;letter-spacing:-0.025em;color:#0E2A47;margin:0 0 24px;max-width:14ch;">Quick<br><em style="font-style:italic;font-weight:400;color:#B08A3E;">quiz.</em></h1>
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:19px;line-height:1.5;color:#444;max-width:620px;margin:0;">Test your knowledge with auto-marked MCQs and short-answer questions. Instant results with explanations for every answer. Choose your own topic or enter a teacher code.</p>
+      </div>
+    </header>
+
+  <div class="section" id="setupSection">
+    <div class="section-header"><div class="section-title"><h2>Set Up Your Quiz</h2><div class="spec-ref">Choose your mode, unit, and topic</div></div></div>
+    <div class="form-card">
+
+      <div><label class="form-label">Quiz Mode</label>
+        <div class="mode-toggle">
+          <button type="button" class="mode-btn active" data-mode="choose" onclick="setQuizMode('choose')">I Choose</button>
+          <button type="button" class="mode-btn" data-mode="teacher" onclick="setQuizMode('teacher')">Teacher Code</button>
+        </div>
+      </div>
+
+      <!-- STUDENT CHOICE -->
+      <div id="chooseArea">
+        <div class="form-row">
+          <div><label class="form-label" for="nameInput">Your Name</label><input type="text" id="nameInput" class="form-input" placeholder="e.g. Amira Singh"></div>
+        </div>
+        <div class="form-row cols-2">
+          <div><label class="form-label" for="unitSelect">Unit</label>
+            <select id="unitSelect" class="form-select" onchange="updateTopics()">
+              <option value="1">Unit 1: Business in the Real World</option>
+              <option value="2">Unit 2: Influences on Business</option>
+              <option value="3">Unit 3: Business Operations</option>
+              <option value="4">Unit 4: Human Resources</option>
+              <option value="5">Unit 5: Marketing</option>
+              <option value="6">Unit 6: Finance</option>
+            </select>
+          </div>
+          <div><label class="form-label" for="topicSelect">Topic</label>
+            <select id="topicSelect" class="form-select"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEACHER CODE -->
+      <div id="teacherArea" style="display:none;">
+        <div class="form-row">
+          <div><label class="form-label" for="nameInputT">Your Name</label><input type="text" id="nameInputT" class="form-input" placeholder="e.g. Amira Singh"></div>
+        </div>
+        <div class="form-row">
+          <div><label class="form-label" for="teacherCode">Quiz Code <span style="text-transform:none;font-weight:400;opacity:.6">(given by your teacher)</span></label><input type="text" id="teacherCode" class="form-input" placeholder="e.g. UNIT3-WEEK5"></div>
+        </div>
+        <div style="background:var(--green-light);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:var(--ink);margin-bottom:12px;">Enter the quiz code from the Assessment Schedule (e.g. Y10-W03-U1). Your teacher sets a new code each week. The quiz will generate 20 questions on that week's topic.</div>
+      </div>
+
+      <button class="start-btn" onclick="startQuiz()">Start Quiz (20 Questions, 12 Minutes)</button>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section quiz-area" id="quizArea">
+    <div class="quiz-topbar">
+      <div class="qt-title" id="quizTitle">Quiz</div>
+      <div class="qt-timer" id="quizTimer">12:00</div>
+      <div class="qt-progress" id="quizProgress">0 / 20 answered</div>
+    </div>
+    <div id="quizQuestions"></div>
+    <button class="submit-quiz-btn" id="submitQuizBtn" onclick="submitQuiz()">Submit Quiz</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="section quiz-area" id="resultsArea">
+    <div class="results-card">
+      <div class="results-score" id="resScore">0</div>
+      <div class="results-of" id="resOf">out of 20</div>
+      <div class="results-pct" id="resPct">0%</div>
+      <div class="results-bar"><div class="results-bar-fill" id="resBarFill" style="width:0%"></div></div>
+      <div class="results-msg" id="resMsg"></div>
+      <button class="retry-btn" onclick="resetQuiz()">Take Another Quiz</button>
+    </div>
+    <div id="reviewQuestions"></div>
+  </div>
+
+<script>
+const PROXY='https://nishkam-marker.j-kerrisk.workers.dev';
+const UNITS={
+  1:{t:'Business in the Real World',tp:['Purpose of business','Enterprise and entrepreneurship','Business ownership','Setting aims and objectives','Stakeholders','Business location','Business planning','Expanding a business']},
+  2:{t:'Influences on Business',tp:['Technology in business','Ethical and environmental considerations','The economic climate','Globalisation','Legislation','The competitive environment']},
+  3:{t:'Business Operations',tp:['Production processes','The role of procurement','Managing quality','The sales process and customer service']},
+  4:{t:'Human Resources',tp:['Organisational structures','Recruitment and selection','Motivation and retention','Training and development']},
+  5:{t:'Marketing',tp:['Identifying and understanding customers','Market research','The marketing mix (4Ps)','Marketing strategy']},
+  6:{t:'Finance',tp:['Sources of finance','Cash flow','Financial terms and calculations','Analysing financial performance']}
+};
+
+
+
+let quizMode='choose';
+function setQuizMode(m){
+  quizMode=m;
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
+  document.getElementById('chooseArea').style.display=m==='choose'?'block':'none';
+  document.getElementById('teacherArea').style.display=m==='teacher'?'block':'none';
+}
+
+function updateTopics(){
+  const u=document.getElementById('unitSelect').value;
+  const s=document.getElementById('topicSelect');
+  s.innerHTML='<option value="all">All topics in this unit</option>';
+  UNITS[u].tp.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;s.appendChild(o)});
+}
+updateTopics();
+
+let quizData=[];let timerInterval=null;let timeLeft=720;
+let quizStudentName='';let quizUnitId='';let quizTopicLabel='';
+
+// Teacher quiz codes — mapped from Assessment Schedule
+const TEACHER_CODES={
+  // YEAR 10
+  'Y10-W01-U1':{unit:'1',topic:'Purpose of business'},
+  'Y10-W02-U1':{unit:'1',topic:'Enterprise and entrepreneurship'},
+  'Y10-W03-U1':{unit:'1',topic:'Business ownership'},
+  'Y10-W04-U1':{unit:'1',topic:'Business ownership'},
+  'Y10-W05-U1':{unit:'1',topic:'Setting aims and objectives'},
+  'Y10-W06-U1':{unit:'1',topic:'Stakeholders'},
+  'Y10-W07-U1':{unit:'1',topic:'All topics'},
+  'Y10-W08-U2':{unit:'2',topic:'Technology in business'},
+  'Y10-W09-U2':{unit:'2',topic:'Ethical and environmental considerations'},
+  'Y10-W10-U2':{unit:'2',topic:'The economic climate'},
+  'Y10-W11-U2':{unit:'2',topic:'The economic climate'},
+  'Y10-W12-U2':{unit:'2',topic:'Globalisation'},
+  'Y10-W13-U2':{unit:'2',topic:'Legislation'},
+  'Y10-W14-U2':{unit:'2',topic:'The competitive environment'},
+  'Y10-W15-U6':{unit:'6',topic:'Sources of finance'},
+  'Y10-W16-U6':{unit:'6',topic:'Cash flow'},
+  'Y10-W17-U6':{unit:'6',topic:'Financial terms and calculations'},
+  'Y10-W18-U6':{unit:'6',topic:'Financial terms and calculations'},
+  'Y10-W19-U6':{unit:'6',topic:'Analysing financial performance'},
+  'Y10-W20-U6':{unit:'6',topic:'All topics'},
+  'Y10-W21-U5':{unit:'5',topic:'Identifying and understanding customers'},
+  'Y10-W22-U5':{unit:'5',topic:'Market research'},
+  'Y10-W23-U5':{unit:'5',topic:'The marketing mix (4Ps)'},
+  'Y10-W24-U5':{unit:'5',topic:'The marketing mix (4Ps)'},
+  'Y10-W25-U5':{unit:'5',topic:'The marketing mix (4Ps)'},
+  'Y10-W26-U5':{unit:'5',topic:'Marketing strategy'},
+  'Y10-W27-U5':{unit:'5',topic:'The marketing mix (4Ps)'},
+  'Y10-W28-U5':{unit:'5',topic:'All topics'},
+  'Y10-W29-REV':{unit:'5',topic:'All topics'},
+  'Y10-W31-REV':{unit:'1',topic:'All topics'},
+  'Y10-W32-U1U2':{unit:'1',topic:'All topics'},
+  'Y10-W33-U5U6':{unit:'6',topic:'All topics'},
+  'Y10-W34-ALL':{unit:'1',topic:'All topics'},
+  // YEAR 11
+  'Y11-W01-U5':{unit:'5',topic:'Marketing strategy'},
+  'Y11-W02-U3':{unit:'3',topic:'Production processes'},
+  'Y11-W03-U3':{unit:'3',topic:'The role of procurement'},
+  'Y11-W04-U3':{unit:'3',topic:'Managing quality'},
+  'Y11-W05-U3':{unit:'3',topic:'The sales process and customer service'},
+  'Y11-W06-U3':{unit:'3',topic:'All topics'},
+  'Y11-W07-REV':{unit:'3',topic:'All topics'},
+  'Y11-W08-U4':{unit:'4',topic:'Organisational structures'},
+  'Y11-W09-U4':{unit:'4',topic:'Recruitment and selection'},
+  'Y11-W10-U4':{unit:'4',topic:'Motivation and retention'},
+  'Y11-W11-U4':{unit:'4',topic:'Training and development'},
+  'Y11-W12-U4':{unit:'4',topic:'All topics'},
+  'Y11-W13-REV':{unit:'4',topic:'All topics'},
+  'Y11-W15-REV':{unit:'1',topic:'All topics'},
+  'Y11-W16-U1U2':{unit:'2',topic:'All topics'},
+  'Y11-W17-U3U4':{unit:'3',topic:'All topics'},
+  'Y11-W18-U5U6':{unit:'5',topic:'All topics'},
+  'Y11-W19-CHAINS':{unit:'1',topic:'All topics'},
+  'Y11-W20-AO2':{unit:'6',topic:'All topics'},
+  'Y11-W21-P1':{unit:'4',topic:'All topics'},
+  'Y11-W22-P2':{unit:'5',topic:'All topics'},
+  'Y11-W23-WEAK':{unit:'1',topic:'All topics'},
+  'Y11-W24-CALC':{unit:'6',topic:'Financial terms and calculations'},
+  'Y11-W25-EASTER':{unit:'2',topic:'All topics'},
+  'Y11-W26-P1C':{unit:'3',topic:'All topics'},
+  'Y11-W27-P2C':{unit:'5',topic:'All topics'},
+  'Y11-W28-MOCK':{unit:'4',topic:'All topics'},
+  'Y11-W29-FINAL':{unit:'1',topic:'All topics'}
+};
+
+// ── Quiz validation: fix AI-generated MCQ errors ──
+function validateQuiz(data) {
+  var letters = ['A','B','C','D'];
+
+  data.forEach(function(q, idx) {
+    if (q.type !== 'mcq') return;
+
+    // 1. Ensure we have exactly 4 options
+    if (!Array.isArray(q.options) || q.options.length < 4) return;
+    q.options = q.options.slice(0, 4);
+
+    // 2. Strip letter prefixes for clean comparison (e.g. "A) GDP" → "GDP")
+    var cleaned = q.options.map(function(opt) {
+      return opt.replace(/^[A-Da-d]\)\s*/, '').trim();
+    });
+
+    // 3. Normalise the correct letter
+    var correctLetter = (q.correct || '').replace(/[^A-Da-d]/g, '').toUpperCase();
+    var correctIdx = letters.indexOf(correctLetter);
+    if (correctIdx === -1) correctIdx = 0; // fallback to A if invalid
+
+    // 4. Check for duplicate options
+    var seen = {};
+    var hasDupes = false;
+    cleaned.forEach(function(c) {
+      var key = c.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (seen[key]) hasDupes = true;
+      seen[key] = true;
+    });
+
+    if (hasDupes) {
+      // Try to extract the correct answer text from the explanation
+      var correctText = cleaned[correctIdx];
+      var uniqueOpts = [];
+      var usedKeys = {};
+
+      // Keep the correct answer at its position
+      cleaned.forEach(function(c, i) {
+        var key = c.toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (!usedKeys[key]) {
+          usedKeys[key] = true;
+          uniqueOpts.push({ text: c, origIdx: i });
+        }
+      });
+
+      // If we lost options due to deduplication, pad with placeholder
+      while (uniqueOpts.length < 4) {
+        uniqueOpts.push({ text: 'None of the above', origIdx: -1 });
+      }
+
+      // Rebuild options ensuring correct answer stays at correctIdx
+      var hasCorrectInList = uniqueOpts.some(function(o) { return o.origIdx === correctIdx; });
+      if (!hasCorrectInList && uniqueOpts.length >= 4) {
+        uniqueOpts[uniqueOpts.length - 1] = { text: correctText, origIdx: correctIdx };
+      }
+
+      // Rebuild with proper letter prefixes
+      q.options = uniqueOpts.slice(0, 4).map(function(o, i) {
+        return letters[i] + ') ' + o.text;
+      });
+
+      // Update correct letter to match where the correct text ended up
+      for (var k = 0; k < uniqueOpts.length && k < 4; k++) {
+        if (uniqueOpts[k].origIdx === correctIdx || uniqueOpts[k].text === correctText) {
+          q.correct = letters[k];
+          break;
+        }
+      }
+
+      console.log('Q' + (idx+1) + ': Fixed duplicate options');
+    }
+
+    // 5. Verify the "correct" letter points to a valid option
+    //    Re-read after any fixes above
+    correctLetter = (q.correct || '').replace(/[^A-Da-d]/g, '').toUpperCase();
+    if (letters.indexOf(correctLetter) === -1) {
+      q.correct = 'A';
+      console.log('Q' + (idx+1) + ': Fixed invalid correct letter → A');
+    }
+
+    // 6. Ensure options have proper letter prefixes (some AI outputs omit them)
+    q.options = q.options.map(function(opt, i) {
+      var stripped = opt.replace(/^[A-Da-d]\)\s*/, '').trim();
+      return letters[i] + ') ' + stripped;
+    });
+
+    // 7. Cross-check: if explanation mentions "correct answer is X" and X appears
+    //    in an option but NOT at the current correct letter, fix the correct letter
+    var exp = (q.explanation || '').toLowerCase();
+    var reClean = q.options.map(function(opt) {
+      return opt.replace(/^[A-Da-d]\)\s*/, '').trim();
+    });
+
+    // Try to find explicit answer statements in the explanation
+    var answerPatterns = [
+      /correct answer is\s+(.+?)[\.\,]/i,
+      /the answer is\s+(.+?)[\.\,]/i,
+      /therefore[,]?\s+(?:the answer is\s+)?(.+?)[\.\,]/i
+    ];
+
+    for (var p = 0; p < answerPatterns.length; p++) {
+      var match = (q.explanation || '').match(answerPatterns[p]);
+      if (match) {
+        var ansText = match[1].trim().replace(/^[A-Da-d]\)\s*/, '').toLowerCase();
+        // Check each option for a match
+        for (var m = 0; m < reClean.length; m++) {
+          var optLower = reClean[m].toLowerCase();
+          if (optLower === ansText || optLower.indexOf(ansText) !== -1 || ansText.indexOf(optLower) !== -1) {
+            if (letters[m] !== q.correct.toUpperCase()) {
+              console.log('Q' + (idx+1) + ': Explanation says "' + match[1].trim() + '" → fixing correct from ' + q.correct + ' to ' + letters[m]);
+              q.correct = letters[m];
+            }
+            break;
+          }
+        }
+        break; // stop after first pattern match
+      }
+    }
+  });
+
+  return data;
+}
+
+async function startQuiz(){
+  const name=quizMode==='choose'?document.getElementById('nameInput').value.trim():document.getElementById('nameInputT').value.trim();
+  if(!name){alert('Please enter your name.');return}
+
+  let unitId, topicLabel;
+
+  if(quizMode==='teacher'){
+    const code=document.getElementById('teacherCode').value.trim().toUpperCase();
+    if(!code){alert('Please enter the quiz code given by your teacher.');return}
+    const lookup=TEACHER_CODES[code];
+    if(!lookup){alert('Quiz code "'+code+'" not recognised. Check with your teacher.');return}
+    unitId=lookup.unit;
+    topicLabel=lookup.topic;
+  } else {
+    unitId=document.getElementById('unitSelect').value;
+    topicLabel=document.getElementById('topicSelect').value;
+    if(topicLabel==='all')topicLabel='All topics';
+  }
+
+  const unit=UNITS[unitId];
+
+  const btn=document.querySelector('.start-btn');
+  btn.disabled=true;btn.textContent='Generating quiz...';
+
+  const sys=`You are an AQA GCSE Business Studies quiz generator for Nishkam School West London. Generate a quiz of exactly 20 questions on "${topicLabel}" from Unit ${unitId}: ${unit.t}.
+
+QUESTION MIX:
+- Questions 1-14: Multiple choice (MCQ). Each has exactly 4 options A, B, C, D. One correct answer. Distractors must be plausible AQA-style misconceptions.
+- Questions 15-20: Short answer (1-2 marks). Student types a brief answer. Provide the correct answer and accept reasonable alternatives.
+
+CRITICAL MCQ RULES — READ CAREFULLY:
+- Each MCQ must have EXACTLY 4 options labelled A), B), C), D)
+- All 4 options MUST be DIFFERENT from each other. NEVER include duplicate or near-identical options.
+- The "correct" field MUST contain the letter (A, B, C, or D) that matches the correct option in the "options" array.
+- BEFORE writing each question: work out the correct answer FIRST, then place it at the position matching your "correct" letter, then write 3 wrong distractors.
+- For calculation questions: do the maths step by step BEFORE writing options. The calculated answer MUST appear as one of the four options and the "correct" letter MUST point to it.
+- DOUBLE-CHECK: After writing each MCQ, verify that options[0] is A, options[1] is B, options[2] is C, options[3] is D, and that the option at the "correct" letter position IS the right answer.
+
+GENERAL RULES:
+- Match AQA GCSE Business specification content exactly
+- Cover a range of subtopics within the chosen area
+- Increase difficulty gradually (Q1-5 easy recall, Q6-14 application/understanding, Q15-20 require explanation)
+- Each question must be distinctly different
+- Short answer questions: provide 5-8 acceptable answer variations covering different wordings, synonyms, and phrasing orders that a student might reasonably use. For example, if the answer is "limited liability", also accept "liability is limited", "owners have limited liability", "limited liability protection", "they have limited liability". Be GENEROUS — if a student demonstrates they understand the concept, their answer should be accepted even if the exact wording differs from the textbook definition. Include common abbreviations (e.g. "PRP" for performance-related pay, "USP" for unique selling point). Include both formal and informal phrasings.
+
+RESPOND IN EXACTLY THIS JSON FORMAT (no markdown, no backticks, raw JSON only):
+[
+  {"num":1,"type":"mcq","question":"...","options":["A) ...","B) ...","C) ...","D) ..."],"correct":"A","explanation":"..."},
+  {"num":15,"type":"short","question":"...","acceptable":["answer1","answer2","answer3","answer4","answer5"],"explanation":"..."}
+]
+
+Every question must have an "explanation" field explaining WHY the answer is correct (2-3 sentences, educational).`;
+
+  try{
+    const r=await fetch(PROXY,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:4096,system:sys,messages:[{role:'user',content:'Generate the 20-question quiz now. Raw JSON only. IMPORTANT: For every MCQ, verify that the "correct" letter matches the position of the right answer in the "options" array (A=index 0, B=index 1, C=index 2, D=index 3). For calculation questions, show your working in the explanation and make sure the calculated answer appears as one of the four options.'}]})});
+    if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.error?.message||'API error')}
+    const d=await r.json();
+    const raw=(d.content||[]).map(b=>b.text||'').join('\n').replace(/```json\s*/g,'').replace(/```\s*/g,'').trim();
+    quizData=JSON.parse(raw);
+    if(!Array.isArray(quizData)||quizData.length<10)throw new Error('Invalid quiz data');
+
+    // POST-PROCESSING VALIDATION — fix common AI generation errors
+    quizData=validateQuiz(quizData);
+
+    renderQuiz(name,unitId,topicLabel);
+    quizStudentName=name;quizUnitId=unitId;quizTopicLabel=topicLabel;
+  }catch(err){
+    alert('Quiz generation failed: '+err.message+'\n\nPlease try again.');
+    console.error(err);
+  }
+  btn.disabled=false;btn.textContent='Start Quiz (20 Questions, 12 Minutes)';
+}
+
+function renderQuiz(name,unitId,topicLabel){
+  document.getElementById('setupSection').style.display='none';
+  document.getElementById('quizArea').classList.add('show');
+  document.getElementById('quizTitle').textContent='Unit '+unitId+': '+topicLabel;
+
+  const container=document.getElementById('quizQuestions');
+  container.innerHTML='';
+
+  quizData.forEach((q,i)=>{
+    const div=document.createElement('div');
+    div.className='q-card';div.id='qcard-'+i;
+    const typeBadge=q.type==='mcq'?'MCQ':'SHORT ANSWER';
+
+    let body='';
+    if(q.type==='mcq'){
+      body='<ul class="mcq-options">';
+      q.options.forEach(function(opt,j){
+        var letter=['A','B','C','D'][j];
+        var cleanOpt=opt.replace(/^[A-D]\)\s*/,'');
+        body+='<li class="mcq-opt" data-q="'+i+'" data-letter="'+letter+'" onclick="selectMCQ('+i+',\''+letter+'\')"><span class="mcq-letter">'+letter+'</span><span>'+cleanOpt+'</span></li>';
+      });
+      body+='</ul>';
+    } else {
+      body='<input type="text" class="sa-input" id="sa-'+i+'" placeholder="Type your answer...">';
+    }
+
+    div.innerHTML='<div class="q-num">Question '+(i+1)+' <span class="q-type-badge">'+typeBadge+'</span></div><div class="q-text">'+q.question+'</div>'+body+'<div class="q-explanation" id="exp-'+i+'"></div>';
+    container.appendChild(div);
+  });
+
+  // Start timer
+  timeLeft=720;
+  updateTimer();
+  timerInterval=setInterval(()=>{
+    timeLeft--;
+    updateTimer();
+    if(timeLeft<=0){clearInterval(timerInterval);submitQuiz()}
+  },1000);
+
+  updateProgress();
+  document.getElementById('quizArea').scrollIntoView({behavior:'smooth'});
+}
+
+function updateTimer(){
+  const m=Math.floor(timeLeft/60);const s=timeLeft%60;
+  document.getElementById('quizTimer').textContent=m+':'+(s<10?'0':'')+s;
+  if(timeLeft<=60)document.getElementById('quizTimer').style.color='var(--red)';
+}
+
+function selectMCQ(qIdx,letter){
+  document.querySelectorAll('[data-q="'+qIdx+'"]').forEach(el=>{
+    el.classList.remove('selected');
+    el.querySelector('.mcq-letter').style.borderColor='';
+  });
+  const selected=document.querySelector('[data-q="'+qIdx+'"][data-letter="'+letter+'"]');
+  if(selected){selected.classList.add('selected')}
+  updateProgress();
+}
+
+function updateProgress(){
+  let answered=0;
+  quizData.forEach((q,i)=>{
+    if(q.type==='mcq'){if(document.querySelector('[data-q="'+i+'"].selected'))answered++}
+    else{const inp=document.getElementById('sa-'+i);if(inp&&inp.value.trim())answered++}
+  });
+  document.getElementById('quizProgress').textContent=answered+' / '+quizData.length+' answered';
+}
+
+function flexibleMatch(studentAnswer, acceptableAnswers) {
+  // Normalise: lowercase, remove punctuation, collapse spaces
+  function norm(s) {
+    return s.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
+  }
+
+  var sa = norm(studentAnswer);
+  if (sa.length === 0) return false;
+
+  // Split student answer into individual words
+  var studentWords = sa.split(' ').filter(function(w) { return w.length > 2; }); // ignore tiny words like "a", "to", "is"
+
+  // Common stop words to ignore when comparing
+  var stopWords = ['the','and','a','an','to','is','it','of','in','for','on','by','as','at','or','be','are','was','has','had','not','but','its','can','may','will','this','that','they','them','with','from','also','would','could','should','their','there','which','when','than','then','been','have','does','did','very','more','most','some','into'];
+
+  // Get meaningful words (remove stop words)
+  var studentKeywords = studentWords.filter(function(w) { return stopWords.indexOf(w) === -1; });
+
+  for (var i = 0; i < acceptableAnswers.length; i++) {
+    var acc = norm(acceptableAnswers[i]);
+    if (acc.length === 0) continue;
+
+    // 1. EXACT MATCH (after normalisation)
+    if (sa === acc) return true;
+
+    // 2. CONTAINS MATCH (either direction)
+    if (sa.indexOf(acc) !== -1 || acc.indexOf(sa) !== -1) return true;
+
+    // 3. KEYWORD MATCH — do most of the key words from the acceptable answer appear in the student answer?
+    var accWords = acc.split(' ').filter(function(w) { return w.length > 2; });
+    var accKeywords = accWords.filter(function(w) { return stopWords.indexOf(w) === -1; });
+
+    if (accKeywords.length > 0) {
+      var matchCount = 0;
+      for (var j = 0; j < accKeywords.length; j++) {
+        // Check if the student answer contains this keyword OR a close variation
+        if (sa.indexOf(accKeywords[j]) !== -1) {
+          matchCount++;
+        } else {
+          // Check for common variations: plural/singular, -ing/-ed/-tion
+          var root = accKeywords[j].replace(/(s|ed|ing|tion|ment|ness|ly|er|est)$/, '');
+          if (root.length >= 3 && sa.indexOf(root) !== -1) {
+            matchCount++;
+          }
+        }
+      }
+      // If 70%+ of key words match, accept it
+      var matchRatio = matchCount / accKeywords.length;
+      if (matchRatio >= 0.7 && matchCount >= 1) return true;
+    }
+
+    // 4. REVERSE CHECK — do the student's keywords appear in the acceptable answer?
+    if (studentKeywords.length > 0 && accKeywords.length > 0) {
+      var reverseCount = 0;
+      for (var k = 0; k < studentKeywords.length; k++) {
+        if (acc.indexOf(studentKeywords[k]) !== -1) {
+          reverseCount++;
+        } else {
+          var sRoot = studentKeywords[k].replace(/(s|ed|ing|tion|ment|ness|ly|er|est)$/, '');
+          if (sRoot.length >= 3 && acc.indexOf(sRoot) !== -1) {
+            reverseCount++;
+          }
+        }
+      }
+      var reverseRatio = reverseCount / studentKeywords.length;
+      if (reverseRatio >= 0.7 && reverseCount >= 2) return true;
+    }
+  }
+  return false;
+}
+
+function submitQuiz(){
+  clearInterval(timerInterval);
+  let score=0;const total=quizData.length;
+
+  quizData.forEach((q,i)=>{
+    const card=document.getElementById('qcard-'+i);
+    const expDiv=document.getElementById('exp-'+i);
+    let isCorrect=false;
+
+    if(q.type==='mcq'){
+      const sel=document.querySelector('[data-q="'+i+'"].selected');
+      const chosen=sel?sel.dataset.letter:'';
+      const correctLetter=q.correct.replace(/[^A-Da-d]/g,'').toUpperCase();
+      isCorrect=(chosen!==''&&chosen===correctLetter);
+
+      // Highlight correct/wrong
+      document.querySelectorAll('[data-q="'+i+'"]').forEach(el=>{
+        el.style.cursor='default';
+        el.onclick=null;
+        if(el.dataset.letter===correctLetter)el.classList.add('correct-answer');
+        else if(el.classList.contains('selected'))el.classList.add('wrong-answer');
+      });
+    } else {
+      const inp=document.getElementById('sa-'+i);
+      const answer=(inp?inp.value.trim():'').toLowerCase();
+      inp.disabled=true;
+      const acceptable=(q.acceptable||[]).map(a=>a.toLowerCase().trim());
+      // Empty answer is always wrong
+      if(answer.length===0){
+        isCorrect=false;
+      } else {
+        isCorrect=flexibleMatch(answer, acceptable);
+      }
+      if(isCorrect){inp.style.borderColor='var(--green)';inp.style.background='var(--green-light)'}
+      else{inp.style.borderColor='var(--red)';inp.style.background='var(--red-light)'}
+    }
+
+    if(isCorrect){score++;card.classList.add('correct')}else{card.classList.add('incorrect')}
+    expDiv.className='q-explanation show '+(isCorrect?'correct-exp':'incorrect-exp');
+    expDiv.innerHTML='<strong>'+(isCorrect?'Correct!':'Incorrect.')+'</strong> '+q.explanation+(q.type==='short'&&!isCorrect?' <strong>Acceptable answers: '+q.acceptable.join(', ')+'</strong>':'');
+  });
+
+  // Disable submit
+  document.getElementById('submitQuizBtn').disabled=true;
+  document.getElementById('submitQuizBtn').textContent='Quiz Submitted';
+
+  // Show results
+  const pct=Math.round((score/total)*100);
+  document.getElementById('resScore').textContent=score;
+  document.getElementById('resOf').textContent='out of '+total;
+  document.getElementById('resPct').textContent=pct+'%';
+  setTimeout(()=>{document.getElementById('resBarFill').style.width=pct+'%'},100);
+
+  let msg='';
+  if(pct>=90)msg='Outstanding! You have an excellent grasp of this topic.';
+  else if(pct>=70)msg='Strong performance. Review the questions you got wrong and try again.';
+  else if(pct>=50)msg='Solid foundation, but some gaps to address. Focus on the red questions below.';
+  else msg='This topic needs more revision. Go back to the Exam Mastery Notes and try again.';
+  document.getElementById('resMsg').textContent=msg;
+
+  document.getElementById('resultsArea').classList.add('show');
+  document.getElementById('resultsArea').scrollIntoView({behavior:'smooth',block:'start'});
+
+  // Log to Google Sheet
+  logQuizToSheet(quizStudentName, quizUnitId, quizTopicLabel, score, total, pct, wrongTopics(quizData, score));
+}
+
+const SHEET_URL='https://script.google.com/macros/s/AKfycbxbOyg1Ggz2m3c3wAL5ulRAoPgK_sw7YWrlavz4eIf3hKsOlmlrIrfADTXRvxkXVjtj0A/exec';
+
+function wrongTopics(data, score) {
+  // Collect questions that were answered incorrectly
+  var wrong = [];
+  data.forEach(function(q, i) {
+    var card = document.getElementById('qcard-' + i);
+    if (card && card.classList.contains('incorrect')) {
+      wrong.push(q.question.substring(0, 60));
+    }
+  });
+  return wrong.slice(0, 3).join(' | ');
+}
+
+function logQuizToSheet(name, unitId, topicLabel, score, total, pct, weakAreas) {
+  try {
+    var payload = {
+      name: name,
+      question: 'Quiz: Unit ' + unitId + ' — ' + topicLabel,
+      maxMark: total,
+      mark: score,
+      level: pct + '%',
+      www1: pct >= 70 ? 'Strong knowledge recall' : pct >= 50 ? 'Solid foundation' : 'Needs revision',
+      www2: score + '/' + total + ' correct',
+      ebi1: weakAreas || 'No weak areas identified',
+      ebi2: '',
+      tool: 'quiz'
+    };
+    var form = document.createElement('form');
+    form.method = 'POST';
+    form.action = SHEET_URL;
+    form.target = 'sheet_iframe';
+    form.style.display = 'none';
+    var input = document.createElement('input');
+    input.name = 'payload';
+    input.value = JSON.stringify(payload);
+    form.appendChild(input);
+    
+    var iframe = document.getElementById('sheet_iframe');
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.name = 'sheet_iframe';
+      iframe.id = 'sheet_iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+    
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+  } catch (e) {
+    console.error('Sheet logging failed:', e);
+  }
+}
+
+function resetQuiz(){
+  document.getElementById('quizArea').classList.remove('show');
+  document.getElementById('resultsArea').classList.remove('show');
+  document.getElementById('setupSection').style.display='block';
+  document.getElementById('quizQuestions').innerHTML='';
+  document.getElementById('submitQuizBtn').disabled=false;
+  document.getElementById('submitQuizBtn').textContent='Submit Quiz';
+  document.getElementById('quizTimer').style.color='var(--gold)';
+  quizData=[];
+  window.scrollTo(0,0);
+}
+</script>
+
+
+    <footer style="background:#081A2E;color:rgba(250,247,241,0.75);padding:48px 0 28px;font-size:13.5px;margin-top:32px;font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+      <div style="max-width:1080px;margin:0 auto;padding:0 48px;">
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div>
+            <div style="font-family:'DM Serif Display',Georgia,serif;font-weight:500;font-size:19px;color:#FAF7F1;margin-bottom:10px;">GCSE Business Studies</div>
+            <div style="font-style:italic;color:#D4B570;font-size:13px;margin-bottom:14px;">Man Neeva, Mat Uchi</div>
+            <p style="font-size:13px;line-height:1.6;margin:0;max-width:320px;">AQA GCSE Business Studies revision resources from Nishkam School West London. Grounded in virtue, built for success.</p>
+          </div>
+          <div>
+            <h4 style="font-size:10.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#D4B570;margin:0 0 14px;">Revise</h4>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;">
+              <li><a href="unit1.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 1 &middot; Real World</a></li>
+              <li><a href="unit2.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 2 &middot; Influences</a></li>
+              <li><a href="unit3.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 3 &middot; Operations</a></li>
+              <li><a href="unit4.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 4 &middot; HR</a></li>
+              <li><a href="unit5.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 5 &middot; Marketing</a></li>
+              <li><a href="unit6.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Unit 6 &middot; Finance</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size:10.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#D4B570;margin:0 0 14px;">Tools &amp; Plan</h4>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;">
+              <li><a href="marker.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Mark my work</a></li>
+              <li><a href="generator.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Practice questions</a></li>
+              <li><a href="mock.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Mock generator</a></li>
+              <li><a href="quiz.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Quick quiz</a></li>
+              <li><a href="resources.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Downloads</a></li>
+              <li><a href="assessments.html" style="color:rgba(250,247,241,0.75);font-size:13px;">Schedule</a></li>
+            </ul>
+          </div>
+        </div>
+        <div style="padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;letter-spacing:0.04em;color:rgba(250,247,241,0.55);">
+          <span>&copy; Nishkam School West London &middot; AQA GCSE Business Studies</span>
+          <span>GCSE Business Studies</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const toggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const scrim = document.getElementById('sidebarScrim');
+  function openSidebar() { sidebar.classList.add('is-open'); scrim.classList.add('is-open'); }
+  function closeSidebar() { sidebar.classList.remove('is-open'); scrim.classList.remove('is-open'); }
+  if (toggle) toggle.addEventListener('click', openSidebar);
+  if (scrim) scrim.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 900) closeSidebar();
+  }));
+</script>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

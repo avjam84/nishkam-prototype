@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Resources — Nishkam School West London</title>
+<meta name="description" content="Unit workbooks, past papers and mark schemes for AQA GCSE Business Studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #0E2A47; --navy-deep: #081A2E; --navy-soft: #1F3F63;
+  --gold: #B08A3E; --gold-soft: #D4B570;
+  --ink: #1A1A1A; --ink-soft: #444; --muted: #6B6B6B;
+  --rule: #E5DFD2; --rule-strong: #C9C0AB;
+  --parchment: #FAF7F1; --parchment-warm: #F3ECDB; --paper: #FFFFFF;
+  --font-display: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sidebar-w: 300px;
+  --maxw-content: 1080px;
+  --radius-sm: 4px; --radius: 6px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --green: #1A7A3A; --green-light: #EAFAF1;
+  --red: #9B3B30; --red-light: #FDF2F0;
+  --teal: #117A65; --teal-light: #E8F8F5;
+  --purple: #6C3483; --purple-light: #F5EEF8;
+  --saffron: #B08A3E; --saffron-light: #FBF5E9;
+  --orange-chain: #C07A28; --blue-extract: #2471A3; --green-eval: #1A7A3A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--font-sans); font-size: 16px; line-height: 1.6;
+  color: var(--ink); background: var(--parchment);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+
+.layout { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; }
+
+.sidebar {
+  background: var(--navy); color: var(--parchment);
+  padding: 32px 28px; position: sticky; top: 0; height: 100vh;
+  overflow-y: auto; border-right: 1px solid var(--navy-deep);
+}
+.sidebar__brand { padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid rgba(176,138,62,0.3); }
+.sidebar__school { font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--parchment); letter-spacing: -0.01em; line-height: 1.25; margin-bottom: 6px; }
+.sidebar__motto { font-family: var(--font-display); font-style: italic; font-size: 12.5px; color: var(--gold-soft); letter-spacing: 0.01em; }
+.sidebar__eyebrow { margin-top: 16px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); }
+.sidebar__group { margin-bottom: 24px; }
+.sidebar__group:last-child { margin-bottom: 0; }
+.sidebar__heading { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin: 0 0 10px; }
+.sidebar__links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.sidebar__links a {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 7px 10px 7px 12px; font-size: 14px; color: rgba(250,247,241,0.82);
+  border-radius: var(--radius-sm); transition: all 0.2s var(--ease);
+  border-left: 2px solid transparent; margin-left: -12px;
+}
+.sidebar__links a:hover { color: var(--parchment); background: rgba(176,138,62,0.08); border-left-color: var(--gold); }
+.sidebar__links a.is-active { color: var(--gold-soft); border-left-color: var(--gold); font-weight: 500; }
+.sidebar__num { font-family: var(--font-display); font-style: italic; color: var(--gold); font-size: 13px; min-width: 14px; }
+.sidebar__links a svg { width: 11px; height: 11px; opacity: 0.6; margin-left: auto; flex-shrink: 0; }
+
+.mobile-bar { display: none; position: sticky; top: 0; z-index: 60; background: var(--navy); color: var(--parchment); padding: 14px 20px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--navy-deep); }
+.mobile-bar__brand { font-family: var(--font-display); font-weight: 500; font-size: 16px; }
+.mobile-bar__toggle { background: none; border: 1px solid rgba(250,247,241,0.3); color: var(--parchment); width: 40px; height: 40px; border-radius: var(--radius-sm); font-size: 18px; cursor: pointer; display: grid; place-items: center; }
+
+.main { min-width: 0; }
+.wrap { max-width: var(--maxw-content); margin: 0 auto; padding: 0 48px; }
+
+.hero { padding: 88px 0 64px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  pointer-events: none; opacity: 0.9;
+}
+.hero__inner { position: relative; }
+.hero__eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.hero__eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+.hero__title { font-family: var(--font-display); font-weight: 500; font-size: clamp(40px, 6vw, 76px); line-height: 0.98; letter-spacing: -0.025em; color: var(--navy); margin: 0 0 24px; max-width: 14ch; }
+.hero__title em { font-style: italic; font-weight: 400; color: var(--gold); }
+.hero__lede { font-family: var(--font-display); font-weight: 400; font-size: 19px; line-height: 1.5; color: var(--ink-soft); max-width: 620px; margin: 0; }
+
+.section { padding: 88px 0; position: relative; }
+.section--tinted { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.section__head { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: baseline; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+.section__num { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 19px; color: var(--gold); letter-spacing: 0.02em; white-space: nowrap; }
+.section__titleblock h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 3.6vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 10px; }
+.section__titleblock p { font-size: 15.5px; color: var(--muted); margin: 0; max-width: 640px; line-height: 1.55; }
+
+.footer { background: var(--navy-deep); color: rgba(250,247,241,0.75); padding: 48px 0 28px; font-size: 13.5px; margin-top: 32px; }
+.footer__inner { max-width: var(--maxw-content); margin: 0 auto; padding: 0 48px; }
+.footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer__brand { font-family: var(--font-display); font-weight: 500; font-size: 19px; color: var(--parchment); margin-bottom: 10px; }
+.footer__motto { font-style: italic; color: var(--gold-soft); font-size: 13px; margin-bottom: 14px; }
+.footer__desc { font-size: 13px; line-height: 1.6; margin: 0; max-width: 320px; }
+.footer__col h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 14px; }
+.footer__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.footer__col a { color: rgba(250,247,241,0.75); font-size: 13px; transition: color 0.2s var(--ease); }
+.footer__col a:hover { color: var(--gold-soft); }
+.footer__bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; letter-spacing: 0.04em; color: rgba(250,247,241,0.55); }
+
+@media (max-width: 1200px) {
+  :root { --sidebar-w: 260px; }
+  .wrap { padding: 0 36px; }
+  .footer__inner { padding: 0 36px; }
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .mobile-bar { display: flex; }
+  .sidebar { position: fixed; top: 0; left: 0; height: 100vh; width: 300px; max-width: 85vw; transform: translateX(-100%); transition: transform 0.3s var(--ease); z-index: 70; box-shadow: 0 0 40px rgba(0,0,0,0.25); }
+  .sidebar.is-open { transform: translateX(0); }
+  .sidebar-scrim { position: fixed; inset: 0; background: rgba(8,26,46,0.6); z-index: 65; opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease); }
+  .sidebar-scrim.is-open { opacity: 1; pointer-events: auto; }
+  .wrap { padding: 0 24px; }
+  .footer__inner { padding: 0 24px; }
+  .hero { padding: 56px 0 40px; }
+  .section { padding: 64px 0; }
+  .section__head { grid-template-columns: 1fr; gap: 12px; }
+  .footer__top { grid-template-columns: 1fr; gap: 28px; }
+  .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: var(--radius); }
+@keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.hero__eyebrow, .hero__title, .hero__lede { animation: riseIn 0.7s var(--ease) both; }
+.hero__title { animation-delay: 0.05s; }
+.hero__lede  { animation-delay: 0.15s; }
+
+
+.workbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); margin: 24px 0; }
+.wb-card { background: var(--paper); padding: 28px 24px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); transition: background 0.25s var(--ease); display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+.wb-card:nth-child(3n) { border-right: none; }
+.wb-card:nth-child(n+4) { border-bottom: none; }
+.wb-card:hover { background: var(--parchment-warm); }
+.wb-card__num { font-family: var(--font-display); font-style: italic; font-size: 28px; color: var(--gold); margin-bottom: 6px; }
+.wb-card__title { font-family: var(--font-display); font-weight: 500; font-size: 18px; color: var(--navy); margin: 0 0 8px; }
+.wb-card__desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; margin: 0 0 16px; flex-grow: 1; }
+.wb-card__link { font-size: 13px; font-weight: 500; color: var(--navy); display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s var(--ease); }
+.wb-card:hover .wb-card__link { gap: 10px; }
+
+.pp-year { margin-bottom: 0; }
+.pp-year-header { background: var(--navy); color: var(--parchment); padding: 14px 24px; font-family: var(--font-display); font-weight: 500; font-size: 20px; display: flex; justify-content: space-between; align-items: center; }
+.pp-year-header span { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-soft); }
+.pp-papers { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); border-top: none; }
+.pp-paper { padding: 20px 24px; border-right: 1px solid var(--rule); background: var(--paper); }
+.pp-paper:last-child { border-right: none; }
+.pp-paper__title { font-family: var(--font-display); font-weight: 500; font-size: 16px; color: var(--navy); margin: 0 0 12px; }
+.pp-paper__links { display: flex; flex-direction: column; gap: 8px; }
+.pp-link { font-size: 13.5px; color: var(--ink-soft); display: flex; align-items: center; gap: 10px; padding: 8px 12px; border: 1px solid var(--rule); transition: all 0.2s var(--ease); text-decoration: none; }
+.pp-link:hover { border-color: var(--gold); background: var(--parchment-warm); color: var(--navy); }
+.pp-link__type { font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; min-width: 110px; }
+.pp-link__type--qp { color: var(--navy); }
+.pp-link__type--ms { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .workbook-grid { grid-template-columns: 1fr; }
+  .wb-card { border-right: none; border-bottom: 1px solid var(--rule); }
+  .wb-card:last-child { border-bottom: none; }
+  .pp-papers { grid-template-columns: 1fr; }
+  .pp-paper { border-right: none; border-bottom: 1px solid var(--rule); }
+  .pp-paper:last-child { border-bottom: none; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="mobile-bar">
+  <div class="mobile-bar__brand">GCSE Business Studies</div>
+  <button class="mobile-bar__toggle" id="sidebarToggle" aria-label="Open navigation">&#9776;</button>
+</div>
+<div class="sidebar-scrim" id="sidebarScrim"></div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar__brand">
+      <div class="sidebar__school">Nishkam School West London</div>
+      <div class="sidebar__motto">Man Neeva, Mat Uchi</div>
+      <div class="sidebar__eyebrow">AQA GCSE Business</div>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Overview</h3>
+      <ul class="sidebar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.nishkamschooltrust.org/nswl/page/?title=Virtue%2Dled+Education&amp;pid=255" target="_blank" rel="noopener">
+          Nishkam Virtues
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a></li>
+        <li><a href="faith.html">Faith &amp; Business</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Revision Units</h3>
+      <ul class="sidebar__links">
+        <li><a href="unit1.html"><span class="sidebar__num">1</span>Business in the Real World</a></li>
+        <li><a href="unit2.html"><span class="sidebar__num">2</span>Influences on Business</a></li>
+        <li><a href="unit3.html"><span class="sidebar__num">3</span>Business Operations</a></li>
+        <li><a href="unit4.html"><span class="sidebar__num">4</span>Human Resources</a></li>
+        <li><a href="unit5.html"><span class="sidebar__num">5</span>Marketing</a></li>
+        <li><a href="unit6.html"><span class="sidebar__num">6</span>Finance</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Resources</h3>
+      <ul class="sidebar__links">
+        <li><a href="resources.html" class="is-active">Download Booklets</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Study Tools</h3>
+      <ul class="sidebar__links">
+        <li><a href="marker.html">Mark My Work</a></li>
+        <li><a href="generator.html">Practice Questions</a></li>
+        <li><a href="mock.html">Mock Paper Generator</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Planning</h3>
+      <ul class="sidebar__links">
+        <li><a href="assessments.html">Assessment Schedule</a></li>
+        <li><a href="revision.html">How to Revise</a></li>
+      </ul>
+    </div>
+    <div class="sidebar__group">
+      <h3 class="sidebar__heading">Beyond GCSE</h3>
+      <ul class="sidebar__links">
+        <li><a href="alevel.html">A Level Business</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero__inner">
+          <div class="hero__eyebrow">Resources · AQA GCSE Business Studies</div>
+          <h1 class="hero__title">Download<br><em style="font-style:italic;font-weight:400;color:#B08A3E;">resources.</em></h1>
+          <p class="hero__lede">Unit workbooks, past papers, mark schemes and exam technique guides — everything you need in one place.</p>
+        </div>
+      </div>
+    </header>
+
+
+    <section class="section section--tinted">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Booklets</span>
+          <div class="section__titleblock">
+            <h2>Unit workbooks.</h2>
+            <p>One workbook per unit. Content-focused revision with retrieval questions, case studies, exam practice and model answers.</p>
+          </div>
+        </div>
+
+        <div class="workbook-grid">
+          <a href="downloads/Unit 1 workbooks.docx" class="wb-card">
+            <div class="wb-card__num">1.</div>
+            <div class="wb-card__title">Business in the Real World</div>
+            <div class="wb-card__desc">Enterprise, ownership, objectives, stakeholders, location, planning, expansion.</div>
+            <span class="wb-card__link">Download workbook <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+          <a href="downloads/Unit 2 workbooks.docx" class="wb-card">
+            <div class="wb-card__num">2.</div>
+            <div class="wb-card__title">Influences on Business</div>
+            <div class="wb-card__desc">Technology, ethics, environment, economic climate, globalisation, legislation, competition.</div>
+            <span class="wb-card__link">Download workbook <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+          <a href="downloads/Unit 3 workbook.docx" class="wb-card">
+            <div class="wb-card__num">3.</div>
+            <div class="wb-card__title">Business Operations</div>
+            <div class="wb-card__desc">Production, procurement, quality, customer service.</div>
+            <span class="wb-card__link">Download workbook <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+          <a href="downloads/Unit 4 workbook.docx" class="wb-card">
+            <div class="wb-card__num">4.</div>
+            <div class="wb-card__title">Human Resources</div>
+            <div class="wb-card__desc">Structures, recruitment, motivation, training.</div>
+            <span class="wb-card__link">Download workbook <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+          <a href="downloads/Unit 5 workbook.docx" class="wb-card">
+            <div class="wb-card__num">5.</div>
+            <div class="wb-card__title">Marketing</div>
+            <div class="wb-card__desc">Customers, segmentation, research, marketing mix, strategy.</div>
+            <span class="wb-card__link">Download workbook <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+          <a href="downloads/Unit 6 workbook.docx" class="wb-card">
+            <div class="wb-card__num">6.</div>
+            <div class="wb-card__title">Finance</div>
+            <div class="wb-card__desc">Sources, cash flow, calculations, analysing performance.</div>
+            <span class="wb-card__link">Download workbook <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="section__num">Papers</span>
+          <div class="section__titleblock">
+            <h2>Past papers and mark schemes.</h2>
+            <p>Every AQA GCSE Business Studies past paper from 2019 to 2025, with mark schemes. Paper 1 covers Units 1&ndash;4. Paper 2 covers Units 1, 2, 5 and 6.</p>
+          </div>
+        </div>
+
+        <div class="pp-year">
+          <div class="pp-year-header">2025<span>AQA 8132</span></div>
+          <div class="pp-papers">
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 1</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2025 Paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2025 mark scheme paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 2</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2025 Paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2025 mark scheme paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-year">
+          <div class="pp-year-header">2024<span>AQA 8132</span></div>
+          <div class="pp-papers">
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 1</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2024 Paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2024 mark scheme paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 2</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2024 Paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <span class="pp-link" aria-disabled="true" style="opacity:.55;cursor:not-allowed" title="This file is not on the original site yet"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Not available yet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-year">
+          <div class="pp-year-header">2023<span>AQA 8132</span></div>
+          <div class="pp-papers">
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 1</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2023 Paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2023 mark scheme paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 2</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2023 Paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2023 mark scheme paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-year">
+          <div class="pp-year-header">2022<span>AQA 8132</span></div>
+          <div class="pp-papers">
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 1</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2022 Paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2022 mark scheme paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 2</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2022 Paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2022 mark scheme paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-year">
+          <div class="pp-year-header">2020<span>AQA 8132</span></div>
+          <div class="pp-papers">
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 1</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2020 Paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2020 mark scheme paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 2</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2020 Paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2020 mark scheme paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pp-year">
+          <div class="pp-year-header">2019<span>AQA 8132</span></div>
+          <div class="pp-papers">
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 1</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2019 Paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2019 mark scheme paper 1.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+            <div class="pp-paper">
+              <div class="pp-paper__title">Paper 2</div>
+              <div class="pp-paper__links">
+                <a href="downloads/2019 Paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--qp">Question Paper</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                <a href="downloads/2019 mark scheme paper 2.pdf" class="pp-link"><span class="pp-link__type pp-link__type--ms">Mark Scheme</span>Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__top">
+          <div>
+            <div class="footer__brand">GCSE Business Studies</div>
+            <div class="footer__motto">Man Neeva, Mat Uchi</div>
+            <p class="footer__desc">AQA GCSE Business Studies revision resources from Nishkam School West London. Grounded in virtue, built for success.</p>
+          </div>
+          <div class="footer__col">
+            <h4>Revise</h4>
+            <ul>
+              <li><a href="unit1.html">Unit 1 &middot; Real World</a></li>
+              <li><a href="unit2.html">Unit 2 &middot; Influences</a></li>
+              <li><a href="unit3.html">Unit 3 &middot; Operations</a></li>
+              <li><a href="unit4.html">Unit 4 &middot; HR</a></li>
+              <li><a href="unit5.html">Unit 5 &middot; Marketing</a></li>
+              <li><a href="unit6.html">Unit 6 &middot; Finance</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Tools &amp; Plan</h4>
+            <ul>
+              <li><a href="marker.html">Mark my work</a></li>
+              <li><a href="generator.html">Practice questions</a></li>
+              <li><a href="mock.html">Mock generator</a></li>
+              <li><a href="quiz.html">Quick quiz</a></li>
+              <li><a href="resources.html">Downloads</a></li>
+              <li><a href="assessments.html">Schedule</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; Nishkam School West London &middot; AQA GCSE Business Studies</span>
+          <span>GCSE Business Studies</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+
+
+<script>
+  const toggle = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+  const scrim = document.getElementById('sidebarScrim');
+  function openSidebar() { sidebar.classList.add('is-open'); scrim.classList.add('is-open'); }
+  function closeSidebar() { sidebar.classList.remove('is-open'); scrim.classList.remove('is-open'); }
+  if (toggle) toggle.addEventListener('click', openSidebar);
+  if (scrim) scrim.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 900) closeSidebar();
+  }));
+</script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
